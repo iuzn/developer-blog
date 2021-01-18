@@ -1,0 +1,18 @@
+.navButton {
+  padding: 12px;
+  color: var(--c-yellow);
+  border: 2px solid var(--c-yellow);
+  width: max-content;
+  svg {
+    font-size: 26px;
+    color: inherit;
+    & + * {
+      margin-left: 20px;
+      margin-right: 15px;
+    }
+  }
+  &:hover {
+    color: var(--c-primary);
+    background-color: var(--c-yellow);
+  }
+}

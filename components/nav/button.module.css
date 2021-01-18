@@ -1,0 +1,16 @@
+.navButton {
+  padding: 10px;
+
+  svg {
+    font-size: 26px;
+    color: inherit;
+    & + * {
+      margin-left: 20px;
+      margin-right: 15px;
+    }
+  }
+}
+
+.navButtonSelected {
+  color: var(--c-yellow);
+}

@@ -1,0 +1,40 @@
+.header {
+  box-sizing: border-box;
+  align-items: center;
+  display: grid;
+  grid-template-columns: auto 80px;
+  border-bottom: 1px solid var(--c-border);
+  border-right: 1px solid var(--c-border);
+  height: 54px;
+  position: sticky;
+  justify-self: flex-end;
+  top: 0;
+  z-index: 999;
+  background-color: var(--c-primary);
+  @media (--d) {
+    color: var(--c-text-color);
+  }
+}
+
+.headertext {
+  position: relative;
+  display: block;
+  padding-left: 15px;
+  font-weight: bold;
+  color: var(--c-yellow);
+
+  @media (--d) {
+    color: var(--c-text-color);
+  }
+}
+
+.modselect {
+  display: block;
+  place-self: center;
+}
+.buton {
+  svg {
+    background-color: transparent;
+    font-size: 30px;
+  }
+}

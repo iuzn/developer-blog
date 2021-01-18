@@ -1,0 +1,37 @@
+.box {
+  display: grid;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+.image {
+  flex-shrink: 0;
+
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 120px;
+  border-radius: 999px;
+}
+.imageflat {
+  flex-shrink: 0;
+
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 46px;
+  border-radius: 99px;
+}
+.title {
+  width: 160px;
+  font-size: 32px;
+  overflow-wrap: break-word;
+  padding-top: 24px;
+  line-height: 32px;
+  text-align: center;
+  font-weight: bold;
+}
+.photo {
+}

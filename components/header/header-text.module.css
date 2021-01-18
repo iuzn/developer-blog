@@ -1,0 +1,13 @@
+.headernone {
+  display: block;
+  font-size: 2em;
+  word-break: keep-all;
+}
+
+.header {
+  display: block;
+  font-size: 2em;
+  @media (--d) {
+    font-size: 2em;
+  }
+}

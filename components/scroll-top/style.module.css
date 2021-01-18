@@ -1,0 +1,52 @@
+.icon {
+  position: fixed;
+  bottom: 0;
+  right: 10%;
+  width: 3vw;
+  height: 3vw;
+  min-width: 60px;
+  min-height: 60px;
+  border-radius: 100%;
+  margin-bottom: 50px;
+  background: var(--c-yellow-10);
+  z-index: 1;
+  cursor: pointer;
+  color: var(--c-primary);
+  margin-top: 10px;
+  margin-right: 10px;
+  animation: scrollTop 0.5s alternate ease infinite;
+  @media (--m) {
+    right: 80%;
+  }
+  @media (--t) {
+    right: 80%;
+  }
+  @media (--d) {
+    right: 10%;
+  }
+
+  &:hover {
+    background: var(--c-yellow);
+    color: var(--c-primary);
+    -webkit-box-shadow: 0 0 50px 10px var(--c-yellow);
+    -moz-box-shadow: 0 0 50px 10px var(--c-yellow);
+    box-shadow: 0 0 50px 1px var(--c-yellow);
+  }
+  svg {
+    margin-right: auto;
+    margin-left: auto;
+    width: 2vw;
+    height: 2vw;
+    min-width: 30px;
+    min-height: 30px;
+  }
+}
+
+@keyframes scrollTop {
+  from {
+    transform: translateY(2px);
+  }
+  to {
+    transform: translateY(-1px);
+  }
+}

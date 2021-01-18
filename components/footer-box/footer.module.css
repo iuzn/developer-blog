@@ -1,0 +1,21 @@
+.social {
+  padding-top: 20px;
+
+  svg {
+    box-sizing: content-box;
+    display: inline;
+    width: 30px;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 30px;
+    color: var(--c-yellow-20);
+    transition: var(--fade-2);
+    &:hover {
+      color: var(--c-yellow);
+    }
+  }
+  p {
+    text-align: center;
+    color: var(--c-yellow-20);
+  }
+}

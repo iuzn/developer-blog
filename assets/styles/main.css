@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  @apply max-w-screen-lg;
+}
+
+.post-container {
+  @apply max-w-3xl mx-auto w-full px-4;
+}
+
+.achievement-notion .notion-text {
+}
+
+.achievement-notion .notion-link,
+.achievement-notion .notion-text {
+  @apply break-normal;
+}
+
+.notion-asset-wrapper img,
+.notion-asset-wrapper iframe {
+  @apply overflow-hidden rounded;
+}
+.aspect-16x9 {
+  padding-bottom: 56.25%;
+}

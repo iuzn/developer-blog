@@ -1,0 +1,62 @@
+:root {
+  --c-primary: #fff;
+  --c-border: rgb(230, 236, 240);
+  --c-text-color: rgb(41, 41, 41);
+  --c-green: rgb(0, 128, 127);
+  --c-yellow: rgba(50, 87, 167, 1);
+  --c-yellow-10: rgba(50, 87, 167, 0.1);
+  --c-yellow-20: rgba(50, 87, 167, 0.2);
+  --c-notion-gray: rgba(100, 100, 100, 0.2);
+  --c-notion-brown: rgba(125, 100, 75, 0.2);
+  --c-notion-orange: rgba(250, 121, 0, 0.2);
+  --c-notion-yellow: rgba(255, 191, 0, 0.2);
+  --c-notion-green: rgba(0, 237, 194, 0.2);
+  --c-notion-blue: rgba(0, 170, 242, 0.2);
+  --c-notion-purple: rgba(105, 0, 242, 0.2);
+  --c-notion-pink: rgba(245, 0, 139, 0.2);
+  --c-notion-red: rgba(250, 0, 0, 0.2);
+  --c-social: #4f4f4f;
+  --c-gray: #828282;
+  --c-gray-50: rgba(130, 130, 130, 0.5);
+  --c-gray-50-50: rgba(50, 50, 50, 0.5);
+  --c-graypoor: #bdbdbd;
+  --c-whitepoor: #e0e0e0;
+  --c-white: #f2f2f2;
+  --c-shadow-10: rgba(0, 0, 0, 0.1);
+  --c-shadow-5: rgba(0, 0, 0, 0.05);
+  --fade: 240ms;
+  --fade-2: 120ms;
+}
+
+.dim:root {
+  --c-primary: #16202a;
+  --c-border: #2f3336;
+  --c-text-color: #e5e5e5;
+  --c-yellow: rgba(244, 199, 112, 1);
+  --c-yellow-10: rgba(244, 199, 112, 0.1);
+  --c-yellow-20: rgba(244, 199, 112, 0.2);
+  --c-shadow-10: rgba(255, 255, 255, 0.1);
+  --c-shadow-5: rgba(255, 255, 255, 0.05);
+}
+
+.dark:root {
+  --c-primary: #000;
+  --c-border: #2f3336;
+  --c-text-color: #ffffff;
+  --c-yellow: rgba(244, 199, 112, 1);
+  --c-yellow-10: rgba(244, 199, 112, 0.1);
+  --c-yellow-20: rgba(244, 199, 112, 0.2);
+  --c-shadow-10: rgba(255, 255, 255, 0.1);
+  --c-shadow-5: rgba(255, 255, 255, 0.05);
+}
+
+.sepia:root {
+  --c-primary: #f5dd9f;
+  --c-border: rgba(108, 84, 62, 0.4);
+  --c-text-color: #6c543e;
+  --c-yellow: rgba(50, 87, 167, 1);
+  --c-yellow-10: rgba(50, 87, 167, 0.1);
+  --c-yellow-20: rgba(50, 87, 167, 0.2);
+  --c-shadow-10: rgba(0, 0, 0, 0.1);
+  --c-shadow-5: rgba(0, 0, 0, 0.05);
+}
