@@ -10,28 +10,33 @@ import { config } from '../config'
 import { BlogPost } from '../types/blog'
 import { Projects } from '../components/sections/projects'
 import { Project } from '../types/project'
+import {Bookmarks} from "../components/sections/bookmarks";
+import {Bookmark} from "../types/bookmark";
 
 interface AppProps {
   blogpost: BlogPost[]
   project: Project[]
+  bookmark: Bookmark[]
 }
 
 export const getStaticProps: GetStaticProps<AppProps> = async () => {
-  const [blogpost, project] = await Promise.all([
+  const [blogpost, project, bookmark] = await Promise.all([
     getBlogTable<BlogPost>(config.notionBlogTableId),
-    getBlogTable<Project>(config.notionProjectTableId)
+    getBlogTable<Project>(config.notionProjectTableId),
+    getBlogTable<Bookmark>(config.notionBookmarkTableId)
   ])
 
   return {
     props: {
       blogpost: blogpost.filter((p) => p.published),
-      project: project.filter((p) => p.published)
+      project: project.filter((p) => p.published),
+      bookmark: bookmark
     },
     revalidate: 1
   }
 }
 
-const HomePage = ({ blogpost, project }: AppProps) => (
+const HomePage = ({ blogpost, project,bookmark }: AppProps) => (
   <>
     <NextSeo
       title={process.env.NEXT_PUBLIC_BLOG_TITLE}
@@ -43,6 +48,7 @@ const HomePage = ({ blogpost, project }: AppProps) => (
       <Header />
       <Blog blogpost={blogpost} preview />
       <Projects project={project} preview />
+      <Bookmarks bookmark={bookmark} preview />
       <Footer />
     </Layout>
   </>

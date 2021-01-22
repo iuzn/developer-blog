@@ -11,6 +11,7 @@ import { toNotionImageUrl } from '../../core/notion'
 import Header from '../../components/header/header'
 import { useRouter } from 'next/router'
 import Loading from '../../components/loading'
+import {dateFormatter} from "../../core/utils";
 
 interface PostProps {
   blocks: BlockMapType
@@ -120,7 +121,7 @@ const BlogPosts: React.FC<PostProps> = ({ project, blocks }) => {
           <h1 className="text-2xl md:text-3xl font-bold sm:text-center mb-2">
             {project.title}
           </h1>
-          <div className="sm:text-center text-gray-600"></div>
+          <div className="sm:text-center text-gray-600">{dateFormatter.format(new Date(project.date))} </div>
         </div>
         <article className="flex-1 my-6 post-container">
           <NotionRenderer blockMap={blocks} mapImageUrl={toNotionImageUrl} />
