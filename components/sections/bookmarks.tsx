@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 export const Bookmark: React.FC<
   BookmarkData & {
+    featured?: boolean
     className?: string
   }
 > = ({ title, link, images, tags, created, description }) => (
@@ -42,7 +43,7 @@ export const Bookmarks: React.FC<{
     </div>
     <div className="grid grid-cols-1 sm:grid-cols-1 gap-4 my-4">
       {bookmark.slice(0, preview ? 3 : undefined).map((p) => (
-        <Bookmark key={p.id} {...p} />
+        <Bookmark key={p.id} featured {...p} />
       ))}
     </div>
   </div>
