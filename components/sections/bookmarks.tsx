@@ -14,7 +14,7 @@ export const Bookmark: React.FC<
         <a
       aria-label={`${title} - Project`}
       className={clsx(
-        'max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl hover:bg-red-700',
+        'max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl',
         featured && 'shadow-lg hover:-translate-y-1 focus:-translate-y-0',
         className
       )} target="_blank"
@@ -31,7 +31,7 @@ export const Bookmark: React.FC<
     </div>
     <div className="p-8">
       <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{tags}</div>
-      <a href="#" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">{title}</a>
+      <a className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">{title}</a>
       <p className="mt-2 text-gray-500">{description}</p>
       <p className="mt-2 text-gray-500">{created}</p>
     </div>
