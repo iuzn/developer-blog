@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps<AppProps> = async () => {
     props: {
       blogpost: blogpost.filter((p) => p.published),
       project: project.filter((p) => p.published),
-      bookmark: bookmark.filter((p) => p.published)
+      bookmark: bookmark.filter((p) => p.published),
     },
     revalidate: 10
   }
