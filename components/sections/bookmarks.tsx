@@ -1,52 +1,32 @@
 import React from 'react'
-import clsx from 'clsx'
 import { Bookmark as BookmarkData } from '../../types/bookmark'
 import { toNotionImageUrl } from '../../core/notion'
 import Link from 'next/link'
 
 export const Bookmark: React.FC<
   BookmarkData & {
-    featured?: boolean
     className?: string
   }
-> = ({ title, link, images, tags, created, description,featured, className }) => (
+> = ({ title, link, images, tags, created, description, className }) => (
     <Link href={link}>
-        <a
-      aria-label={`${title} - Bookmark`}
-      className={clsx(
-        'focus group border bg-box-primary rounded-md overflow-hidden flex flex-col',
-        'transform transition-transform ease-in-out duration-100 hover:text-color-link',
-        featured && 'shadow-lg hover:-translate-y-1 focus:-translate-y-0',
-        className
-      )}
-    >
-      {featured && (
-        <div className="pb-2/3 bg-gray-100 relative border-b overflow-hidden">
-          {images && images[0] && (
+        <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl hover:bg-red-700">
+  <div className="md:flex">
+    <div className="md:flex-shrink-0">
+        {images && images[0] && (
             <img
-              className={clsx('absolute w-full h-full object-cover')}
+              className="h-48 w-full object-cover md:w-48"
               src={toNotionImageUrl(images[0].url)}
               alt={title}
             />
           )}
-        </div>
-      )}
-      <div className="flex flex-1 flex-col justify-between">
-        <div className="p-4 pb-4">
-          <div className="font-semibold text-color-primary group-hover:text-blue-500">
-            {title}
-          </div>
-          <div className="text-s" />
-          <div className={clsx(!featured && 'text-sm', 'text-color-primary')}>
-
-            {description}
-            {link}
-            {created}
-            {tags}
-          </div>
-        </div>
-      </div>
-    </a>
+    </div>
+    <div className="p-8">
+      <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{tags}</div>
+      <a href="#" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">{title}</a>
+      <p className="mt-2 text-gray-500">{description}</p>
+    </div>
+  </div>
+</div>
         </Link>
 )
 
@@ -59,9 +39,9 @@ export const Bookmarks: React.FC<{
       <h1 className="text-4xl font-bold">{preview && 'Bookmarks'}</h1>
       <div className="text-2xl ">{preview && 'Some Bookmarks'}</div>
     </div>
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-4">
-      {bookmark.slice(0, preview ? 6 : undefined).map((p) => (
-        <Bookmark key={p.id} featured {...p} />
+    <div className="grid grid-cols-1 sm:grid-cols-1 gap-4 my-4">
+      {bookmark.slice(0, preview ? 3 : undefined).map((p) => (
+        <Bookmark key={p.id} {...p} />
       ))}
     </div>
     {preview && (

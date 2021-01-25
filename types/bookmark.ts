@@ -12,4 +12,5 @@ export interface Bookmark {
     url: string;
   }[];
   description: string;
+  published: boolean;
 }

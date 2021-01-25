@@ -18,7 +18,7 @@ export const getStaticProps: GetStaticProps<AppProps> = async () => {
 
   return {
     props: {
-      bookmark: bookmark.filter((post) => post)
+      bookmark: bookmark.filter((post) => post.published)
     },
     revalidate: 10
   }
