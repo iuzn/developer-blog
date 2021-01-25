@@ -7,7 +7,7 @@ export const Bookmark: React.FC<
   BookmarkData & {
     className?: string
   }
-> = ({ title, link, images, tags, created, description, className }) => (
+> = ({ title, link, images, tags, created, description }) => (
     <Link href={link}>
         <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl hover:bg-red-700">
   <div className="md:flex">
@@ -24,6 +24,7 @@ export const Bookmark: React.FC<
       <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{tags}</div>
       <a href="#" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">{title}</a>
       <p className="mt-2 text-gray-500">{description}</p>
+      <p className="mt-2 text-gray-500">{created}</p>
     </div>
   </div>
 </div>
