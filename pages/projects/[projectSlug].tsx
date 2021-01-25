@@ -69,7 +69,7 @@ export const getStaticProps: GetStaticProps<
   }
 }
 
-export const BlogPosts: React.FC<PostProps> = ({ project, blocks }) => {
+const ProjectPosts: React.FC<PostProps> = ({ project, blocks }) => {
   const router = useRouter()
   if (router.isFallback) {
     return (
@@ -131,3 +131,4 @@ export const BlogPosts: React.FC<PostProps> = ({ project, blocks }) => {
     </>
   )
 }
+export default ProjectPosts
