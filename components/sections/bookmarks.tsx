@@ -45,12 +45,5 @@ export const Bookmarks: React.FC<{
         <Bookmark key={p.id} {...p} />
       ))}
     </div>
-    {preview && (
-      <div>
-        {bookmark.slice(8, 8).map((p) => (
-          <Bookmark key={p.id} className="hidden md:flex" {...p} />
-        ))}
-      </div>
-    )}
   </div>
 )

@@ -50,7 +50,7 @@ export const Projects: React.FC<{
   project: ProjectData[]
   preview?: boolean
 }> = ({ project, preview }) => (
-  <div className="container ">
+  <div className="container pb-8">
     <div className="m-auto max-w-3xl pb-8">
       <h1 className="text-4xl font-bold">{preview && 'Projects'}</h1>
       <div className="text-2xl ">{preview && 'My works and projects'}</div>
@@ -60,12 +60,5 @@ export const Projects: React.FC<{
         <Project key={p.id} featured {...p} />
       ))}
     </div>
-    {preview && (
-      <div>
-        {project.slice(8, 8).map((p) => (
-          <Project key={p.id} className="hidden md:flex" {...p} />
-        ))}
-      </div>
-    )}
   </div>
 )
