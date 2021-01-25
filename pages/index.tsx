@@ -36,7 +36,7 @@ export const getStaticProps: GetStaticProps<AppProps> = async () => {
   }
 }
 
-const HomePage = ({ blogpost, project,bookmark }: AppProps) => (
+const HomePage = ({ blogpost, project, bookmark }: AppProps) => (
   <>
     <NextSeo
       title={process.env.NEXT_PUBLIC_BLOG_TITLE}

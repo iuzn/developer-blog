@@ -10,14 +10,14 @@ export const Bookmark: React.FC<
     className?: string
   }
 > = ({ title, link, images, tags, created, description, featured, className }) => (
-    <Link href={link}>
+    <Link href={link} >
         <a
       aria-label={`${title} - Project`}
       className={clsx(
         'max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl hover:bg-red-700',
         featured && 'shadow-lg hover:-translate-y-1 focus:-translate-y-0',
         className
-      )}
+      )} target="_blank"
     >
   <div className="md:flex">
     <div className="md:flex-shrink-0">
