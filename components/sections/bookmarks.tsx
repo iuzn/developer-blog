@@ -3,6 +3,7 @@ import { Bookmark as BookmarkData } from '../../types/bookmark'
 import { toNotionImageUrl } from '../../core/notion'
 import Link from 'next/link'
 import clsx from 'clsx'
+import {dateFormatter} from "../../core/utils";
 
 export const Bookmark: React.FC<
   BookmarkData & {
@@ -23,7 +24,7 @@ export const Bookmark: React.FC<
     <div className="md:flex-shrink-0">
         {images && images[0] && (
             <img
-              className="h-48 w-full object-cover md:w-48"
+              className="h-48 w-full object-cover md:w-64"
               src={toNotionImageUrl(images[0].url)}
               alt={title}
             />
@@ -31,9 +32,9 @@ export const Bookmark: React.FC<
     </div>
     <div className="p-8">
       <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{tags}</div>
-      <a className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">{title}</a>
-      <p className="mt-2 text-gray-500">{description}</p>
-      <p className="mt-2 text-gray-500">{created}</p>
+      <a className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">{title.slice(0,70)}{title.length>70 && "..."}</a>
+      <p className="mt-2 text-gray-500">{description.slice(0,85)}{description.length>70 && "..."}</p>
+      <p className="mt-2 text-gray-500">{dateFormatter.format(new Date(created))}</p>
     </div>
   </div>
 </a>
