@@ -15,7 +15,7 @@ export const Bookmark: React.FC<
         <a
       aria-label={`${title} - Project`}
       className={clsx(
-        'max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl',
+        'max-w-md mx-auto rounded-xl shadow-md overflow-hidden bg-transparent md:max-w-2xl',
         featured && 'shadow-lg hover:-translate-y-1 focus:-translate-y-0',
         className
       )} target="_blank"
@@ -28,7 +28,15 @@ export const Bookmark: React.FC<
               src={toNotionImageUrl(images[0].url)}
               alt={title}
             />
-          )}
+          )}{
+            images && images.length<1 && (
+            <img
+              className="h-48 w-full object-cover md:w-64"
+              src={`https://dummyimage.com/600x400/000/fff&text=${tags}`}
+              alt={title}
+            />
+          )
+    }
     </div>
     <div className="p-8">
       <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{tags}</div>
