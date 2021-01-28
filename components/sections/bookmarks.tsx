@@ -29,7 +29,7 @@ export const Bookmark: React.FC<
               alt={title}
             />
           )}{
-            images && images.length<1 && (
+            images.length<1 && (
             <img
               className="h-48 w-full object-cover md:w-64"
               src={`https://dummyimage.com/600x400/000/fff&text=${tags}`}
