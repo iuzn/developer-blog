@@ -15,23 +15,23 @@ export const Bookmark: React.FC<
         <a
       aria-label={`${title} - Project`}
       className={clsx(
-        'max-w-md mx-auto rounded-xl overflow-hidden bg-transparent md:max-w-2xl justify-',
-        featured && 'over:-translate-y-1 focus:-translate-y-0',
+        'max-w-md mx-auto rounded-xl overflow-hidden bg-transparent md:max-w-2xl ',
+        featured && 'over:-translate-y-1 focus:-translate-y-0 ',
         className
       )} target="_blank"
     >
   <div className="md:flex ">
-    <div className="md:flex-shrink-0">
+    <div className="md:flex-shrink-0 ">
         {images && images[0] && (
             <img
-              className="h-48 w-full object-cover md:w-64"
+              className="h-48 w-full object-cover rounded-large md:w-64"
               src={toNotionImageUrl(images[0].url)}
               alt={title}
             />
           )}{
            !images &&  (
             <img
-              className="h-48 w-full object-cover md:w-64"
+              className="h-48 w-full object-cover rounded-large md:w-64"
               src={`https://dummyimage.com/600x400/3257A7/F4C770&text=${tags}`}
               alt={title}
             />
@@ -39,7 +39,7 @@ export const Bookmark: React.FC<
     }{
            images && images.length<1 &&  (
             <img
-              className="h-48 w-full object-cover md:w-64"
+              className="h-48 w-full object-cover rounded-large md:w-64"
               src={`https://dummyimage.com/600x400/3257A7/F4C770&text=${tags}`}
               alt={title}
             />
@@ -47,10 +47,10 @@ export const Bookmark: React.FC<
     }
     </div>
     <div className="p-8">
-      <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{tags}</div>
       <a className="block mt-1 text-lg leading-tight font-medium text-gray-400 hover:underline">{title.slice(0,70)}{title.length>70 && "..."}</a>
+        <p className="inline mt-2 text-gray-500">{dateFormatter.format(new Date(created))} </p>
       <p className="mt-2 text-gray-500">{description.slice(0,85)}{description.length>70 && "..."}</p>
-      <p className="mt-2 text-gray-500">{dateFormatter.format(new Date(created))}</p>
+      <div className="inline-flex items-center px-3 py-1 rounded-large text-sm font-medium leading-5 mb-2  bg-indigo-100 text-indigo-800">{tags}</div>
     </div>
   </div>
 </a>
