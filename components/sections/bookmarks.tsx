@@ -11,16 +11,16 @@ export const Bookmark: React.FC<
     className?: string
   }
 > = ({ title, link, images, tags, created, description, featured, className }) => (
-    <Link href={link} >
+    <Link href={link}  >
         <a
       aria-label={`${title} - Project`}
       className={clsx(
-        'max-w-md mx-auto rounded-xl shadow-md overflow-hidden bg-transparent md:max-w-2xl',
-        featured && 'shadow-lg hover:-translate-y-1 focus:-translate-y-0',
+        'max-w-md mx-auto rounded-xl overflow-hidden bg-transparent md:max-w-2xl justify-',
+        featured && 'over:-translate-y-1 focus:-translate-y-0',
         className
       )} target="_blank"
     >
-  <div className="md:flex">
+  <div className="md:flex ">
     <div className="md:flex-shrink-0">
         {images && images[0] && (
             <img
@@ -29,10 +29,18 @@ export const Bookmark: React.FC<
               alt={title}
             />
           )}{
-           images && images.length<1 && (
+           !images &&  (
             <img
               className="h-48 w-full object-cover md:w-64"
-              src={`https://dummyimage.com/600x400/000/fff&text=${tags}`}
+              src={`https://dummyimage.com/600x400/3257A7/F4C770&text=${tags}`}
+              alt={title}
+            />
+          )
+    }{
+           images && images.length<1 &&  (
+            <img
+              className="h-48 w-full object-cover md:w-64"
+              src={`https://dummyimage.com/600x400/3257A7/F4C770&text=${tags}`}
               alt={title}
             />
           )
@@ -40,7 +48,7 @@ export const Bookmark: React.FC<
     </div>
     <div className="p-8">
       <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{tags}</div>
-      <a className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">{title.slice(0,70)}{title.length>70 && "..."}</a>
+      <a className="block mt-1 text-lg leading-tight font-medium text-gray-400 hover:underline">{title.slice(0,70)}{title.length>70 && "..."}</a>
       <p className="mt-2 text-gray-500">{description.slice(0,85)}{description.length>70 && "..."}</p>
       <p className="mt-2 text-gray-500">{dateFormatter.format(new Date(created))}</p>
     </div>
@@ -60,7 +68,8 @@ export const Bookmarks: React.FC<{
     </div>
     <div className="grid grid-cols-1 sm:grid-cols-1 gap-4 my-4">
       {bookmark.slice(0, preview ? 3 : undefined).map((p) => (
-        <Bookmark key={p.id} featured {...p} />
+          <div className=" flex divide-y divide-gray-400 md:divide-y-8"><Bookmark key={p.id} featured {...p} /></div>
+
       ))}
     </div>
   </div>

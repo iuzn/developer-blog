@@ -40,6 +40,13 @@ export const MENU = [
     icon: <Icon.Iletisim />,
     iconSelected: <Icon.IletisimFilled />,
     title: 'Contact'
+  },
+  {
+    key: 'bookmark',
+    path: '/bookmarks',
+    icon: <Icon.Tezgah />,
+    iconSelected: <Icon.TezgahFilled />,
+    title: 'Bookmarks'
   }
 ]
 

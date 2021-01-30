@@ -10,7 +10,6 @@ export { default as Info } from './Info'
 export { default as InfoFilled } from './InfoFilled'
 export { default as Kapat } from './Kapat'
 export { default as Kimdir } from './Kimdir'
-
 export { default as KimdirFilled } from './KimdirFilled'
 export { default as Lahzalar } from './Lahzalar'
 export { default as LahzalarFilled } from './LahzalarFilled'
