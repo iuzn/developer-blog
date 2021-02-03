@@ -16,7 +16,7 @@ export const Bookmark: React.FC<
       aria-label={`${title} - Project`}
       className={clsx(
         'max-w-md mx-auto rounded-xl overflow-hidden bg-transparent md:max-w-2xl ',
-        featured && 'over:-translate-y-1 focus:-translate-y-1 ',
+        featured && 'over:-translate-y-1 focus:-translate-y-2 ',
         className
       )} target="_blank"
     >
