@@ -47,7 +47,7 @@ export const Bookmark: React.FC<
     }
     </div>
     <div className="p-8">
-      <a className="block mt-1 text-lg leading-tight font-medium text-gray-400 hover:underline">{title.slice(0,70)}{title.length>70 && "..."}</a>
+      <a className="block mt-1 text-lg leading-tight font-medium text-black dark:text-white hover:underline">{title.slice(0,70)}{title.length>70 && "..."}</a>
         <p className="inline mt-2 text-gray-500">{dateFormatter.format(new Date(created))} </p>
       <p className="mt-2 text-gray-500">{description.slice(0,70)}{description.length>58 && "..."}</p>
       <div className="inline-flex items-center px-3 py-1 rounded-large text-sm font-medium leading-5 mb-2  bg-indigo-100 text-indigo-800">{tags}</div>
