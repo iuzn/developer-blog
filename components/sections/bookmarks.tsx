@@ -69,9 +69,6 @@ export const Bookmarks: React.FC<{
       <div className="text-2xl ">{preview && 'Some Bookmarks'}</div>
     </div>
     <div className="grid grid-cols-1 sm:grid-cols-1  my-4 ">
-        {Object.keys(bookmark).map(()=>(
-  created
-        ))}
         <div className="divide-y divide-solid">
       {bookmark.slice(0, preview ? 3 : undefined).map((p) => (
           <div className=" p-8 "><Bookmark key={p.id} featured {...p} /></div>
