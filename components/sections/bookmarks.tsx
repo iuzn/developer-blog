@@ -24,14 +24,14 @@ export const Bookmark: React.FC<
     <a
       aria-label={`${title} - Project`}
       className={clsx(
-        'max-w-md mx-auto overflow-hidden  ',
-        featured && 'over:-translate-y-1 focus:-translate-y-2 ',
+        'max-w-md mx-auto  ',
+        featured && 'hover:-translate-y-1 focus:-translate-y-2 ',
         className
       )}
       target="_blank"
     >
-      <div className="group md:flex items-center">
-        <div className="md:flex-shrink-0 group-hover:opacity-75 ">
+      <div className="group md:flex items-center transition duration-300 ease-in-out transform hover:bg-indigo-800 hover:text-indigo-200">
+        <div className="md:flex-shrink-0 transition duration-300 ease-in-out transform group-hover:-translate-y-1 group-hover:scale-110">
           {images && images[0] && (
             <img
               className="h-32 w-full object-cover md:w-48 sm:w-full"
@@ -42,32 +42,32 @@ export const Bookmark: React.FC<
           {!images && (
             <img
               className="h-32 w-full object-cover md:w-48 sm:w-full"
-              src={`https://dummyimage.com/600x400/3257A7/F4C770&text=${tags[0]}`}
+              src={`https://dummyimage.com/600x400/434190/c3dafe&text=${tags[0]}`}
               alt={title}
             />
           )}
           {images && images.length < 1 && (
             <img
               className="h-32 w-full object-cover md:w-48 sm:w-full"
-              src={`https://dummyimage.com/600x400/3257A7/F4C770&text=${tags[0]}`}
+              src={`https://dummyimage.com/600x400/434190/c3dafe&text=${tags[0]}`}
               alt={title}
             />
           )}
         </div>
-        <div className="p-2">
-          <a className="block mt-2 text-lg font-bold leading-tight font-medium hover:underline">
-            {title.slice(0, 70)}
-            {title.length > 70 && '...'}
-          </a>
+        <div className="p-2 lg:ml-4">
+          <title className=" block mt-2 text-lg font-semibold leading-tight font-medium">
+            {title.slice(0, 100)}
+            {title.length > 101 && '...'}
+          </title>
           <p className="mt-2 pb-3">
             {description.slice(0, 120)}
             {description.length > 120 && '...'}
           </p>
           <time className="inline-flex mr-4">
-            {dateFormatter.format(new Date(created))}{' '}
+            {dateFormatter.format(new Date(created))}
           </time>
           {tags.map((tag) => (
-            <div className="inline-flex items-center px-3 py-1 rounded-large text-sm font-medium leading-5 mr-2 bg-indigo-100 text-indigo-800">
+            <div key={tag} className="inline-flex items-center px-3 py-1 rounded-large text-sm font-medium leading-5 mr-2 bg-indigo-100 text-indigo-800">
               {tag}
             </div>
           ))}
@@ -88,8 +88,8 @@ export const Bookmarks: React.FC<{
     </div>
     <div className="grid grid-cols-1  border-b-2 border-fuchsia-600 sm:grid-cols-1  my-4 ">
       {bookmark.slice(0, preview ? 3 : undefined).map((p) => (
-        <div className="p-8 ">
-          <Bookmark key={p.id} featured {...p} />
+        <div key={p.id}  className="p-8">
+          <Bookmark featured {...p} />
         </div>
       ))}
     </div>

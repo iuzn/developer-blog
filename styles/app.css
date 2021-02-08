@@ -47,6 +47,8 @@ body::-webkit-scrollbar-thumb {
 button:focus {
   outline: none;
 }
+
+
 .text-color-primary {
   p {
     color: var(--c-text-color);
