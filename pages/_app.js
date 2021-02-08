@@ -5,7 +5,7 @@ import '../assets/styles/main.css'
 import '../assets/styles/prism.css'
 import '../styles/app.css'
 
-export default function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
   const siteTitle = process.env.NEXT_PUBLIC_BLOG_TITLE
   const [theme, themeSet] = useState(null)
 
@@ -24,8 +24,8 @@ export default function MyApp({ Component, pageProps }) {
     const $html = document.querySelector('html')
     $html.classList.remove('light')
     $html.classList.remove('dim')
-    $html.classList.remove('dark')
     $html.classList.remove('sepia')
+    $html.classList.remove('dark')
     $html.classList.add(theme.toString())
   }, [theme])
 
@@ -49,3 +49,4 @@ export default function MyApp({ Component, pageProps }) {
     </StoreContext.Provider>
   )
 }
+export default MyApp
