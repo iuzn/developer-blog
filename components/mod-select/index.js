@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
-
+import React, {useContext} from 'react';
 import styles from './style.module.css'
 import StoreContext from '../../store'
 import { Check, Kapat } from '../icons'
 import Button from '../button'
+import useOnclickOutside from "react-cool-onclickoutside";
 
 const THEME = {
   light: 'Light',
@@ -16,10 +16,14 @@ const THEME = {
 function ModSelect({ onClick = () => {} }) {
   const store = useContext(StoreContext)
 
+
+  const ref = useOnclickOutside(() => {
+    onClick();
+  });
   return (
-    <div className={styles.overlay}>
-      <div className={styles.mod}>
-        <Button className={styles.kapat} onClick={onClick}>
+    <div className={styles.overlay} >
+      <div ref={ref} className={styles.mod}>
+        <Button className={styles.kapat} onClick={onClick} type="button">
           <Kapat />
         </Button>
         <h2>Choose Theme</h2>
@@ -33,12 +37,13 @@ function ModSelect({ onClick = () => {} }) {
 
         <div className={styles.container}>
           {['light', 'dark', 'sepia', 'dim'].map((theme) => (
-            <label key={theme} id={THEME[theme]} className={styles.button}>
+            <label key={theme} id={THEME[theme]} className={styles.button} >
               <Check id={THEME[theme]} />
               <input
                 type="radio"
                 value={theme}
                 name="theme"
+                onClick={onClick}
                 checked={theme === store.theme}
                 onChange={(e) => store.changeTheme(e.target.value)}
               />
