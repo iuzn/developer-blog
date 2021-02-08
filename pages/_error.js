@@ -7,8 +7,7 @@ import LinkedButton from '../components/linked-button'
 
 function Error({ statusCode }) {
   return (
-
-      <Layout>
+    <Layout>
       <NextSeo
         title={`${statusCode}  - No such thing`}
         titleTemplate={'%s'}
@@ -22,10 +21,10 @@ function Error({ statusCode }) {
             <div className="text-5xl font-bold pb-12">${statusCode} Error</div>
             <p className="text-2xl md:text-3xl font-light leading-normal font-sans pb-4">
               <p>
-      {statusCode
-        ? `An error ${statusCode} occurred on server`
-        : 'An error occurred on client'}
-    </p>{' '}
+                {statusCode
+                  ? `An error ${statusCode} occurred on server`
+                  : 'An error occurred on client'}
+              </p>{' '}
             </p>
             <p className="mb-8 font-sans pb-8">
               If you want to browse all content, you can start exploring on the

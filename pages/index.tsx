@@ -10,8 +10,8 @@ import { config } from '../config'
 import { BlogPost } from '../types/blog'
 import { Projects } from '../components/sections/projects'
 import { Project } from '../types/project'
-import {Bookmarks} from "../components/sections/bookmarks";
-import {Bookmark} from "../types/bookmark";
+import { Bookmarks } from '../components/sections/bookmarks'
+import { Bookmark } from '../types/bookmark'
 
 interface AppProps {
   blogpost: BlogPost[]
@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps<AppProps> = async () => {
     props: {
       blogpost: blogpost.filter((p) => p.published),
       project: project.filter((p) => p.published),
-      bookmark: bookmark.filter((p) => p.published),
+      bookmark: bookmark.filter((p) => p.published)
     },
     revalidate: 10
   }

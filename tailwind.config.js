@@ -1,7 +1,5 @@
 const { boxShadow } = require("tailwindcss/defaultTheme");
-
 module.exports = {
-  darkMode: 'class',
   purge: [
     "./pages/*.tsx",
     "./pages/**/*.tsx",
@@ -12,6 +10,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+      orderOpacity: ['active'],
       spacing: {
         "2/3": "66.66666667%",
       },
@@ -45,9 +44,6 @@ module.exports = {
     translate: ["hover", "focus", "group-hover"],
     opacity: ["hover", "group-hover"],
     scale: ["hover", "group-hover"],
-    extend: {
-      textOpacity: ['dark']
-    }
   },
   future: {
     removeDeprecatedGapUtilities: true,
