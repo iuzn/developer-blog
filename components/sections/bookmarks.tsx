@@ -30,8 +30,8 @@ export const Bookmark: React.FC<
       )}
       target="_blank"
     >
-      <div className="group md:flex items-center transition duration-300 ease-in-out transform hover:bg-indigo-800 hover:text-indigo-200">
-        <div className="md:flex-shrink-0 transition duration-300 ease-in-out transform group-hover:-translate-y-1 group-hover:scale-110">
+      <div className="group md:flex items-center transition duration-300 ease-in-out transform hover:bg-indigo-800 hover:text-indigo-200 ">
+        <div className="md:flex-shrink-0 transition duration-300 ease-in-out transform group-hover:scale-110 ">
           {images && images[0] && (
             <img
               className="h-32 w-full object-cover md:w-48 sm:w-full"
@@ -48,7 +48,7 @@ export const Bookmark: React.FC<
           )}
           {images && images.length < 1 && (
             <img
-              className="h-32 w-full object-cover md:w-48 sm:w-full"
+              className="h-32 w-full object-cover md:w-48 sm:w-full "
               src={`https://dummyimage.com/600x400/434190/c3dafe&text=${tags[0]}`}
               alt={title}
             />
@@ -83,7 +83,7 @@ export const Bookmarks: React.FC<{
 }> = ({ bookmark, preview }) => (
   <div className="container ">
     <div className="m-auto max-w-3xl pb-8">
-      <h1 className="text-4xl font-bold">{preview && 'Bookmarks'}</h1>
+      <h1 className="text-4xl font-bold dark:text-blue-400">{preview && 'Bookmarks'}</h1>
       <div className="text-2xl ">{preview && 'Last Bookmarks'}</div>
     </div>
     <div className="grid grid-cols-1  border-b-2 border-fuchsia-600 sm:grid-cols-1  my-4 ">
