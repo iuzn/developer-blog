@@ -22,7 +22,7 @@ export const Bookmark: React.FC<
 }) => (
   <Link href={link}>
     <a
-      aria-label={`${title} - Project`}
+      aria-label={`${title} - Yer İmi`}
       className={clsx(
         'max-w-md mx-auto  ',
         featured && 'hover:-translate-y-1 focus:-translate-y-2 ',

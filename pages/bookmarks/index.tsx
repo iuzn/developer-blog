@@ -27,7 +27,7 @@ export const getStaticProps: GetStaticProps<AppProps> = async () => {
 const BookmarksPage = ({ bookmark }: AppProps) => (
   <>
     <NextSeo
-      title={'Bookmarks'}
+      title={'Yer İmleri'}
       titleTemplate={'%s'}
       description="My Bookmarks"
     />

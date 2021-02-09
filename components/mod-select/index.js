@@ -43,7 +43,6 @@ function ModSelect({ onClick = () => {} }) {
                 type="radio"
                 value={theme}
                 name="theme"
-                onClick={onClick}
                 checked={theme === store.theme}
                 onChange={(e) => store.changeTheme(e.target.value)}
               />
