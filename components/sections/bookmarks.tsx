@@ -30,8 +30,8 @@ export const Bookmark: React.FC<
       )}
       target="_blank"
     >
-      <div className="group md:flex items-center transition duration-300 ease-in-out transform hover:bg-indigo-800 hover:text-indigo-200 rounded-large">
-        <div className="md:flex-shrink-0 transition duration-300 ease-in-out transform group-hover:rounded-large group-hover:scale-110 ">
+      <div className="group md:flex p-2 items-center transition duration-300 ease-in-out transform hover:bg-color-secondary hover:color-secondary rounded-large">
+        <div className="md:flex-shrink-0 transition duration-300 ease-in-out transform group-hover:scale-110 ">
           {images && images[0] && (
             <img
               className="h-32 w-full object-cover md:w-48 sm:w-full rounded-large "
@@ -41,14 +41,14 @@ export const Bookmark: React.FC<
           )}
           {!images && (
             <img
-              className="h-32 w-full object-cover md:w-48 sm:w-full rounded-large "
+              className="h-32 w-full object-cover md:w-48 sm:w-full rounded-large"
               src={`https://dummyimage.com/600x400/434190/c3dafe&text=${tags[0]}`}
               alt={title}
             />
           )}
           {images && images.length < 1 && (
             <img
-              className="h-32 w-full object-cover md:w-48 sm:w-full rounded-large "
+              className="h-32 w-full object-cover md:w-48 sm:w-full rounded-large"
               src={`https://dummyimage.com/600x400/434190/c3dafe&text=${tags[0]}`}
               alt={title}
             />
@@ -63,11 +63,12 @@ export const Bookmark: React.FC<
             {description.slice(0, 120)}
             {description.length > 120 && '...'}
           </p>
-          <time className="inline-flex mr-4">
+          <time className="inline-flex mr-4 color-primary-60 group-hover:color-secondary">
             {dateFormatter.format(new Date(created))}
           </time>
+            <p className="inline-flex mr-4 color-primary-60 group-hover:color-secondary ">{new URL(link).hostname}</p>
           {tags.map((tag) => (
-            <div key={tag} className="inline-flex items-center px-3 py-1 rounded-large text-sm font-medium leading-5 mr-2 bg-indigo-100 text-indigo-800">
+            <div key={tag} className="inline-flex items-center px-3 py-1 rounded-large text-sm font-medium leading-5 mr-2 bg-indigo-100 text-indigo-800 group-hover:color-primary group-hover:bg-color-primary">
               {tag}
             </div>
           ))}

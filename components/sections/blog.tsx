@@ -53,10 +53,10 @@ export const BlogPost: React.FC<
       <a aria-label={`${title} - Blog`}>
         {featured && (
           <footer className={styles.footer}>
-            {!showVideo ? 'Keep reading' : 'Keep watching'}
+            {!showVideo ? 'Okumaya devam et' : 'İzlemeye devam et'}
           </footer>
         )}
-        {!featured && <footer className={styles.footer}>Read</footer>}
+        {!featured && <footer className={styles.footer}>Oku</footer>}
       </a>
     </Link>
   </div>
@@ -74,10 +74,10 @@ export const Blog: React.FC<{
     </div>
 
     {preview && (
-      <div className="container pb-8">
+      <div className="container">
         <div className="m-auto max-w-3xl">
           <h1 className="text-4xl font-bold">Blog</h1>
-          <div className="text-2xl ">Other posts that may interest you</div>
+          <div className="text-2xl ">Tasarım, Web, Teknoloji</div>
         </div>
         <div className="md:grid mt-4 grid-cols-2 sm:grid-cols-4 gap-4 ">
           {blogpost.slice(1, 5).map((p) => (

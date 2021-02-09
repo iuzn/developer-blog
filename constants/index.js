@@ -21,32 +21,32 @@ export const MENU = [
     title: 'Blog'
   },
   {
-    key: 'projects',
-    path: '/projects',
+    key: 'projeler',
+    path: '/projeler',
     icon: <Icon.Projeler />,
     iconSelected: <Icon.ProjelerFilled />,
-    title: 'Projects'
+    title: 'Projeler'
   },
   {
-    key: 'about',
-    path: '/about',
+    key: 'hakkimda',
+    path: '/hakkimda',
     icon: <Icon.Kimdir />,
     iconSelected: <Icon.KimdirFilled />,
-    title: 'About'
+    title: 'Hakkımda'
   },
   {
-    key: 'contact',
-    path: '/contact',
+    key: 'iletisim',
+    path: '/iletisim',
     icon: <Icon.Iletisim />,
     iconSelected: <Icon.IletisimFilled />,
-    title: 'Contact'
+    title: 'İletişim'
   },
   {
-    key: 'bookmark',
-    path: '/bookmarks',
+    key: 'yer-imleri',
+    path: '/yer-imleri',
     icon: <Icon.Tezgah />,
     iconSelected: <Icon.TezgahFilled />,
-    title: 'Bookmarks'
+    title: 'Yer imleri'
   }
 ]
 

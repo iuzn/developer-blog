@@ -53,18 +53,6 @@ input:focus {
 input::placeholder{
   color: var(--c-yellow-40);
 }
-.bg-color-primary{
-  background-color: var(--c-primary);
-}
-.bg-color-secondary{
-  background-color: var(--c-yellow);
-}
-.color-primary{
-  color: var(--c-yellow);
-}
-.color-secondary{
-  color: var(--c-primary);
-}
 .button-primary{
   cursor: pointer;
   background: var(--c-yellow);
