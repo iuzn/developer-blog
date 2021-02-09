@@ -47,8 +47,29 @@ body::-webkit-scrollbar-thumb {
 button:focus {
   outline: none;
 }
+input:focus {
+  outline: none;
+}
 
 
+.button-primary{
+  cursor: pointer;
+  background: var(--c-yellow);
+  color: var(--c-primary);
+  border-radius: 99px;
+  align-items: center;
+  transition: var(--fade);
+  text-decoration: none;
+  font-weight: bold;
+  &:hover {
+    color: var(--c-yellow);
+    background-color: var(--c-yellow-10);
+  }
+}
+
+.border-primary{
+  border: 1px solid var(--c-yellow);
+}
 .text-color-primary {
   p {
     color: var(--c-text-color);

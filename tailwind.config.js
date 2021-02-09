@@ -28,6 +28,7 @@ module.exports = {
     borderRadius: {
       default: '4px',
       'large': '24px',
+      full:'9999px'
 },
     container: {
       padding: "1rem",
@@ -40,6 +41,9 @@ module.exports = {
     },
   },
   variants: {
+    extend: {
+       boxShadow: ["active", "focus"],
+    },
     textColor: ["responsive", "hover", "focus", "group-hover"],
     backgroundColor: ["responsive", "hover", "focus", "group-hover"],
     translate: ["hover", "focus", "group-hover"],

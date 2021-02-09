@@ -29,7 +29,7 @@ const BookmarksPage = ({ bookmark }: AppProps) => (
     <NextSeo
       title={'Yer İmleri'}
       titleTemplate={'%s'}
-      description="My Bookmarks"
+      description="Web'de dikkatimi çekenler"
     />
 
     <Layout>

@@ -83,8 +83,8 @@ export const Bookmarks: React.FC<{
 }> = ({ bookmark, preview }) => (
   <div className="container ">
     <div className="m-auto max-w-3xl pb-8">
-      <h1 className="text-4xl font-bold dark:text-blue-400">{preview && 'Bookmarks'}</h1>
-      <div className="text-2xl ">{preview && 'Last Bookmarks'}</div>
+      <h1 className="text-4xl font-bold dark:text-blue-400">{preview && 'Yer imleri'}</h1>
+      <div className="text-2xl ">{preview && 'İnternette dikkatimi çeken sayfalar'}</div>
     </div>
     <div className="grid grid-cols-1  border-b-2 border-fuchsia-600 sm:grid-cols-1  my-4 ">
       {bookmark.slice(0, preview ? 3 : undefined).map((p) => (
