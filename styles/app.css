@@ -50,6 +50,9 @@ button:focus {
 input:focus {
   outline: none;
 }
+input::placeholder{
+  color: var(--c-yellow-40);
+}
 .bg-color-primary{
   background-color: var(--c-primary);
 }

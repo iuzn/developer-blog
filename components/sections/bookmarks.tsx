@@ -30,25 +30,25 @@ export const Bookmark: React.FC<
       )}
       target="_blank"
     >
-      <div className="group md:flex items-center transition duration-300 ease-in-out transform hover:bg-indigo-800 hover:text-indigo-200 ">
-        <div className="md:flex-shrink-0 transition duration-300 ease-in-out transform group-hover:scale-110 ">
+      <div className="group md:flex items-center transition duration-300 ease-in-out transform hover:bg-indigo-800 hover:text-indigo-200 rounded-large">
+        <div className="md:flex-shrink-0 transition duration-300 ease-in-out transform group-hover:rounded-large group-hover:scale-110 ">
           {images && images[0] && (
             <img
-              className="h-32 w-full object-cover md:w-48 sm:w-full"
+              className="h-32 w-full object-cover md:w-48 sm:w-full rounded-large "
               src={toNotionImageUrl(images[0].url)}
               alt={title}
             />
           )}
           {!images && (
             <img
-              className="h-32 w-full object-cover md:w-48 sm:w-full"
+              className="h-32 w-full object-cover md:w-48 sm:w-full rounded-large "
               src={`https://dummyimage.com/600x400/434190/c3dafe&text=${tags[0]}`}
               alt={title}
             />
           )}
           {images && images.length < 1 && (
             <img
-              className="h-32 w-full object-cover md:w-48 sm:w-full "
+              className="h-32 w-full object-cover md:w-48 sm:w-full rounded-large "
               src={`https://dummyimage.com/600x400/434190/c3dafe&text=${tags[0]}`}
               alt={title}
             />
