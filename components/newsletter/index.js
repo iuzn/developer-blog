@@ -19,14 +19,14 @@ const Newsletter = () =>  {
   };
 
   return (
-    <div className="flex flex-col items-center mt-8">
-      <h2 className="text-3xl font-bold text-center">
+    <div className="flex flex-col items-center p-8 m-10 bg-color-secondary rounded-large">
+      <h2 className="text-3xl font-bold text-center color-secondary">
         E-bültenime abone ol!
       </h2>
-      <p className="mt-2 font-light w-4/5 text-center leading-relaxed">
+      <p className="mt-2 w-4/5 text-center leading-relaxed color-secondary">
         En son yazdığım blog yazılarından haberdar olmak için e-postanızı girin.
       </p>
-      <form className="flex border-primary sm:block mt-6 rounded-full ">
+      <form className="flex border-secondary bg-color-primary  sm:block mt-6 rounded-full ">
         <input
           className="py-3 px-3 border-none bg-transparent w-48 sm:w-64 focus:ring-0 focus:outline-none"
           type="text"
