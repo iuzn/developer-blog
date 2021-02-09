@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 import Button from '../button';
-import Loading from '../loading';
 import clsx from 'clsx';
 
 const Newsletter = () =>  {
@@ -24,15 +23,14 @@ const Newsletter = () =>  {
   return (
     <div className="flex flex-col items-center w-full p-8 border-gray-500 border-solid border rounded-sm mt-8">
       <h2 className="text-3xl font-bold text-center">
-        I also have a newsletter!
+        E-bültenime abone ol!
       </h2>
       <p className="mt-2 font-light w-4/5 text-center leading-relaxed">
-        It includes intersting stuff about tech and will arrive to your mailbox
-        no more than once every 2 weeks
+        En son yazdığım blog yazılarından haberdar olmak için e-postanızı girin.
       </p>
       <div className="flex w-1/2 lg:w-2/3 justify-center mt-5 flex-col lg:flex-row">
         <input
-          className="appearance-none mb-2 lg:mb-0 w-full lg:w-2/3 border border-gray-500 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:border-gray-600"
+          className="appearance-none mb-2 lg:mb-0 w-full lg:w-2/3 border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:border-gray-600"
           type="text"
           placeholder="E-posta Girin"
           value={email}
@@ -45,7 +43,7 @@ const Newsletter = () =>  {
           disabled={state === "LOADING"}
           onClick={subscribe}
         >
-          Subscribe {state === "LOADING" && <Loading className="w-1/3" />}
+          Abone ol {state === "LOADING" && <svg className="animate-spin text-blue-500 h-5 w-5 mr-3" viewBox="0 0 24 24"/>}
         </Button>
       </div>
       {state === "ERROR" && (

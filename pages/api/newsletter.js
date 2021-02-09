@@ -43,7 +43,7 @@ export default async (req, res) => {
     return res.status(201).json({ error: null });
   } catch (error) {
     return res.status(400).json({
-      error: `Hata sende değil, sadece bir şeyler ters gitti... Bana dev@ibrahimuzun.com adresinden bir e-posta gönderin, sizi listeye ekleyeceğim.`,
+      error: `Hata sende değil, sadece bir şeyler ters gitti... Bana dev@ibrahimuzun.com adresinden bir e-posta gönder, seni listeye ekleyeyim.`,
     });
 
     // Report error to Sentry or whatever
