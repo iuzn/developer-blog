@@ -27,9 +27,9 @@ export const getStaticProps: GetStaticProps<AppProps> = async () => {
 const ProjectsPage = ({ project }: AppProps) => (
   <>
     <NextSeo
-      title={'Projects'}
+      title={'Projeler'}
       titleTemplate={'%s'}
-      description="My Projects"
+      description="Kendi yaptığım ve dahil olduğum bazı işler"
     />
 
     <Layout>

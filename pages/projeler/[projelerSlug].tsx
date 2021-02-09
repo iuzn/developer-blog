@@ -24,16 +24,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: table
       .filter((row) => row.published)
-      .map((row) => `/projects/${row.slug}`),
+      .map((row) => `/projeler/${row.slug}`),
     fallback: true
   }
 }
 
 export const getStaticProps: GetStaticProps<
   PostProps,
-  { projectSlug: string }
+  { projelerSlug: string }
 > = async ({ params }) => {
-  const slug = params?.projectSlug
+  const slug = params?.projelerSlug
 
   if (!slug) {
     throw Error('No slug given')
@@ -108,7 +108,7 @@ const ProjectPosts: React.FC<PostProps> = ({ project, blocks }) => {
         titleTemplate="%s"
       />
       <Layout>
-        <Header title={'Projects'} />
+        <Header title={'Projeler'} />
 
         <div className="my-8 w-full max-w-3xl mx-auto px-4">
           {project.images && project.images[0] && (
