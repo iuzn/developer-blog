@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "next",
     "build": "yarn build:rss && next build",
-    "build:rss": "ts-node core/rss.ts",
     "start": "next start",
     "icon": "svgr icons -d components/icons --icon --replace-attr-values \"#fff=currentColor\""
   },
@@ -26,7 +25,6 @@
     "react-dom": "^16.14.0",
     "react-feather": "^2.0.8",
     "react-notion": "^0.9.3",
-    "rss": "^1.2.2",
     "sass": "^1.29.0",
     "styled-components": "^5.2.1"
   },
@@ -53,7 +51,6 @@
     "state": "^0.2.0",
     "style-loader": "^1.3.0",
     "tailwindcss": "^1.9.6",
-    "ts-node": "^9.1.1",
     "typescript": "^3.9.7"
   }
 }
