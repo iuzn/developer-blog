@@ -2,9 +2,9 @@ import { BlogPost } from "../types/blog";
 
 const generateRssItem = (post: BlogPost): string => `
 <item>
-  <guid>https://timo.sh/blog/${post.slug}</guid>
+  <guid>https://dev.ibrahimuzun.com/blog/${post.slug}</guid>
   <title>${post.title}</title>
-  <link>https://timo.sh/blog/${post.slug}</link>
+  <link>https://dev.ibrahimuzun.com/blog/${post.slug}</link>
   <description>${post.preview}</description>
   <pubDate>${new Date(post.date).toUTCString()}</pubDate>
 </item>
