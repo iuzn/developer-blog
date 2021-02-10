@@ -21,7 +21,7 @@ export const generateRss = (posts: BlogPost[]): string => `
   <title>Ibrahium Uzun – Blog</title>
   <link>https://dev.ibrahimuzun.com/blog</link>
   <description>En güncel geliştirici içeriklerini bu adresten bulabilirsiniz.</description>
-  <language>tr</language>
+  <language>tr-TR</language>
   <lastBuildDate>${new Date(posts[0].date).toUTCString()}</lastBuildDate>
   <atom:link href="https://dev.ibrahimuzun.com/api/blog.xml" rel="self" type="application/rss+xml"/>
   ${posts.map(generateRssItem).join("")}

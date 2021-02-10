@@ -1,8 +1,7 @@
 import React from 'react'
 import styles from './style.module.css'
-import SampleText from '../sample'
 
-function Blogpost({ video, title, text, children }) {
+function Blogpost({ video }) {
   return (
     <article className={styles.post}>
       <div className={styles.video}>
@@ -17,7 +16,6 @@ function Blogpost({ video, title, text, children }) {
       <div className={styles.article}>
         <h1 className={styles.title}>Başlık</h1>
         <div className={styles.text}>
-          <p></p>
         </div>
         <footer className={styles.footer}>Devam et</footer>
       </div>
