@@ -1,7 +1,7 @@
 {
-  "name": "helium-theme",
+  "name": "developer-blog",
   "version": "0.1.1",
-  "description": "Element Blog - Helium Theme",
+  "description": "İbrahim Uzun | Developer Website",
   "main": "index.js",
   "scripts": {
     "dev": "next",
