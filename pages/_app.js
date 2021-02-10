@@ -43,7 +43,6 @@ function MyApp({ Component, pageProps }) {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0,
      user-scalable=0"
         />
-        <meta name="google-site-verification" content="GLJ3smFhjwSu7M9reZJ-FsLSxeKNZrtr3fYJxn3IcxM" />
         <title>{siteTitle}</title>
       </Head>
       <Component {...pageProps} />
