@@ -5,7 +5,7 @@ const generateRssItem = (post: BlogPost): string => `
   <enclosure 
   url="${post.images && post.images[0].url}"
   type="image/jpeg" 
-  length="1967"
+  length="1200"
 />
   <guid>https://dev.ibrahimuzun.com/blog/${post.slug}</guid>
   <title>${post.title}</title>
