@@ -12,6 +12,7 @@
     "jsx": "preserve",
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
+    "types": ["node"],
     "skipLibCheck": true
   },
   "exclude": ["node_modules"],
