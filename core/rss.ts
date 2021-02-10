@@ -2,15 +2,11 @@ import { BlogPost } from "../types/blog";
 
 const generateRssItem = (post: BlogPost): string => `
 <item>
-  <enclosure 
-  url="${post.images && post.images[0].url}"
-  type="image/jpeg" 
-  length="1200"
-/>
   <guid>https://dev.ibrahimuzun.com/blog/${post.slug}</guid>
   <title>${post.title}</title>
   <link>https://dev.ibrahimuzun.com/blog/${post.slug}</link>
   <description>${post.preview}</description>
+  <media:content url="${post.images && post.images[0].url}" medium="image">
   <pubDate>${new Date(post.date).toUTCString()}</pubDate>
 </item>
 `;
