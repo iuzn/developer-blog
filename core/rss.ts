@@ -6,7 +6,9 @@ const generateRssItem = (post: BlogPost): string => `
   <title>${post.title}</title>
   <link>https://dev.ibrahimuzun.com/blog/${post.slug}</link>
   <description>${post.preview}</description>
+  <media:group>
   <media:content url="${post.images && post.images[0].url.replace(/&/g, "&amp;")}" medium="image"/>
+  </media:group>
   <pubDate>${new Date(post.date).toUTCString()}</pubDate>
 </item>
 `;
