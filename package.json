@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "build": "yarn build:rss && next build",
+    "build": "next build",
     "start": "next start",
     "icon": "svgr icons -d components/icons --icon --replace-attr-values \"#fff=currentColor\""
   },
