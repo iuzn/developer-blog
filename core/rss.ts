@@ -2,6 +2,7 @@ import { BlogPost } from "../types/blog";
 
 const generateRssItem = (post: BlogPost): string => `
 <item>
+   <media:thumbnail url={post.images[0]} height='600' width='1200' />
   <guid>https://dev.ibrahimuzun.com/blog/${post.slug}</guid>
   <title>${post.title}</title>
   <link>https://dev.ibrahimuzun.com/blog/${post.slug}</link>
