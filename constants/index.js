@@ -1,17 +1,19 @@
 import * as Icon from '../components/icons'
 import React from 'react'
 
+
 export default {
   TABLET_SIZE: 960,
   DESKTOP_SIZE: 1280
 }
-export const MENU = [
+
+export const MENU= [
   {
-    key: 'home',
+    key: 'giris',
     path: '/',
     icon: <Icon.Home />,
     iconSelected: <Icon.HomeFilled />,
-    title: 'Home'
+    title: 'Ana Sayfa'
   },
   {
     key: 'blog',
@@ -49,6 +51,9 @@ export const MENU = [
     title: 'Yer imleri'
   }
 ]
+
+
+
 
 export const IMG = [
   {

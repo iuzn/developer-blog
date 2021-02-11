@@ -83,7 +83,7 @@ export const Bookmarks: React.FC<{
   preview?: boolean
 }> = ({ bookmark, preview }) => (
   <div className="container ">
-    <div className="m-auto max-w-3xl pb-8">
+    <div className="m-auto max-w-3xl">
       <h1 className="text-4xl font-bold dark:text-blue-400">{preview && 'Yer imleri'}</h1>
       <div className="text-2xl ">{preview && 'İnternette dikkatimi çeken sayfalar'}</div>
     </div>
