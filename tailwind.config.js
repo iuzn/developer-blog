@@ -46,7 +46,7 @@ module.exports = {
     extend: {
       borderWidth: ['group-hover', 'first'],
       borderRadius: ['responsive', 'hover', 'focus', 'group-hover'],
-      textDecoration: ['focus-visible'],
+      textDecoration: [ 'hover', 'group-hover'],
       boxShadow: ['active', 'focus']
     },
     textColor: ['responsive', 'hover', 'focus', 'group-hover'],

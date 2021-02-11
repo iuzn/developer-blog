@@ -30,8 +30,8 @@ export const Bookmark: React.FC<
       )}
       target="_blank"
     >
-      <div className="group md:flex p-2 items-center transition duration-300 ease-in-out transform hover:bg-color-secondary hover:color-secondary rounded-large">
-        <div className="md:flex-shrink-0 transition duration-300 ease-in-out transform group-hover:scale-110 ">
+      <div className="group md:flex p-2 items-center transition duration-150 ease-in-out transform  rounded-large">
+        <div className="md:flex-shrink-0 lg:mr-0 md:mr-4 transition duration-150 ease-in-out transform group-hover:scale-110 ">
           {images && images[0] && (
             <img
               className="h-32 w-full object-cover md:w-48 sm:w-full rounded-large "
@@ -54,8 +54,8 @@ export const Bookmark: React.FC<
             />
           )}
         </div>
-        <div className="p-2 lg:ml-4">
-          <title className=" block mt-2 text-lg font-semibold leading-tight font-medium">
+        <div className="inline transition transform duration-200 ease-in-out md:group-hover:bg-color-secondary md:group-hover:color-secondary group-hover:color-primary rounded-large pl-6 p-3 lg:ml-4">
+          <title className="block mt-2 text-lg font-semibold leading-tight font-medium focus:underline hover:underline">
             {title.slice(0, 100)}
             {title.length > 101 && '...'}
           </title>
@@ -63,12 +63,12 @@ export const Bookmark: React.FC<
             {description.slice(0, 120)}
             {description.length > 120 && '...'}
           </p>
-          <time className="inline-flex mr-4 color-primary-60 group-hover:color-secondary">
+          <time className="inline-flex mr-4 color-primary-60 md:group-hover:color-secondary">
             {dateFormatter.format(new Date(created))}
           </time>
-            <p className="inline-flex mr-4 color-primary-60 group-hover:color-secondary ">{new URL(link).hostname}</p>
+            <p className="inline-flex mr-4 color-primary-60 md:group-hover:color-secondary">{new URL(link).hostname}</p>
           {tags.map((tag) => (
-            <div key={tag} className="inline-flex items-center px-3 py-1 rounded-large text-sm font-medium leading-5 mr-2 bg-indigo-100 text-indigo-800 group-hover:color-primary group-hover:bg-color-primary">
+            <div key={tag} className="inline-flex items-center px-3 py-1 rounded-large text-sm font-medium leading-5 mr-2 bg-indigo-100 text-indigo-800 md:group-hover:color-primary group-hover:color-secondary md:group-hover:bg-color-primary group-hover:bg-color-secondary">
               {tag}
             </div>
           ))}
