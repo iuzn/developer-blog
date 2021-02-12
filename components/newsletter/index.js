@@ -55,7 +55,7 @@ const errornotify = () => toast.error(`${errorMessage}`, {
       </p>
       <form className="flex border-secondary bg-color-primary  sm:block mt-6 rounded-full ">
         <input
-          className="py-3 px-3 border-none bg-transparent w-48 sm:w-64 focus:ring-0 focus:outline-none"
+          className="py-3 px-3 border-none bg-transparent w-full sm:w-64 focus:ring-0 focus:outline-none"
           type="text"
           placeholder="E-posta Girin"
           value={email}
