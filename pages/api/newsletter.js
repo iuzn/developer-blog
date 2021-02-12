@@ -40,7 +40,7 @@ export default async (req, res) => {
     const response = await axios.post(url, data, { headers });
 
     // Success
-    return res.status(201).json({ error: null });
+    return res.status(201).json({ error: "Hatalı!" });
   } catch (error) {
     return res.status(400).json({
       error: `Hata sende değil, bir şeyler ters gitti. Bana dev@ibrahimuzun.com adresinden bir e-posta gönder, seni listeye ekleyeyim.`,

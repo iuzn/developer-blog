@@ -18,8 +18,9 @@ const Newsletter = () => {
       setState(errornotify)
     }
   }
+
 const loadingnotify = () => toast.loading('Bekleyin..',{
-  duration: 500,
+  duration: 1000,
 });
 const successnotify = () => toast.success('E-postanız başarıyla listeye eklendi.', {
     duration: 8000,
@@ -37,7 +38,7 @@ const errornotify = () => toast.error(`${errorMessage}`, {
     role: 'status',
     ariaLive: 'polite'
   });
-
+{state === "" && toast.remove()}
   return (
     <div className="flex flex-col items-center p-8 m-10 bg-color-secondary rounded-large">
 
@@ -58,6 +59,8 @@ const errornotify = () => toast.error(`${errorMessage}`, {
           type="text"
           placeholder="E-posta Girin"
           value={email}
+          onKeyPress={(e) => { e.key === 'Enter' &&  subscribe()  && e.preventDefault() }}
+
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
