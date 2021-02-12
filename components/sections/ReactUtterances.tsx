@@ -72,8 +72,7 @@ export class ReactUtterances extends React.Component<
       scriptElement.setAttribute('label', label)
     }
 
-
-      if (issueMap === 'issue-number') {
+    if (issueMap === 'issue-number') {
       scriptElement.setAttribute('issue-number', issueNumber!.toString())
     } else if (issueMap === 'issue-term') {
       scriptElement.setAttribute('issue-term', issueTerm!)

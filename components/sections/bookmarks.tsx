@@ -42,14 +42,14 @@ export const Bookmark: React.FC<
           {!images && (
             <img
               className="h-32 w-full object-cover md:w-48 sm:w-full rounded-large"
-              src={`https://dummyimage.com/600x400/434190/c3dafe&text=${tags[0]}`}
+              src={`https://dummyimage.com/300x200/434190/c3dafe&text=${tags[0]}`}
               alt={title}
             />
           )}
           {images && images.length < 1 && (
             <img
               className="h-32 w-full object-cover md:w-48 sm:w-full rounded-large"
-              src={`https://dummyimage.com/600x400/434190/c3dafe&text=${tags[0]}`}
+              src={`https://dummyimage.com/300x200/434190/c3dafe&text=${tags[0]}`}
               alt={title}
             />
           )}
