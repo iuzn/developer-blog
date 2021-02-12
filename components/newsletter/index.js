@@ -1,25 +1,51 @@
-import { useState } from "react";
-import axios from "axios";
+import { useState } from 'react'
+import axios from 'axios'
+import toast, { Toaster } from 'react-hot-toast'
 
-const Newsletter = () =>  {
-  const [email, setEmail] = useState("");
-  const [state, setState] = useState("IDLE");
-  const [errorMessage, setErrorMessage] = useState(null);
+const Newsletter = () => {
+  const [email, setEmail] = useState('')
+  const [state, setState] = useState('IDLE')
+  const [errorMessage, setErrorMessage] = useState(null)
 
   const subscribe = async () => {
-    setState("LOADING");
-    setErrorMessage(null);
+    setState(loadingnotify)
+    setErrorMessage(null)
     try {
-      const response = await axios.post("/api/newsletter", { email });
-      setState("SUCCESS");
+      const response = await axios.post('/api/newsletter', { email })
+      setState(successnotify)
     } catch (e) {
-      setErrorMessage(e.response.data.error);
-      setState("ERROR");
+      setErrorMessage(e.response.data.error)
+      setState(errornotify)
     }
-  };
+  }
+const loadingnotify = () => toast.loading('Bekleyin..',{
+  duration: 500,
+});
+const successnotify = () => toast.success('E-postanız başarıyla listeye eklendi.', {
+    duration: 8000,
+    style: {
+      border: '1px solid #667EEA',
+      padding: '16px',
+      color: '#667EEA'
+    },
+    iconTheme: {
+      primary: '#047100',
+      secondary: '#FFFAEE'
+    }
+  });
+const errornotify = () => toast.error(`${errorMessage}`, {
+    role: 'status',
+    ariaLive: 'polite'
+  });
 
   return (
     <div className="flex flex-col items-center p-8 m-10 bg-color-secondary rounded-large">
+
+      <div className="hidden">
+        {state === 'ERROR' && <b>{}</b>}
+
+        {state === 'SUCCESS' && <b>{}</b>}
+      </div>
       <h2 className="text-3xl font-bold text-center color-secondary">
         E-bültenime abone ol!
       </h2>
@@ -33,17 +59,17 @@ const Newsletter = () =>  {
           placeholder="E-posta Girin"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-        /><input type="button" value="Abone ol"
-          onClick={subscribe} className="button-primary rounded text-white py-3 px-6 cursor-pointer"/>
+        />
+        <input
+          type="button"
+          value="Abone ol"
+          onClick={subscribe}
+          className="button-primary rounded text-white py-3 px-6 cursor-pointer"
+        />
+        <Toaster position="bottom-right" reverseOrder={false} />
       </form>
-      {state === "ERROR" && (
-        <p className="w-1/2 mt-2 text-red-600">{errorMessage}</p>
-      )}
-      {state === "SUCCESS" && (
-        <p className="w-1/2 mt-2 text-green-600">Başarılı!</p>
-      )}
     </div>
-  );
-};
+  )
+}
 
 export default Newsletter

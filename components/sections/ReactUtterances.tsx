@@ -58,27 +58,14 @@ export class ReactUtterances extends React.Component<
     this.state = { pending: true }
   }
 
-  UNSAFE_componentWillReceiveProps(props) {
-    // this.scriptElement.setAttribute('theme', props.theme)
-    const iframe = document.querySelector('iframe.utterances-frame') as any
-
-    if (iframe) {
-      iframe.contentWindow.postMessage(
-        { type: 'set-theme', theme: props.theme },
-        'https://utteranc.es/'
-      )
-    }
-  }
-
   componentDidMount(): void {
-    const { repo, issueMap, issueTerm, issueNumber, label, theme } = this.props
+    const { repo, issueMap, issueTerm, issueNumber, label } = this.props
     const scriptElement = document.createElement('script')
     scriptElement.src = 'https://utteranc.es/client.js'
     scriptElement.async = true
     scriptElement.defer = true
     scriptElement.setAttribute('repo', repo)
     scriptElement.setAttribute('crossorigin', 'annonymous')
-    scriptElement.setAttribute('theme', theme)
     scriptElement.onload = () => this.setState({ pending: false })
 
     if (label) {
