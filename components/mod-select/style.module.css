@@ -54,7 +54,7 @@
     height: auto;
     margin-left: auto;
     margin-right: auto;
-    font-size: 8vw;
+    font-size: 28px;
     color: var(--c-text-color);
     opacity: 0;
     transition: var(--fade);
@@ -77,24 +77,18 @@
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  -webkit-box-flex: 1;
   outline-style: none;
   cursor: pointer;
   color: black;
-  padding-left: 20px;
-  padding-right: 20px;
-
-  border: 3px solid var(--c-text-color);
-
+  border: 5px solid var(--c-text-color);
   margin-right: auto;
   margin-left: auto;
-
+  min-width: 40px;
+  max-width: 65px;
   width: 100%;
-  min-width: 65px;
-  max-width: 4vw;
-  height: 4vw;
-  min-height: 65px;
-  max-height: 4vw;
+  height: auto;
+  min-height: 40px;
+  max-height: 65px;
   border-radius: 99px;
 
   input[type='radio'] {
