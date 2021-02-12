@@ -59,7 +59,7 @@ export class ReactUtterances extends React.Component<
   }
 
   componentDidMount(): void {
-    const { repo, issueMap, issueTerm, issueNumber, label } = this.props
+    const { repo, issueMap, label } = this.props
     const scriptElement = document.createElement('script')
     scriptElement.src = 'https://utteranc.es/client.js'
     scriptElement.async = true
@@ -72,13 +72,9 @@ export class ReactUtterances extends React.Component<
       scriptElement.setAttribute('label', label)
     }
 
-    if (issueMap === 'issue-number') {
-      scriptElement.setAttribute('issue-number', issueNumber.toString())
-    } else if (issueMap === 'issue-term') {
-      scriptElement.setAttribute('issue-term', issueTerm)
-    } else {
+
       scriptElement.setAttribute('issue-term', issueMap)
-    }
+
 
     // TODO: Check current availability
     this.scriptElement = scriptElement
@@ -89,7 +85,7 @@ export class ReactUtterances extends React.Component<
     return (
       <div className={styles.comments}>
         <div className={styles.utterances} ref={this.reference}>
-          {this.state.pending && <p>Loading Comments...</p>}
+          {this.state.pending && <p>Yorumlar yükleniyor...</p>}
         </div>
       </div>
     )
