@@ -78,7 +78,7 @@ export class ReactUtterances extends React.Component<
 
     // TODO: Check current availability
     this.scriptElement = scriptElement
-    this.reference.current.appendChild(scriptElement)
+    this.reference.current!.appendChild(scriptElement)
   }
 
   render(): React.ReactElement {
