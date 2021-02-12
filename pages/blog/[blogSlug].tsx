@@ -12,6 +12,7 @@ import { toNotionImageUrl } from '../../core/notion'
 import Header from '../../components/header/header'
 import { useRouter } from 'next/router'
 import Loading from '../../components/loading'
+import {ReactUtterances} from "../../components/sections/ReactUtterances";
 
 interface PostProps {
   blocks: BlockMapType
@@ -66,8 +67,11 @@ export const getStaticProps: GetStaticProps<
   }
 }
 
-const BlogPosts: React.FC<PostProps> = ({ post, blocks }) => {
+
+
+const BlogPosts: React.FC<PostProps> = ({post, blocks }) => {
   const router = useRouter()
+
   if (router.isFallback) {
     return (
       <>
@@ -118,8 +122,15 @@ const BlogPosts: React.FC<PostProps> = ({ post, blocks }) => {
         </div>
         <article className="flex-1 my-6 post-container">
           <NotionRenderer blockMap={blocks} mapImageUrl={toNotionImageUrl} />
-        </article>
+          <ReactUtterances
+          repo='iuzn/developer-blog'
+          issueMap='issue-term'
+          issueTerm='title'
+          theme={'github-light'}
+        />
         <Footer />
+        </article>
+
       </Layout>
     </>
   )

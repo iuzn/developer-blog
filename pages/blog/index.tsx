@@ -8,6 +8,7 @@ import Header from '../../components/header/header'
 import React from 'react'
 import Layout from '../../components/layout/index.js'
 import { BlogPost } from '../../types/blog'
+import Head from "next/head";
 
 interface AppProps {
   blogpost: BlogPost[]
@@ -31,6 +32,7 @@ const BlogPage = ({ blogpost }: AppProps) => (
     <Layout>
       <Header />
       <Blog blogpost={blogpost} />
+
       <Footer />
     </Layout>
   </>
