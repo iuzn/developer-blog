@@ -11,7 +11,7 @@ const Newsletter = () => {
     setState(loadingnotify)
     setErrorMessage(null)
     try {
-      const response = await axios.post('/api/newsletter', { email })
+      await axios.post('/api/newsletter', { email });
       setState(successnotify)
     } catch (e) {
       setErrorMessage(e.response.data.error)
@@ -25,9 +25,9 @@ const loadingnotify = () => toast.loading('Bekleyin..',{
 const successnotify = () => toast.success('E-postanız başarıyla listeye eklendi.', {
     duration: 8000,
     style: {
-      border: '1px solid #667EEA',
+      border: '1px solid #047100',
       padding: '16px',
-      color: '#667EEA'
+      color: '#047100'
     },
     iconTheme: {
       primary: '#047100',
@@ -38,7 +38,7 @@ const errornotify = () => toast.error(`${errorMessage}`, {
     role: 'status',
     ariaLive: 'polite'
   });
-{state === "" && toast.remove()}
+{state === "" && toast.remove(loadingnotify())}
   return (
     <div className="flex flex-col items-center p-8 m-10 bg-color-secondary rounded-large">
 
