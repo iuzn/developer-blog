@@ -4,8 +4,8 @@
   @media (--m) {
     display: flex;
     grid-template-columns: auto;
-    background: var(--c-primary);
-    position: fixed;
+    background: var(--c-primary-80);
+    backdrop-filter: blur(10px);    position: fixed;
     visibility: visible;
     width: 100vw;
     bottom: 0;
@@ -17,6 +17,7 @@
     display: none;
     visibility: hidden;
   }
+
 }
 .sidebar {
   @media (--m) {
@@ -38,6 +39,7 @@
     visibility: visible;
     align-items: flex-start;
   }
+
 }
 .profile {
   margin: 96px auto auto;
@@ -53,6 +55,9 @@
   flex: 1;
   padding: 0 2rem;
   justify-content: space-around;
+
+
+
 }
 
 .footer {

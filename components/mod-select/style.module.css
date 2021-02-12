@@ -7,8 +7,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--c-gray-50-50);
+  background-color: var(--c-primary-40);
   z-index: 999;
+  backdrop-filter: blur(10px);
+}
+
+.overlay {
+  -webkit-animation: in var(--fade) ease-in-out 0s;
+          animation: in var(--fade) ease-in-out 0s;
 }
 .mod {
   display: grid;
@@ -169,5 +175,23 @@
       color: var(--c-yellow);
       border: transparent;
     }
+  }
+}
+
+@-webkit-keyframes in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

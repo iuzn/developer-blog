@@ -50,13 +50,13 @@ export const BlogPost: React.FC<
       />
     )}
     <Link href={`/blog/[projectSlug]`} as={`/blog/${slug}`}>
-      <a aria-label={`${title} - Blog`}>
+      <a aria-label="Blog Gönderisi">
         {featured && (
           <footer className={styles.footer}>
             {!showVideo ? 'Okumaya devam et' : 'İzlemeye devam et'}
           </footer>
         )}
-        {!featured && <footer className={styles.footer}>Oku</footer>}
+        {!featured && <footer className={styles.footer}>{!showVideo ? 'Oku' : 'İzle'}</footer>}
       </a>
     </Link>
   </div>

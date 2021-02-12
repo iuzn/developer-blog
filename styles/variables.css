@@ -1,5 +1,7 @@
 :root {
-  --c-primary: #fff;
+  --c-primary: rgba(255, 255, 255,1);
+  --c-primary-40: rgba(255, 255, 255,0.4);
+  --c-primary-80: rgba(255, 255, 255,0.8);
   --c-border: rgb(230, 236, 240);
   --c-text-color: rgb(41, 41, 41);
   --c-green: rgb(0, 128, 127);
@@ -31,9 +33,11 @@
 }
 
 .dim:root {
-  --c-primary: #16202a;
-  --c-border: #2f3336;
-  --c-text-color: #e5e5e5;
+  --c-primary: rgba(22, 32, 42,1);
+  --c-primary-40: rgba(22, 32, 42,0.4);
+  --c-primary-80: rgba(22, 32, 42,0.8);
+  --c-border: rgb(47, 51, 54);
+  --c-text-color: rgba(229, 229, 229,1);
   --c-yellow: rgba(234, 210, 102, 1);
   --c-yellow-10: rgba(234, 210, 102, 0.1);
   --c-yellow-20: rgba(234, 210, 102, 0.2);
@@ -44,9 +48,11 @@
 }
 
 .dark:root {
-  --c-primary: #000;
-  --c-border: #2f3336;
-  --c-text-color: #ffffff;
+  --c-primary: rgba(0, 0, 0,1);
+  --c-primary-40: rgba(0, 0, 0,0.4);
+  --c-primary-80: rgba(0, 0, 0,0.8);
+  --c-border: rgba(47, 51, 54,1);
+  --c-text-color: rgba(255, 255, 255,1);
   --c-yellow: rgba(234, 210, 102, 1);
   --c-yellow-10: rgba(234, 210, 102, 0.1);
   --c-yellow-20: rgba(234, 210, 102, 0.2);
@@ -57,9 +63,11 @@
 }
 
 .sepia:root {
-  --c-primary: #f5dd9f;
+  --c-primary: rgba(245, 221, 159,1);
+  --c-primary-40: rgba(245, 221, 159,0.4);
+  --c-primary-80: rgba(245, 221, 159,0.8);
   --c-border: rgba(108, 84, 62, 0.4);
-  --c-text-color: #6c543e;
+  --c-text-color: rgba(108, 84, 62,1);
   --c-yellow: rgba(102, 126, 234, 1);
   --c-yellow-10: rgba(102, 126, 234, 0.1);
   --c-yellow-20: rgba(102, 126, 234, 0.2);

@@ -49,13 +49,14 @@
   color: var(--c-primary);
   background-image: linear-gradient(
     to right,
-    var(--c-yellow-20) 0%,
+    var(--c-yellow-40) 0%,
     var(--c-yellow) 100%
   );
   background-size: 200% auto;
+  backdrop-filter: blur(10px);
   text-align: center;
   padding: 10px 30px;
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: bold;
   box-sizing: border-box;
   -webkit-border-bottom-right-radius: 25px;
