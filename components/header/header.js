@@ -27,6 +27,7 @@ function Header(props) {
       </div>
       <div className={styles.modselect}>
         <Button
+            alt="Temayı değiştir."
           className={styles.buton}
           onClick={() => isShowModset(!isShowMod)}
         >

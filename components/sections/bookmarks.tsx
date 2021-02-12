@@ -21,7 +21,7 @@ export const Bookmark: React.FC<
   className
 }) => (
   <Link href={link}>
-    <a
+    <a rel="noopener"
       aria-label={`${title} - Yer İmi`}
       className={clsx(
         'max-w-md mx-auto  ',

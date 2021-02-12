@@ -3,7 +3,7 @@ import cn from 'classnames'
 import Button from '../button'
 import styles from './button.module.css'
 
-function NavigationButton({ href, selected, children, className, ...props }) {
+function NavigationButton({ alt, href, selected, children, className, ...props }) {
   return (
     <Button
       className={cn(

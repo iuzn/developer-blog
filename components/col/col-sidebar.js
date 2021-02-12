@@ -32,6 +32,7 @@ function Sidebar({ flat }) {
             const selected = router.pathname === menu.path
             return (
               <NavigationButton
+                  alt={menu.title}
                 key={menu.key}
                 selected={selected}
                 href={menu.path}
