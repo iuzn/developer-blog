@@ -13,7 +13,7 @@ function Navigation({ flat }) {
     <nav className={styles.nav}>
       {MENU.map((menu) => {
         const showTitle = !flat && menu.title.length > 0
-        const selected = router.pathname === menu.path
+        const selected = router.asPath === menu.path
         return (
           <NavigationButton
             key={menu.key}
