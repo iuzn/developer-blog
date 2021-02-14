@@ -11,7 +11,7 @@ export const BlogPost: React.FC<
     className?: string
   }
 > = ({ title, preview, video, showVideo, featured, slug, images }) => (
-  <div className={styles.post}>
+  <div className={clsx(styles.post, "mb-8", featured && "mb-16")}>
     {featured &&
       (showVideo ? (
         <div className="pb-2/3 aspect-16x9 bg-gray-100 relative border-b overflow-hidden">
@@ -79,7 +79,7 @@ export const Blog: React.FC<{
           <h1 className="text-4xl font-bold">Blog</h1>
           <div className="text-2xl ">Tasarım, Web, Teknoloji</div>
         </div>
-        <div className="md:grid mt-4 grid-cols-2 sm:grid-cols-4 gap-4 ">
+        <div className="md:grid mt-4 mb-4 grid-cols-2 sm:grid-cols-4 gap-4 ">
           {blogpost.slice(1, 5).map((p) => (
             <BlogPost key={p.id} className="hidden md:flex" {...p} />
           ))}

@@ -10,7 +10,6 @@
   border-bottom-right-radius: 25px;
   box-sizing: content-box;
   resize: both;
-  margin-bottom: 6em;
   background-color: var(--c-primary);
 }
 

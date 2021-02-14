@@ -4,6 +4,7 @@ import StoreContext from '../../store'
 import { Check, Kapat } from '../icons'
 import Button from '../button'
 import useOnclickOutside from "react-cool-onclickoutside";
+import Newsletter from '../newsletter';
 
 const THEME = {
   light: 'Light',
@@ -50,6 +51,7 @@ function ModSelect({ onClick = () => {} }) {
           ))}
         </div>
       </div>
+
     </div>
   )
 }

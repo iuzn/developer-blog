@@ -53,6 +53,7 @@ const HomePage = ({ blogpost, project, bookmark }: AppProps) => (
       <Bookmarks bookmark={bookmark} preview />
       <Newsletter/>
       <Footer />
+
     </Layout>
   </>
 )

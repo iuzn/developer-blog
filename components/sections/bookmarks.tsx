@@ -17,17 +17,11 @@ export const Bookmark: React.FC<
   tags,
   created,
   description,
-  featured,
-  className
 }) => (
   <Link href={link}>
     <a rel="noopener"
       aria-label={`${title} - Yer İmi`}
-      className={clsx(
-        'max-w-md mx-auto  ',
-        featured && 'hover:-translate-y-1 focus:-translate-y-2 ',
-        className
-      )}
+      className="max-w-md mx-auto"
       target="_blank"
     >
       <div className="group md:flex p-2 items-center transition duration-150 ease-in-out transform  rounded-large">
@@ -87,9 +81,9 @@ export const Bookmarks: React.FC<{
       <h1 className="text-4xl font-bold dark:text-blue-400">{preview && 'Yer imleri'}</h1>
       <div className="text-2xl ">{preview && 'İnternette dikkatimi çeken sayfalar'}</div>
     </div>
-    <div className="grid grid-cols-1  border-b-2 border-fuchsia-600 sm:grid-cols-1  my-4 ">
+    <div className="grid grid-cols-1 sm:grid-cols-1  ">
       {bookmark.slice(0, preview ? 3 : undefined).map((p) => (
-        <div key={p.id}  className="p-8">
+        <div key={p.id}  className="p-4">
           <Bookmark featured {...p} />
         </div>
       ))}
