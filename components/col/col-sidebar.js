@@ -29,7 +29,7 @@ function Sidebar({ flat }) {
       <div id={'wrapper'} className={styles.wrapper}>
         <nav className={styles.nav}>
           {MENU.map((menu) => {
-            const selected = router.pathname === menu.path
+            const selected = router.asPath === menu.path
             return (
               <NavigationButton
                   alt={menu.title}
