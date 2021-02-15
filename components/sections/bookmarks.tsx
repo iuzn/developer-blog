@@ -2,7 +2,6 @@ import React from 'react'
 import { Bookmark as BookmarkData } from '../../types/bookmark'
 import { toNotionImageUrl } from '../../core/notion'
 import Link from 'next/link'
-import clsx from 'clsx'
 import { dateFormatter } from '../../core/utils'
 
 export const Bookmark: React.FC<
@@ -10,16 +9,10 @@ export const Bookmark: React.FC<
     featured?: boolean
     className?: string
   }
-> = ({
-  title,
-  link,
-  images,
-  tags,
-  created,
-  description,
-}) => (
+> = ({ title, link, images, tags, created, description }) => (
   <Link href={link}>
-    <a rel="noopener"
+    <a
+      rel="noopener"
       aria-label={`${title} - Yer İmi`}
       className="max-w-md mx-auto"
       target="_blank"
@@ -49,20 +42,23 @@ export const Bookmark: React.FC<
           )}
         </div>
         <div className="inline transition transform duration-200 ease-in-out md:group-hover:bg-color-secondary md:group-hover:color-secondary group-hover:color-primary rounded-large pl-6 p-3 lg:ml-4">
-          <title className="block mt-2 text-lg font-semibold leading-tight font-medium focus:underline hover:underline">
-            {title.slice(0, 100)}
-            {title.length > 101 && '...'}
+          <title className="block mt-2 text-lg font-semibold leading-tight font-medium focus:underline hover:underline whitespace-nowrap	overflow-hidden	overflow-ellipsis	">
+            {title}
           </title>
-          <p className="mt-2 pb-3">
-            {description.slice(0, 120)}
-            {description.length > 120 && '...'}
+          <p className="mt-2 pb-3 whitespace-nowrap	overflow-hidden	overflow-ellipsis">
+            {description}
           </p>
           <time className="inline-flex mr-4 color-primary-60 md:group-hover:color-secondary">
             {dateFormatter.format(new Date(created))}
           </time>
-            <p className="inline-flex mr-4 color-primary-60 md:group-hover:color-secondary">{new URL(link).hostname}</p>
+          <p className="inline-flex mr-4 color-primary-60 md:group-hover:color-secondary">
+            {new URL(link).hostname}
+          </p>
           {tags.map((tag) => (
-            <div key={tag} className="inline-flex items-center px-3 py-1 rounded-large text-sm font-medium leading-5 mr-2 bg-indigo-100 text-indigo-800 md:group-hover:color-primary group-hover:color-secondary md:group-hover:bg-color-primary group-hover:bg-color-secondary">
+            <div
+              key={tag}
+              className="inline-flex items-center px-3 py-1 rounded-large text-sm font-medium leading-5 mr-2 bg-indigo-100 text-indigo-800 md:group-hover:color-primary group-hover:color-secondary md:group-hover:bg-color-primary group-hover:bg-color-secondary"
+            >
               {tag}
             </div>
           ))}
@@ -78,12 +74,16 @@ export const Bookmarks: React.FC<{
 }> = ({ bookmark, preview }) => (
   <div className="container ">
     <div className="m-auto max-w-3xl">
-      <h1 className="text-4xl font-bold dark:text-blue-400">{preview && 'Yer imleri'}</h1>
-      <div className="text-2xl ">{preview && 'İnternette dikkatimi çeken sayfalar'}</div>
+      <h1 className="text-4xl font-bold dark:text-blue-400">
+        {preview && 'Yer imleri'}
+      </h1>
+      <div className="text-2xl ">
+        {preview && 'İnternette dikkatimi çeken sayfalar'}
+      </div>
     </div>
     <div className="grid grid-cols-1 sm:grid-cols-1  ">
       {bookmark.slice(0, preview ? 3 : undefined).map((p) => (
-        <div key={p.id}  className="p-4">
+        <div key={p.id} className="p-4">
           <Bookmark featured {...p} />
         </div>
       ))}

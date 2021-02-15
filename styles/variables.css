@@ -30,6 +30,7 @@
   --c-shadow-5: rgba(0, 0, 0, 0.05);
   --fade: 240ms;
   --fade-2: 120ms;
+  --fade-3: 360ms;
 }
 
 .dim:root {

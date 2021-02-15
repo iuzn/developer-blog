@@ -5,7 +5,8 @@
     display: flex;
     grid-template-columns: auto;
     background: var(--c-primary-80);
-    backdrop-filter: blur(10px);    position: fixed;
+    backdrop-filter: blur(10px);
+    position: fixed;
     visibility: visible;
     width: 100vw;
     bottom: 0;
@@ -17,7 +18,6 @@
     display: none;
     visibility: hidden;
   }
-
 }
 .sidebar {
   @media (--m) {
@@ -39,7 +39,6 @@
     visibility: visible;
     align-items: flex-start;
   }
-
 }
 .profile {
   margin: 96px auto auto;
@@ -55,9 +54,6 @@
   flex: 1;
   padding: 0 2rem;
   justify-content: space-around;
-
-
-
 }
 
 .footer {
@@ -68,6 +64,30 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   font-size: 1.2rem;
+
+}
+.navButton:active {
+  svg {
+    -webkit-animation: in var(--fade-3) ease 0s;
+    animation: in var(--fade-3) ease 0s;
+  }
+}
+
+@-webkit-keyframes in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

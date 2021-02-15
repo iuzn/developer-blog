@@ -6,33 +6,37 @@
 }
 .image {
   flex-shrink: 0;
-
-  display: grid;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  max-width: 120px;
-  border-radius: 999px;
-}
-.imageflat {
-  flex-shrink: 0;
-
   display: grid;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
   max-width: 46px;
   border-radius: 99px;
+  @media (--d) {
+    flex-shrink: 0;
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 120px;
+    border-radius: 999px;
+  }
 }
 .title {
-  width: 160px;
-  font-size: 32px;
-  overflow-wrap: break-word;
-  padding-top: 24px;
-  line-height: 32px;
-  text-align: center;
-  font-weight: bold;
+  display: none;
+  @media (--d) {
+    display: inherit;
+    width: 160px;
+    font-size: 32px;
+    overflow-wrap: break-word;
+    padding-top: 24px;
+    line-height: 32px;
+    text-align: center;
+    font-weight: bold;
+  }
 }
+
 .photo {
-  cursor: url('https://raw.githubusercontent.com/iuzn/assets/master/Website/nazar.png'), auto;
+  cursor: url('https://raw.githubusercontent.com/iuzn/assets/master/Website/nazar.png'),
+    auto;
 }
