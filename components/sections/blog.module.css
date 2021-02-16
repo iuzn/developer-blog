@@ -52,7 +52,7 @@
     var(--c-yellow) 100%
   );
   background-size: 200% auto;
-  backdrop-filter: blur(10px);
+  backdrop-filter: saturate(150%) blur(8px);
   text-align: center;
   padding: 10px 30px;
   font-size: 1.2em;

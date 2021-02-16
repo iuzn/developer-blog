@@ -68,12 +68,12 @@
   --c-primary-40: rgba(245, 221, 159,0.4);
   --c-primary-80: rgba(245, 221, 159,0.8);
   --c-border: rgba(108, 84, 62, 0.4);
-  --c-text-color: rgba(108, 84, 62,1);
-  --c-yellow: rgba(102, 126, 234, 1);
-  --c-yellow-10: rgba(102, 126, 234, 0.1);
-  --c-yellow-20: rgba(102, 126, 234, 0.2);
-  --c-yellow-40: rgba(102, 126, 234, 0.4);
-  --c-yellow-60: rgba(102, 126, 234, 0.6);
+  --c-text-color: rgb(108, 84, 62);
+  --c-yellow: rgba(108, 84, 62, 1);
+  --c-yellow-10: rgba(108, 84, 62, 0.1);
+  --c-yellow-20: rgba(108, 84, 62, 0.2);
+  --c-yellow-40: rgba(108, 84, 62, 0.4);
+  --c-yellow-60: rgba(108, 84, 62, 0.6);
   --c-shadow-10: rgba(0, 0, 0, 0.1);
   --c-shadow-5: rgba(0, 0, 0, 0.05);
 }

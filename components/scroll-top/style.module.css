@@ -15,8 +15,7 @@
   color: var(--c-primary);
   margin-top: 10px;
   margin-right: 10px;
-  backdrop-filter: blur(6px);
-
+  backdrop-filter: saturate(150%) blur(8px);
   animation: scrollTop 0.5s alternate ease infinite;
   @media (--m) {
     right: 80%;
