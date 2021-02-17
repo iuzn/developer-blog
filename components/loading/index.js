@@ -7,7 +7,7 @@ function Loading({ size = 30, stroke = 2 }) {
       height={size}
       viewBox="0 0 38 38"
       xmlns="http://www.w3.org/2000/svg"
-      stroke="rgba(29, 161, 242, 1)"
+      stroke="var(--c-yellow)"
     >
       <g fill="none" fillRule="evenodd">
         <g transform="translate(1 1)" strokeWidth={stroke}>
