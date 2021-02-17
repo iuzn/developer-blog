@@ -1,5 +1,5 @@
 import React, {useCallback, useContext, useEffect} from 'react';
-import styles from './style.module.css'
+import styles from './style.module.scss'
 import StoreContext from '../../store'
 import { Check, Kapat } from '../icons'
 import Button from '../button'
@@ -44,7 +44,7 @@ function ModSelect({ onClick = () => {} }) {
         <div>
           {store.theme === 'light' && <h3>"Aydınlık"</h3>}
           {store.theme === 'dark' && <h3>"Karanlık"</h3>}
-          {store.theme === 'dim' && <h3>"Loş"</h3>}
+          {store.theme === 'dim' && <div className={styles.wrapper}><h3 className={styles.glitch}>"Hacker"</h3></div>}
           {store.theme === 'sepia' && <h3>"Sepya"</h3>}
         </div>
 
