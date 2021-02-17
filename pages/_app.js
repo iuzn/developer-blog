@@ -20,6 +20,7 @@ function MyApp({ Component, pageProps }) {
   }
 
   useEffect(() => {
+    document.documentElement.lang = "tr"
     if (!theme) return
     const $html = document.querySelector('html')
     $html.classList.remove('light')
