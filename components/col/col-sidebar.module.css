@@ -64,7 +64,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 0;
+  svg{
+      font-size: 1.2rem;
+
+  }
 }
 .navButton:active {
   svg {
