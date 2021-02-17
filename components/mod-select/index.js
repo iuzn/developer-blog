@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, {useCallback, useContext, useEffect} from 'react';
 import styles from './style.module.css'
 import StoreContext from '../../store'
 import { Check, Kapat } from '../icons'
@@ -15,6 +15,19 @@ const THEME = {
 
 function ModSelect({ onClick = () => {} }) {
   const store = useContext(StoreContext)
+ const escFunction = useCallback((event) => {
+    if(event.keyCode === 27) {
+      onClick()
+    }
+  }, []);
+  useEffect(() => {
+    document.addEventListener("keydown", escFunction,true);
+
+    return () => {
+      document.removeEventListener("keydown", escFunction, false);
+    };
+  }, [onClick]);
+
 
   const ref = useOnclickOutside(() => {
     onClick()
@@ -22,7 +35,7 @@ function ModSelect({ onClick = () => {} }) {
   return (
     <div className={styles.overlay}>
       <div ref={ref} className={styles.mod}>
-        <Button className={styles.kapat} onClick={onClick} type="button">
+        <Button className={styles.kapat} onClick={onClick} type="button" >
           <Kapat />
         </Button>
         <h2>Bir Tema Seçin</h2>

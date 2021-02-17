@@ -50,7 +50,7 @@ button:focus {
   outline: none;
 }
 button:focus-visible {
-  box-shadow: 0 0 15pt 4pt rgba(77, 182, 173, 1);
+  box-shadow: 0 0 0 3pt rgb(220, 63, 22);
 }
 
 input:active,
@@ -58,7 +58,7 @@ input:focus {
   outline: none;
 }
 input:focus-visible {
-  box-shadow: 0 0 5pt 4pt rgba(77, 182, 173, 1);
+  box-shadow: 0 0 0 3pt rgb(220, 63, 22);
 }
 input[type='text']:focus-visible {
   box-shadow: none;
@@ -74,7 +74,7 @@ a:focus {
   outline: none;
 }
 a:focus-visible {
-  box-shadow: 0 0 15pt 4pt rgba(77, 182, 173, 1);
+  box-shadow: 0 0 0 2pt rgb(220, 63, 22);
 }
 
 .button-primary {

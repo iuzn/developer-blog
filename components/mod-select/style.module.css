@@ -79,6 +79,9 @@
       opacity: 1;
       pointer-events: none;
     }
+    .button:focus-visible{
+          box-shadow: 0 0 0 3pt rgba(77, 182, 173, 1);
+    }
   }
 }
 
