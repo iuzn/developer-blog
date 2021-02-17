@@ -14,7 +14,7 @@ export const Bookmark: React.FC<
     <a
       rel="noopener"
       aria-label={`${title} - Yer İmi`}
-      className="max-w-md mx-auto"
+      className="flex"
       target="_blank"
     >
       <div className="group md:flex p-2 items-center transition duration-150 ease-in-out transform  rounded-large">
@@ -27,18 +27,20 @@ export const Bookmark: React.FC<
             />
           )}
           {!images && (
-            <img
-              className="h-32 w-full object-cover md:w-48 sm:w-full rounded-large"
-              src={`https://dummyimage.com/300x200/434190/c3dafe&text=${tags[0]}`}
-              alt={title}
-            />
+            <div className="flex justify-center items-center h-32 w-full object-cover md:w-48 sm:w-full rounded-large group-hover:bg-color-secondary bg-color-secondary-60">
+              <p className="group-hover:text-3xl text-4xl sm:text-4xl group-hover:animate-bounce transition-all ease-in-out duration-200 color-secondary">
+                {tags && tags[0]}
+                {tags[0].length < 1 &&
+                  dateFormatter.format(new Date(created)).slice(0, -4)}
+              </p>
+            </div>
           )}
           {images && images.length < 1 && (
-            <img
-              className="h-32 w-full object-cover md:w-48 sm:w-full rounded-large"
-              src={`https://dummyimage.com/300x200/434190/c3dafe&text=${tags[0]}`}
-              alt={title}
-            />
+            <div className="flex justify-center items-center h-32 w-full object-cover md:w-48 sm:w-full group-hover:bg-color-secondary rounded-large bg-color-secondary-60">
+              <p className="group-hover:text-3xl text-2xl group-hover:animate-bounce transition-all	 ease-in-out duration-200 transform color-secondary">
+                {tags[0]}
+              </p>{' '}
+            </div>
           )}
         </div>
         <div className="inline transition transform duration-200 ease-in-out md:group-hover:bg-color-secondary md:group-hover:color-secondary group-hover:color-primary rounded-large pl-6 p-3 lg:ml-4">
@@ -57,7 +59,7 @@ export const Bookmark: React.FC<
           {tags.map((tag) => (
             <div
               key={tag}
-              className="inline-flex items-center px-3 py-1 rounded-large text-sm font-medium leading-5 mr-2 bg-indigo-100 text-indigo-800 md:group-hover:color-primary group-hover:color-secondary md:group-hover:bg-color-primary group-hover:bg-color-secondary"
+              className="inline-flex items-center px-3 py-1 rounded-large text-sm font-medium leading-5 mr-2 bg-color-secondary color-secondary md:group-hover:color-primary group-hover:color-secondary md:group-hover:bg-color-primary group-hover:bg-color-secondary"
             >
               {tag}
             </div>

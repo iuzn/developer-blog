@@ -37,6 +37,13 @@
 .bg-color-secondary{
   background-color: var(--c-yellow);
 }
+.bg-color-secondary-40{
+  background-color: var(--c-yellow-40);
+}
+
+.bg-color-secondary-60{
+  background-color: var(--c-yellow-60);
+}
 
 .color-secondary{
   color: var(--c-primary);

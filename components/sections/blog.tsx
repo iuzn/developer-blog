@@ -11,7 +11,7 @@ export const BlogPost: React.FC<
     className?: string
   }
 > = ({ title, preview, video, showVideo, featured, slug, images }) => (
-  <div className={clsx(styles.post, "mb-8", featured && "mb-16")}>
+  <div className={clsx(styles.post, 'mb-8', featured && 'mb-16')}>
     {featured &&
       (showVideo ? (
         <div className="pb-2/3 aspect-16x9 bg-gray-100 relative border-b overflow-hidden">
@@ -50,13 +50,10 @@ export const BlogPost: React.FC<
       />
     )}
     <Link href={`/blog/[projectSlug]`} as={`/blog/${slug}`}>
-      <a aria-label="Blog Gönderisi">
-        {featured && (
-          <footer className={styles.footer}>
-            {!showVideo ? 'Okumaya devam et' : 'İzlemeye devam et'}
-          </footer>
-        )}
-        {!featured && <footer className={styles.footer}>{!showVideo ? 'Oku' : 'İzle'}</footer>}
+      <a aria-label="Blog Gönderisi" className={styles.footer}>
+        {featured &&
+          (!showVideo ? 'Okumaya devam et' : 'İzlemeye devam et')
+          }{!featured && (!showVideo ? 'Oku' : 'İzle')}
       </a>
     </Link>
   </div>

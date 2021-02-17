@@ -44,16 +44,40 @@ body::-webkit-scrollbar-thumb {
   border-radius: 6px;
   border: 3px solid var(--c-yellow-10);
 }
+
+button:active,
 button:focus {
   outline: none;
 }
+button:focus-visible {
+  box-shadow: 0 0 15pt 4pt rgba(77, 182, 173, 1);
+}
+
+input:active,
 input:focus {
   outline: none;
 }
-input::placeholder{
-  color: var(--c-yellow-40);
+input:focus-visible {
+  box-shadow: 0 0 5pt 4pt rgba(77, 182, 173, 1);
 }
-.button-primary{
+input[type='text']:focus-visible {
+  box-shadow: none;
+  text-decoration: underline;
+  text-decoration-color: var(--c-yellow);
+}
+input::placeholder {
+  color: var(--c-yellow-60);
+}
+
+a:active,
+a:focus {
+  outline: none;
+}
+a:focus-visible {
+  box-shadow: 0 0 15pt 4pt rgba(77, 182, 173, 1);
+}
+
+.button-primary {
   cursor: pointer;
   background: var(--c-yellow);
   color: var(--c-primary);
@@ -68,11 +92,11 @@ input::placeholder{
   }
 }
 
-.border-primary{
+.border-primary {
   border: 1px solid var(--c-yellow);
 }
 
-.border-secondary{
+.border-secondary {
   border: 1px solid var(--c-primary);
 }
 
@@ -524,8 +548,8 @@ img.notion-page-icon {
   &:hover {
     background: var(--c-text-color);
     border: 1px solid var(--c-text-color);
-    & > div:first-child{
-          color: var(--c-primary);
+    & > div:first-child {
+      color: var(--c-primary);
     }
     .notion-bookmark-link > div {
       color: var(--c-primary);
@@ -541,7 +565,6 @@ img.notion-page-icon {
   text-align: left;
   color: var(--c-text-color);
   &:hover {
-
   }
 }
 

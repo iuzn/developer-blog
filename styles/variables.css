@@ -1,7 +1,7 @@
 :root {
-  --c-primary: rgba(255, 255, 255,1);
-  --c-primary-40: rgba(255, 255, 255,0.4);
-  --c-primary-80: rgba(255, 255, 255,0.8);
+  --c-primary: rgba(255, 255, 255, 1);
+  --c-primary-40: rgba(255, 255, 255, 0.4);
+  --c-primary-80: rgba(255, 255, 255, 0.8);
   --c-border: rgb(230, 236, 240);
   --c-text-color: rgb(41, 41, 41);
   --c-green: rgb(0, 128, 127);
@@ -34,26 +34,26 @@
 }
 
 .dim:root {
-  --c-primary: rgba(22, 32, 42,1);
-  --c-primary-40: rgba(22, 32, 42,0.4);
-  --c-primary-80: rgba(22, 32, 42,0.8);
+  --c-primary: rgb(21, 41, 39);
+  --c-primary-40: rgba(21, 41, 39, 0.4);
+  --c-primary-80: rgba(21, 41, 39, 0.8);
   --c-border: rgb(47, 51, 54);
-  --c-text-color: rgba(229, 229, 229,1);
-  --c-yellow: rgba(234, 210, 102, 1);
-  --c-yellow-10: rgba(234, 210, 102, 0.1);
-  --c-yellow-20: rgba(234, 210, 102, 0.2);
-  --c-yellow-40: rgba(234, 210, 102, 0.4);
-  --c-yellow-60: rgba(234, 210, 102, 0.6);
+  --c-text-color: rgba(229, 229, 229, 1);
+  --c-yellow: rgb(76, 181, 172);
+  --c-yellow-10: rgba(77, 182, 173, 0.1);
+  --c-yellow-20: rgba(77, 182, 173, 0.2);
+  --c-yellow-40: rgba(77, 182, 173, 0.4);
+  --c-yellow-60: rgba(77, 182, 173, 0.6);
   --c-shadow-10: rgba(255, 255, 255, 0.1);
   --c-shadow-5: rgba(255, 255, 255, 0.05);
 }
 
 .dark:root {
-  --c-primary: rgba(0, 0, 0,1);
-  --c-primary-40: rgba(0, 0, 0,0.4);
-  --c-primary-80: rgba(0, 0, 0,0.8);
-  --c-border: rgba(47, 51, 54,1);
-  --c-text-color: rgba(255, 255, 255,1);
+  --c-primary: rgba(0, 0, 0, 1);
+  --c-primary-40: rgba(0, 0, 0, 0.4);
+  --c-primary-80: rgba(0, 0, 0, 0.8);
+  --c-border: rgba(47, 51, 54, 1);
+  --c-text-color: rgba(255, 255, 255, 1);
   --c-yellow: rgba(234, 210, 102, 1);
   --c-yellow-10: rgba(234, 210, 102, 0.1);
   --c-yellow-20: rgba(234, 210, 102, 0.2);
@@ -64,9 +64,9 @@
 }
 
 .sepia:root {
-  --c-primary: rgba(245, 221, 159,1);
-  --c-primary-40: rgba(245, 221, 159,0.4);
-  --c-primary-80: rgba(245, 221, 159,0.8);
+  --c-primary: rgba(245, 221, 159, 1);
+  --c-primary-40: rgba(245, 221, 159, 0.4);
+  --c-primary-80: rgba(245, 221, 159, 0.8);
   --c-border: rgba(108, 84, 62, 0.4);
   --c-text-color: rgb(108, 84, 62);
   --c-yellow: rgba(108, 84, 62, 1);

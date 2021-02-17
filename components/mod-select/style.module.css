@@ -65,16 +65,19 @@
     opacity: 0;
     transition: var(--fade);
   }
-  label {
-    border-color: rgba(55, 167, 148, 0);
+  .button {
+    svg {
+      pointer-events: none;
+    }
   }
-  label:hover {
-    border-color: rgba(55, 167, 148, 1);
+  .button:hover {
+    box-shadow: 0 0 0 3pt rgba(77, 182, 173, 1);
     transition: var(--fade);
     svg {
       visibility: visible;
-      color: rgb(55, 167, 148);
+      color: rgb(77, 182, 173);
       opacity: 1;
+      pointer-events: none;
     }
   }
 }
@@ -86,7 +89,6 @@
   outline-style: none;
   cursor: pointer;
   color: black;
-  border: 5px solid var(--c-text-color);
   margin-right: auto;
   margin-left: auto;
   min-width: 40px;
@@ -96,11 +98,6 @@
   min-height: 40px;
   max-height: 65px;
   border-radius: 99px;
-
-  input[type='radio'] {
-    display: none;
-  }
-
   &:hover {
     color: var(--c-primary);
     background-color: var(--c-yellow);
@@ -130,7 +127,7 @@
   background-color: #f5dd9f;
 }
 .container [id='Dim'] {
-  background-color: #16202a;
+  background-color: rgb(21, 41, 39);
 }
 
 :global(.light):root {

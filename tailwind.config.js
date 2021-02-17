@@ -1,6 +1,5 @@
 const { boxShadow } = require('tailwindcss/defaultTheme')
 module.exports = {
-  darkMode: 'class',
   purge: [
     './pages/*.tsx',
     './pages/**/*.tsx',
@@ -46,9 +45,10 @@ module.exports = {
     extend: {
       borderWidth: ['group-hover', 'first'],
       borderRadius: ['responsive', 'hover', 'focus', 'group-hover'],
-      textDecoration: [ 'hover', 'group-hover'],
+      textDecoration: ['hover', 'group-hover'],
       boxShadow: ['active', 'focus']
     },
+    fontSize: ['group-hover'],
     textColor: ['responsive', 'hover', 'focus', 'group-hover'],
     backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
     translate: ['hover', 'focus', 'group-hover'],
