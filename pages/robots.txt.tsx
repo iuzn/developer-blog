@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 export default class Robots extends Component {
-    static getInitialProps({ res }) {
+    static getInitialProps({ res }: { res: any}) {
         res.setHeader("Content-Type", "text/plain");
         res.write(`Sitemap: https://dev.ibrahimuzun.com/api/sitemap.xml
 User-agent: *
