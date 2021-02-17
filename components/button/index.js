@@ -3,10 +3,10 @@ import cn from 'classnames'
 import Link from 'next/link'
 import styles from './style.module.css'
 
-function LinkButton({ href, children, ...props }) {
+function LinkButton({ href, alt, children, ...props }) {
   return (
-    <Link href={href}>
-      <a {...props}>{children}</a>
+    <Link  href={href}>
+      <a  {...props}>{children}</a>
     </Link>
   )
 }

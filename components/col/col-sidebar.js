@@ -32,13 +32,14 @@ function Sidebar({ flat }) {
             const selected = router.asPath === menu.path
             return (
               <NavigationButton
-                  alt={menu.title}
+                alt={menu.title}
                 key={menu.key}
                 selected={selected}
                 href={menu.path}
                 className={styles.navButton}
               >
-                {selected ? menu.iconSelected : menu.icon}{menu.title}
+                {selected ? menu.iconSelected : menu.icon}
+                {menu.title}
               </NavigationButton>
             )
           })}

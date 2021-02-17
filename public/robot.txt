@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://dev.ibrahimuzun.com/sitemap.xml
+Sitemap: https://dev.ibrahimuzun.com/api/sitemap.xml

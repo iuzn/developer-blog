@@ -11,6 +11,8 @@ function NavigationButton({ alt, href, selected, children, className, ...props }
         selected && styles.navButtonSelected,
         className
       )}
+      alt={alt}
+
       href={href}
       {...props}
     >

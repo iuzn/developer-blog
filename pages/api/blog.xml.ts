@@ -4,7 +4,7 @@ import { getBlogTable } from "../../core/blog";
 import { BlogPost } from "../../types/blog";
 import { config } from "../../config";
 
-export default async (_req: NextApiRequest, res: NextApiResponse) => {
+export default  async (_req: NextApiRequest, res: NextApiResponse) => {
   const posts = await getBlogTable<BlogPost>(config.notionBlogTableId);
   const filteredPosts = posts
     .filter((post) => process.env.NODE_ENV === "development" || post.published)
