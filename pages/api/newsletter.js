@@ -30,22 +30,17 @@ export default async (req, res) => {
 
   if (!email || !email.length) {
     return res.status(400).json({
-      error: 'E-postanızı eklemeyi mi unuttunuz?'
+      error: `E-postanızı eklemeyi mi unuttunuz?`
     })
   }
 
   try {
     const { url, data, headers } = getRequestParams(email)
-
-    const response = await axios.post(url, data, { headers })
-
-    // Success
-    return res.status(201).json({ error: `Hatalı!` })
+     await axios.post(url, data, { headers })
+    return res.status(201).json({ error: `Hata` })
   } catch (error) {
     return res.status(400).json({
       error: `Hata sende değil, bir şeyler ters gitti. Bana dev@ibrahimuzun.com adresinden bir e-posta gönder, seni listeye ekleyeyim.`
     })
-
-    // Report error to Sentry or whatever
   }
 }
