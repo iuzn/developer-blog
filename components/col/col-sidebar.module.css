@@ -65,10 +65,15 @@
   flex-direction: column;
   align-items: center;
   font-size: 0;
-  svg{
-      font-size: 1.2rem;
-
+  && svg{
+      font-size: 6vw;
   }
+  @media (--m) {
+    svg{
+      font-size: 1.2rem;
+  }
+  }
+
 }
 .navButton:active {
   svg {
