@@ -1,4 +1,3 @@
-// pages/404.js
 import React from 'react'
 import { Footer } from '../components/sections/footer'
 import { NextSeo } from 'next-seo'
@@ -15,7 +14,6 @@ export default function Custom404() {
         description="Böyle bir şey yok"
       />
       <Header title={'Böyle bir şey yok'} />
-
       <div className="h-screen flex items-center">
         <div className="container flex flex-col md:flex-row items-center justify-center px-5">
           <div className="max-w-md">
@@ -24,14 +22,14 @@ export default function Custom404() {
               Üzgünüm, böyle bir sayfa mevcut değil.{' '}
             </p>
             <p className="mb-8 font-sans pb-8">
-              Bütün içeriklere göz atmak istiyorsanız, ana sayfadan keşfetmeye başlayabilirsiniz.
+              Bütün içeriklere göz atmak istiyorsanız, ana sayfadan keşfetmeye
+              başlayabilirsiniz.
             </p>
 
             <LinkedButton href={'/'}>Ana Sayfaya Dön</LinkedButton>
           </div>
         </div>
       </div>
-
       <Footer />
     </Layout>
   )

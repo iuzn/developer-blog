@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }) {
   }
 
   useEffect(() => {
-    document.documentElement.lang = "tr"
+    document.documentElement.lang = 'tr'
     if (!theme) return
     const $html = document.querySelector('html')
     $html.classList.remove('light')
@@ -39,10 +39,7 @@ function MyApp({ Component, pageProps }) {
         />
 
         <link rel="shortcut icon" href={process.env.NEXT_PUBLIC_FAVICON_URL} />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <title>{siteTitle}</title>
       </Head>
