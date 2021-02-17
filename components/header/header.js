@@ -30,7 +30,7 @@ function Header(props) {
             alt="Temayı değiştir."
           className={styles.buton}
           onClick={() => isShowModset(!isShowMod)}
-        >
+        >Temayı Değiştir
           <ModFilled />
         </Button>
         {isShowMod && <ModSelect onClick={() => isShowModset(false)} />}

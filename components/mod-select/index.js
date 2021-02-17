@@ -37,7 +37,7 @@ function ModSelect({ onClick = () => {} }) {
     <div className={styles.overlay}>
       <div ref={ref} className={styles.mod}>
         <Button className={styles.kapat} onClick={onClick} type="button" >
-          <Kapat />
+          Kapat<Kapat />
         </Button>
         <h2>Bir Tema Seçin</h2>
 

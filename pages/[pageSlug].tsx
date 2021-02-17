@@ -48,7 +48,7 @@ export const getStaticProps: GetStaticProps<
   )
 
   if (!post || (!post.published && process.env.NODE_ENV !== 'development')) {
-    throw Error(`Failed to find post for slug: ${slug}`)
+    throw Error(`Bu adres için gönderi bulunamadı: ${slug}`)
   }
 
   const blocks = await getPageBlocks(post.id)
@@ -69,11 +69,11 @@ const BlogPosts: React.FC<PostProps> = ({ post, blocks }) => {
     return (
       <>
         <Layout>
-          <Header title={'Loading'} />
-          <div className={'pt-4 flex justify-center'}>
-            <Loading />
+          <Header title={'Yükleniyor...'} />
+          <div className="m-40 flex content-center justify-center">
+            <Loading size={50} />
           </div>
-          <div className={'bottom-0'}>
+          <div className="bottom-0 fixed self-center">
             <Footer />
           </div>
         </Layout>

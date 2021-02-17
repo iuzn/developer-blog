@@ -10,25 +10,24 @@ export default function Custom404() {
   return (
     <Layout>
       <NextSeo
-        title={'404 - No such thing'}
+        title={'Hata'}
         titleTemplate={'%s'}
-        description="No such thing"
+        description="Böyle bir şey yok"
       />
-      <Header title={'No such thing'} />
+      <Header title={'Böyle bir şey yok'} />
 
       <div className="h-screen flex items-center">
         <div className="container flex flex-col md:flex-row items-center justify-center px-5">
           <div className="max-w-md">
-            <div className="text-5xl font-bold pb-12">404 Error</div>
+            <div className="text-5xl font-bold pb-12"> ⚠ HATA ⚠</div>
             <p className="text-2xl md:text-3xl font-light leading-normal font-sans pb-4">
-              Sorry, there is no such thing.{' '}
+              Üzgünüm, böyle bir sayfa mevcut değil.{' '}
             </p>
             <p className="mb-8 font-sans pb-8">
-              If you want to browse all content, you can start exploring on the
-              homepage.
+              Bütün içeriklere göz atmak istiyorsanız, ana sayfadan keşfetmeye başlayabilirsiniz.
             </p>
 
-            <LinkedButton href={'/'}>Return to Homepage</LinkedButton>
+            <LinkedButton href={'/'}>Ana Sayfaya Dön</LinkedButton>
           </div>
         </div>
       </div>

@@ -26,7 +26,7 @@ const ScrollToTop = () => {
   return (
     <div onClick={scrollToTop}>
       <NavigationButton className={styles.icon}>
-        <ArrowToTop />
+        Yukarı Çık<ArrowToTop />
       </NavigationButton>
     </div>
   )

@@ -33,6 +33,7 @@
   place-self: center;
 }
 .buton {
+  font-size: 0;
   svg {
     background-color: transparent;
     font-size: 30px;

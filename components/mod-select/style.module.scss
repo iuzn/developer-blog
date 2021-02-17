@@ -110,8 +110,11 @@
   display: grid;
   grid-row-end: auto;
   margin: -15px -15px auto auto;
-  font-size: 30px;
+  font-size: 0;
   color: var(--c-yellow);
+  svg {
+    font-size: 30px;
+  }
 }
 .kapat:hover {
   svg {
@@ -223,7 +226,6 @@
   animation-timing-function: linear;
   animation-delay: 0s;
   animation-iteration-count: infinite;
-  animation-direction: reverse-alternate;
 }
 .wrapper h3.glitch::after {
   left: -3px;
@@ -233,7 +235,6 @@
   animation-timing-function: linear;
   animation-delay: 0s;
   animation-iteration-count: infinite;
-  animation-direction: reverse-alternate;
 }
 
 @keyframes glitch-animation-1 {

@@ -869,3 +869,6 @@ img.notion-nav-icon {
   margin: 0 2px;
   color: rgba(55, 53, 47, 0.4);
 }
+.blend{
+  mix-blend-mode: multiply;
+}
