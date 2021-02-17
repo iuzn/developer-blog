@@ -17,7 +17,4 @@ export const generateSitemap = (posts: BlogPost[],project:Project[] ): string =>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${posts.map(generateSitemapBlog).join("")}
   ${project.map(generateSitemapProject).join("")}
-
-}
-}
 </urlset>`;
