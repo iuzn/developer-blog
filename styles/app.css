@@ -77,6 +77,16 @@ a:focus-visible {
   box-shadow: 0 0 0 2pt rgb(220, 63, 22);
 }
 
+::-moz-selection {
+  color: var(--c-primary);
+  background: var(--c-yellow-60);
+}
+
+::selection {
+  color: var(--c-primary);
+  background: var(--c-yellow);
+}
+
 .button-primary {
   cursor: pointer;
   background: var(--c-yellow);

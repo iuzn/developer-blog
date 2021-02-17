@@ -3,6 +3,7 @@ import { Bookmark as BookmarkData } from '../../types/bookmark'
 import { toNotionImageUrl } from '../../core/notion'
 import Link from 'next/link'
 import { dateFormatter } from '../../core/utils'
+import clsx from 'clsx'
 
 export const Bookmark: React.FC<
   BookmarkData & {
@@ -27,8 +28,8 @@ export const Bookmark: React.FC<
             />
           )}
           {!images && (
-            <div className="flex justify-center items-center h-32 w-full object-cover md:w-48 sm:w-full rounded-large group-hover:bg-color-secondary bg-color-secondary-60">
-              <p className="group-hover:text-3xl text-4xl sm:text-4xl group-hover:animate-bounce transition-all ease-in-out duration-200 color-secondary">
+            <div className="flex justify-center items-center h-32 w-full object-cover md:w-48 sm:w-full group-hover:bg-color-secondary rounded-large bg-color-secondary-60">
+              <p className="group-hover:text-3xl text-2xl group-hover:animate-bounce transition-all	 ease-in-out duration-200 transform color-secondary">
                 {tags && tags[0]}
                 {tags[0].length < 1 &&
                   dateFormatter.format(new Date(created)).slice(0, -4)}
@@ -39,7 +40,7 @@ export const Bookmark: React.FC<
             <div className="flex justify-center items-center h-32 w-full object-cover md:w-48 sm:w-full group-hover:bg-color-secondary rounded-large bg-color-secondary-60">
               <p className="group-hover:text-3xl text-2xl group-hover:animate-bounce transition-all	 ease-in-out duration-200 transform color-secondary">
                 {tags[0]}
-              </p>{' '}
+              </p>
             </div>
           )}
         </div>
@@ -56,14 +57,18 @@ export const Bookmark: React.FC<
           <p className="inline-flex mr-4 color-primary-60 md:group-hover:color-secondary">
             {new URL(link).hostname}
           </p>
-          {tags.map((tag) => (
-            <div
-              key={tag}
-              className="inline-flex items-center px-3 py-1 rounded-large text-sm font-medium leading-5 mr-2 bg-color-secondary color-secondary md:group-hover:color-primary group-hover:color-secondary md:group-hover:bg-color-primary group-hover:bg-color-secondary"
-            >
-              {tag}
-            </div>
-          ))}
+          {tags &&
+            tags.map((tag) => (
+              <p
+                key={tag}
+                className={clsx(
+                  tags[0].length < 1 && 'hidden',
+                  'inline-flex items-center px-3 py-1 rounded-large text-sm font-medium leading-5 mr-2 bg-color-secondary color-secondary md:group-hover:color-primary group-hover:color-secondary md:group-hover:bg-color-primary group-hover:bg-color-secondary'
+                )}
+              >
+                {tag}
+              </p>
+            ))}
         </div>
       </div>
     </a>

@@ -19,6 +19,7 @@ function ModSelect({ onClick = () => {} }) {
     if(event.keyCode === 27) {
       onClick()
     }
+
   }, []);
   useEffect(() => {
     document.addEventListener("keydown", escFunction,true);
