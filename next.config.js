@@ -22,7 +22,7 @@ const withSvgr = (nextConfig = {}, nextComposePlugins = {}) => {
 module.exports = withPlugins([withSvgr], {
   images: {
     loader: 'imgix',
-    path: '',
+    domains: ['ssfy.io', 'raw.githubusercontent.com'],
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')]
