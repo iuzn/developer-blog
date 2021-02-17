@@ -15,7 +15,7 @@ export const Bookmark: React.FC<
     <a
       rel="noopener"
       aria-label={`${title} - Yer İmi`}
-      className="flex"
+      className="flex group"
       target="_blank"
     >
       <div className="group md:flex p-2 items-center transition duration-150 ease-in-out transform  rounded-large">

@@ -51,7 +51,7 @@ export const Projects: React.FC<{
   preview?: boolean
 }> = ({ project, preview }) => (
   <div className="container pb-8">
-    <div className="m-auto max-w-3xl pb-8">
+    <div className="m-auto max-w-3xl pb-4">
       <h1 className="text-4xl font-bold">{preview && 'Projeler'}</h1>
       <div className="text-2xl ">{preview && 'Kendi yaptığım ve dahil olduğum bazı işler'}</div>
     </div>

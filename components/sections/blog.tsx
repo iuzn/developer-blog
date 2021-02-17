@@ -11,7 +11,7 @@ export const BlogPost: React.FC<
     className?: string
   }
 > = ({ title, preview, video, showVideo, featured, slug, images }) => (
-  <div className={clsx(styles.post, 'mb-8', featured && 'mb-16')}>
+  <div className={clsx(styles.post, 'mb-8', featured && 'mb-8')}>
     {featured &&
       (showVideo ? (
         <div className="pb-2/3 aspect-16x9 bg-gray-100 relative border-b overflow-hidden">
@@ -33,7 +33,7 @@ export const BlogPost: React.FC<
         </div>
       ))}
 
-    <div className="flex flex-1 flex-col justify-between ">
+    <div className="flex flex-1 flex-col justify-between pb-6">
       <div className="p-4 pb-10 ">
         <div className="font-semibold text-xl pb-2">{title}</div>
         <div className={clsx(!featured && 'text-sm')}>
@@ -72,7 +72,7 @@ export const Blog: React.FC<{
 
     {preview && (
       <div className="container">
-        <div className="m-auto max-w-3xl">
+        <div className="m-auto max-w-3xl pb-4">
           <h1 className="text-4xl font-bold">Blog</h1>
           <div className="text-2xl ">Tasarım, Web, Teknoloji</div>
         </div>
