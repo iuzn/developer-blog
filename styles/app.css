@@ -124,8 +124,12 @@ a:focus-visible {
 
 .bg-box-primary {
   background-color: var(--c-primary);
-  box-shadow: 0 10px 15px -3px var(--c-shadow-10),
-    0 4px 6px -2px var(--c-shadow-5);
+  box-shadow:
+              0 1px 1px   var(--c-yellow-10),
+              0 2px 2px   var(--c-shadow-10),
+              0 4px 4px   var(--c-yellow-10),
+              0 6px 8px   var(--c-shadow-10),
+              0 8px 16px var(--c-yellow-10)
 }
 .notion {
   padding-top: 1rem;

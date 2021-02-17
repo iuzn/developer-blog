@@ -20,6 +20,10 @@ const withSvgr = (nextConfig = {}, nextComposePlugins = {}) => {
 };
 
 module.exports = withPlugins([withSvgr], {
+  images: {
+    loader: 'imgix',
+    path: '',
+  },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')]
   }

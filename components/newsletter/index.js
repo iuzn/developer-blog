@@ -20,25 +20,17 @@ const Newsletter = () => {
   }
 
 const loadingnotify = () => toast.loading('Bekleyin..',{
-  duration: 1000,
+  duration: 800,
 });
 const successnotify = () => toast.success('E-postanız başarıyla listeye eklendi.', {
     duration: 8000,
-    style: {
-      border: '1px solid #047100',
-      padding: '16px',
-      color: '#047100'
-    },
-    iconTheme: {
-      primary: '#047100',
-      secondary: '#FFFAEE'
-    }
+
   });
 const errornotify = () => toast.error(`${errorMessage}`, {
     role: 'status',
     ariaLive: 'polite'
   });
-{state === "" && toast.remove(loadingnotify())}
+{  state === "" && toast.remove(loadingnotify())}
   return (
     <div className="flex flex-col items-center p-8 m-10 bg-color-secondary rounded-large">
 
@@ -69,7 +61,17 @@ const errornotify = () => toast.error(`${errorMessage}`, {
           onClick={subscribe}
           className="button-primary rounded text-white py-3 px-6 cursor-pointer"
         />
-        <Toaster position="bottom-right" reverseOrder={false} />
+        <Toaster toastOptions={
+
+        {
+    className: "bg-color-secondary",
+    style: {
+      color:'var(--c-text-color)',
+      padding: '16px',
+      backgroundColor:'var(--c-primary-80)',
+      backdropFilter:'saturate(150%) blur(10px)'
+    },
+  }} position="bottom-right" reverseOrder={false} />
       </form>
     </div>
   )
