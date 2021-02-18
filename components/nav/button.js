@@ -12,11 +12,9 @@ function NavigationButton({ alt, href, selected, children, className, ...props }
         className
       )}
       alt={alt}
-
       href={href}
       {...props}
-    >
-      {children}
+    >{children}
     </Button>
   )
 }

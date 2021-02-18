@@ -5,6 +5,7 @@
 }
 
 .navButton {
+  font-size: 0;
   & + & {
     margin-top: 8px;
   }

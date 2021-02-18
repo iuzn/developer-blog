@@ -21,7 +21,7 @@ function Navigation({ flat }) {
             href={menu.path}
             className={styles.navButton}
           >
-            {selected ? menu.iconSelected : menu.icon}
+            {selected ? menu.iconSelected : menu.icon}{menu.title}
             {showTitle && <TextTitle>{menu.title}</TextTitle>}
           </NavigationButton>
         )

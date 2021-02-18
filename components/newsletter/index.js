@@ -45,7 +45,9 @@ const Newsletter = () => {
         En son yazdığım blog yazılarından haberdar olmak için e-postanızı girin.
       </p>
       <form className="flex border-secondary bg-color-primary  sm:block mt-6 rounded-full p-px animate-wiggle">
+        <label htmlFor={email}>
         <input
+            id={email}
           className={clsx(
             'py-3 px-3 border-none bg-transparent w-full sm:w-64 focus:ring-0 focus:outline-none',
           )}
@@ -63,6 +65,7 @@ const Newsletter = () => {
           onClick={subscribe}
           className="button-primary rounded text-white py-3 px-6 cursor-pointer"
         />
+        </label>
         <Toaster
           toastOptions={{
             className: 'bg-color-secondary',

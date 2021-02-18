@@ -32,7 +32,6 @@ const BlogPage = ({ blogpost }: AppProps) => (
     <Layout>
       <Header />
       <Blog blogpost={blogpost} />
-
       <Footer />
     </Layout>
   </>
