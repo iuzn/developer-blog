@@ -15,7 +15,7 @@ function Layout({ children }) {
     <div className={cn(styles.layout)}>
       <Sidebar flat={size.width < CONST.DESKTOP_SIZE}>sidebar</Sidebar>
 
-      <Main>
+      <Main flat={size.width < CONST.DESKTOP_SIZE}>
         {children}
 
         <ScrollToTop />

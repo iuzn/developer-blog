@@ -27,7 +27,7 @@ export const BlogPost: React.FC<
         <div className="pb-2/3 aspect-16x9 bg-gray-100 relative border-b overflow-hidden">
           <img
             className={clsx('absolute w-full h-full object-cover')}
-            src={toNotionImageUrl(images[0].url)}
+            src={toNotionImageUrl(images[0].url.replace("&width=600", "&width=982"))}
             alt={title}
           />
         </div>
@@ -45,7 +45,7 @@ export const BlogPost: React.FC<
     {!featured && (
       <img
         className={clsx('rounded-br-large absolute w-full h-full object-cover')}
-        src={toNotionImageUrl(images[0].url)}
+        src={toNotionImageUrl(images[0].url.replace("&width=600", "&width=235"))}
         alt={title}
       />
     )}

@@ -25,7 +25,7 @@ export const Project: React.FC<
           {images && images[0] && (
             <img
               className={clsx('absolute w-full h-full object-cover')}
-              src={toNotionImageUrl(images[0].url)}
+              src={toNotionImageUrl(images[0].url.replace("&width=600", "&width=320"))}
               alt={title}
             />
           )}

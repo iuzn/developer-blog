@@ -15,15 +15,15 @@ export const Bookmark: React.FC<
     <a
       rel="noopener"
       aria-label={`${title} - Yer İmi`}
-      className="flex group"
+      className="flex group "
       target="_blank"
     >
-      <div className="group md:flex p-2 items-center transition duration-150 ease-in-out transform  rounded-large">
-        <div className="md:flex-shrink-0 lg:mr-0 md:mr-4 transition duration-150 ease-in-out transform group-hover:scale-110 ">
+      <div className="group md:flex p-2 mr-auto ml-auto md:ml-0 items-center transition duration-150 ease-in-out transform  rounded-large">
+        <div className="md:flex-shrink-0  lg:mr-0 md:mr-4 transition duration-150  ease-in-out transform group-hover:scale-110 ">
           {images && images[0] && (
             <img
-              className="h-32 w-full object-cover md:w-48 sm:w-full rounded-large "
-              src={toNotionImageUrl(images[0].url)}
+              className="h-48 md:h-32 w-full object-cover md:w-56 sm:w-full rounded-large "
+              src={toNotionImageUrl(images[0].url.replace("&width=600", "&width=192"))}
               alt={title}
             />
           )}
