@@ -3,6 +3,7 @@
   align-items: center;
   width: 100%;
   box-sizing: border-box;
+  z-index: 2;
 }
 .image {
   flex-shrink: 0;
@@ -22,6 +23,13 @@
     border-radius: 999px;
   }
 }
+.button{
+flex-shrink: 0;
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
 .title {
   display: none;
   @media (--d) {
@@ -35,8 +43,59 @@
     font-weight: bold;
   }
 }
+.overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--c-primary-40);
+  z-index: 2;
+  backdrop-filter: saturate(150%) blur(10px);
+}
 
-.photo {
-  cursor: url('https://raw.githubusercontent.com/iuzn/assets/master/Website/nazar.png'),
-    auto;
+.overlay {
+  -webkit-animation: in var(--fade) ease-in-out 0s;
+  animation: in var(--fade) ease-in-out 0s;
+}
+
+.kapat {
+  display: flex;
+  margin-left: auto;
+  margin-right: 25px;
+  margin-bottom: 15px;
+  font-size: 0;
+  svg {
+
+  color: var(--c-primary);
+    border-radius: 99px;
+    background-color: var(--c-yellow);
+    font-size: 30px;
+  }
+}
+.kapat:hover {
+  svg {
+    color: var(--c-primary);
+    background-color: rgb(220, 63, 22);
+  }
+}
+@-webkit-keyframes in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

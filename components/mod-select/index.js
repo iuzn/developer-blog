@@ -29,10 +29,10 @@ function ModSelect({ onClick = () => {} }) {
     };
   }, [onClick]);
 
-
   const ref = useOnclickOutside(() => {
     onClick()
   })
+
   return (
     <div className={styles.overlay}>
       <div ref={ref} className={styles.mod}>

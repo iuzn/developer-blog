@@ -46,25 +46,25 @@ const Newsletter = () => {
       </p>
       <form className="flex border-secondary bg-color-primary  sm:block mt-6 rounded-full p-px animate-wiggle">
         <label htmlFor={email}>
-        <input
+          <input
             id={email}
-          className={clsx(
-            'py-3 px-3 border-none bg-transparent w-full sm:w-64 focus:ring-0 focus:outline-none',
-          )}
-          type="text"
-          placeholder="E-posta Girin"
-          value={email}
-          onKeyPress={(e) => {
-            e.key === 'Enter' && subscribe() && e.preventDefault()
-          }}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="button"
-          value="Abone ol"
-          onClick={subscribe}
-          className="button-primary rounded text-white py-3 px-6 cursor-pointer"
-        />
+            className={clsx(
+              'py-3 px-3 border-none bg-transparent w-48 sm:w-64'
+            )}
+            type="text"
+            placeholder="E-posta Girin"
+            value={email}
+            onKeyPress={(e) => {
+              e.key === 'Enter' && subscribe() && e.preventDefault()
+            }}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="button"
+            value="Abone ol"
+            onClick={subscribe}
+            className="button-primary inline-block py-3 px-6 cursor-pointer"
+          />
         </label>
         <Toaster
           toastOptions={{

@@ -51,10 +51,39 @@ export const MENU= [
     title: 'Yer imleri'
   }
 ]
+export const LINK = [
 
-
-
-
+      {
+    key: 'instagram',
+    href: 'https://www.instagram.com/ibrahimuzuncom',
+    icon: <Icon.Instagram/>,
+    title: 'Instagram'
+  },
+      {
+    key: 'twitter',
+    href: 'https://www.twitter.com/ibrahimuzn',
+    icon: <Icon.Twitter/>,
+    title: 'Twitter'
+  },
+      {
+    key: 'Linkedin',
+    href: 'https://www.linkedin.com/in/ibuzn',
+    icon: <Icon.Linkedin/>,
+    title: 'Linkedin'
+  },
+      {
+    key: 'github',
+    href: 'https://www.github.com/iuzn',
+    icon: <Icon.Github/>,
+    title: 'Github'
+  },
+      {
+    key: 'figma',
+    href: 'https://www.figma.com/@ibrahim',
+    icon: <Icon.Figma/>,
+    title: 'Figma'
+  },
+]
 export const IMG = [
   {
     src: process.env.NEXT_PUBLIC_AVATAR_URL,

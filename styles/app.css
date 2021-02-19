@@ -86,7 +86,12 @@ a:focus-visible {
   color: var(--c-primary);
   background: var(--c-yellow);
 }
+.shadow{
 
+  -webkit-box-shadow: 0 0 50px 10px var(--c-yellow);
+  -moz-box-shadow: 0 0 50px 10px var(--c-primary);
+  box-shadow: 0 20px 80px -40px var(--c-yellow);
+}
 .button-primary {
   cursor: pointer;
   background: var(--c-yellow);
@@ -104,6 +109,9 @@ a:focus-visible {
 
 .border-primary {
   border: 1px solid var(--c-yellow);
+}
+.border-primary-2 {
+  border: 2px solid var(--c-yellow);
 }
 
 .border-secondary {

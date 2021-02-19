@@ -8,12 +8,17 @@ import { MENU } from '../../constants'
 import { useRouter } from 'next/router'
 import Button from '../button'
 import { ModFilled } from '../icons'
+import Profile from '../profile-box/profile';
 
 function Header(props) {
   const router = useRouter()
   const [isShowMod, isShowModset] = useState(false)
   return (
     <div className={cn(styles.header)}>
+      <div className={styles.profile}>
+        <Profile/>
+
+      </div>
       <div className={styles.headertext}>
         {MENU.map((menu) => {
           const selected = router.pathname === menu.path

@@ -28,6 +28,7 @@ module.exports = {
     },
     borderRadius: {
       default: '4px',
+      medium: '8px',
       large: '24px',
       full: '9999px'
     },
@@ -48,7 +49,9 @@ module.exports = {
       textDecoration: ['hover', 'group-hover'],
       boxShadow: ['active', 'focus']
     },
-    fontSize: ['group-hover'],
+    margin:['hover'],
+    gap:['hover'],
+    fontSize: ['group-hover', 'hover'],
     textColor: ['responsive', 'hover', 'focus', 'group-hover'],
     backgroundColor: ['responsive', 'hover', 'focus', 'group-hover'],
     translate: ['hover', 'focus', 'group-hover'],

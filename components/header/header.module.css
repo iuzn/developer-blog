@@ -2,18 +2,26 @@
   box-sizing: border-box;
   align-items: center;
   display: grid;
-  grid-template-columns: auto 80px;
   border-bottom: 1px solid var(--c-border);
   border-right: 1px solid var(--c-border);
   height: 54px;
   position: sticky;
   justify-self: flex-end;
   top: 0;
-  z-index: 999;
+  z-index: 4;
   background-color: var(--c-primary);
-  @media (--d) {
-    color: var(--c-text-color);
+
+  @media (--m) {
+  grid-template-columns: 80px auto 80px;
+
   }
+    @media (--t) {
+    grid-template-columns: auto 80px;
+
+  }
+   grid-template-columns: 0 auto 80px;
+  color: var(--c-text-color);
+
 }
 
 .headertext {
@@ -22,8 +30,13 @@
   padding-left: 15px;
   font-weight: bold;
   color: var(--c-yellow);
+  text-align: center;
+  @media (--t) {
 
+  text-align: left; }
   @media (--d) {
+
+  text-align: left;
     color: var(--c-text-color);
   }
 }
@@ -31,6 +44,18 @@
 .modselect {
   display: block;
   place-self: center;
+}
+
+.profile {
+  place-self: center;
+   display: block;
+  visibility: visible;
+  width: 36px;
+    @media (--t) {
+    display: none;
+    visibility: hidden;
+
+  }
 }
 .buton {
   font-size: 0;

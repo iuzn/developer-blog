@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import cn from 'classnames'
 import styles from './col-sidebar.module.css'
 import Navigation from '../nav/navigation'
-import ProfileBox from '../profile-box/'
+import Profile from '../profile-box/profile'
 import FooterBox from '../footer-box/footer-box'
 import { MENU } from '../../constants'
 import NavigationButton from '../nav/button'
@@ -47,7 +47,7 @@ function Sidebar({ flat }) {
       </div>
       <div className={cn(styles.sidebar)}>
         <div className={styles.profile}>
-          <ProfileBox flat={flat} />
+          <Profile flat={flat} />
         </div>
         <div className={styles.navigation}>
           <Navigation flat={flat} />
