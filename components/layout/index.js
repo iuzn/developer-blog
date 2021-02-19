@@ -13,9 +13,9 @@ function Layout({ children }) {
   const size = useWindowSize()
   return (
     <div className={cn(styles.layout)}>
-      <Sidebar flat={size.width < CONST.DESKTOP_SIZE}>sidebar</Sidebar>
+      <Sidebar mobile={size.width < CONST.TABLET_SIZE} flat={size.width < CONST.DESKTOP_SIZE}>sidebar</Sidebar>
 
-      <Main flat={size.width < CONST.DESKTOP_SIZE}>
+      <Main >
         {children}
 
         <ScrollToTop />

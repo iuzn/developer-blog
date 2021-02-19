@@ -8,7 +8,7 @@ import { MENU } from '../../constants'
 import NavigationButton from '../nav/button'
 import { useRouter } from 'next/router'
 
-function Sidebar({ flat }) {
+function Sidebar({ flat, mobile }) {
   useEffect(() => {
     let prevScrollpos = window.pageYOffset
     window.onscroll = function () {
@@ -47,7 +47,7 @@ function Sidebar({ flat }) {
       </div>
       <div className={cn(styles.sidebar)}>
         <div className={styles.profile}>
-          <Profile flat={flat} />
+          <Profile flat={flat} mobile={mobile} />
         </div>
         <div className={styles.navigation}>
           <Navigation flat={flat} />

@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react'
 import { IMG } from '../../constants'
 import styles from './style.module.css'
-import ProfileBox from './profil-box';
+import ProfileBox from './profil-box'
 
-function Profile() {
-    const [isShowProfile, isShowProfileset] = useState(false)
+function Profile({flat,mobile}) {
+  const [isShowProfile, isShowProfileset] = useState(false)
 
   return (
     <div className={styles.box}>
@@ -12,14 +12,22 @@ function Profile() {
         return (
           <div key={img.src}>
             <div>
-              <button onClick={() => isShowProfileset(!isShowProfile)} className={styles.button}><img
-className={styles.image}
-                src={img.src}
-                alt={img.alt}
-              /></button>
+              <button
+                onClick={() => isShowProfileset(!isShowProfile)}
+                className={styles.button}
+              >
+                <img
+                  className={styles.image}
+                  src={img.src.concat(!flat && '?s=120'|| !mobile && '?s=46' || '?s=36') }
+                  alt={img.alt}
+                  width={!flat && '120'|| !mobile && '46' || '36'}
+                  height={!flat && '120'|| !mobile && '46' || '36'}
+                />
+              </button>
 
-        {isShowProfile && <ProfileBox onClick={() => isShowProfileset(false)} />}
-
+              {isShowProfile && (
+                <ProfileBox mobile={mobile} onClick={() => isShowProfileset(false)} />
+              )}
             </div>
 
             <div>

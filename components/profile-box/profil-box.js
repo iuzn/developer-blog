@@ -5,8 +5,7 @@ import useOnclickOutside from 'react-cool-onclickoutside'
 import Button from '../button'
 import Kapat from '../icons/Kapat'
 
-
-function ProfileBox({ onClick = () => {} }) {
+function ProfileBox({ mobile, onClick = () => {} }) {
   const escFunction = useCallback((event) => {
     if (event.keyCode === 27) {
       onClick()
@@ -40,9 +39,10 @@ function ProfileBox({ onClick = () => {} }) {
                       return (
                         <img
                           key={img.name}
-                          src={img.src}
+                          src={img.src.concat('?s=120')}
+                          width={'120'}
+                          height={'120'}
                           className="rounded-full h-auto align-middle border-primary-2 border-4 absolute -m-16"
-                          style={{ maxWidth: '150px' }}
                           alt={img.alt}
                         />
                       )
