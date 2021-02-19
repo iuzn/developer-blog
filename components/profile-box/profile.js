@@ -26,7 +26,7 @@ function Profile({flat,mobile}) {
               </button>
 
               {isShowProfile && (
-                <ProfileBox mobile={mobile} onClick={() => isShowProfileset(false)} />
+                <ProfileBox onClick={() => isShowProfileset(false)} />
               )}
             </div>
 

@@ -5,7 +5,7 @@ import useOnclickOutside from 'react-cool-onclickoutside'
 import Button from '../button'
 import Kapat from '../icons/Kapat'
 
-function ProfileBox({ mobile, onClick = () => {} }) {
+function ProfileBox({  onClick = () => {} }) {
   const escFunction = useCallback((event) => {
     if (event.keyCode === 27) {
       onClick()
