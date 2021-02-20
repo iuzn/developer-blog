@@ -33,10 +33,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <StoreContext.Provider value={{ siteTitle, theme, changeTheme }}>
       <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-          rel="stylesheet"
-        />
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
 
         <link rel="shortcut icon" href={process.env.NEXT_PUBLIC_FAVICON_URL} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
