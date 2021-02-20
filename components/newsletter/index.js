@@ -2,8 +2,14 @@ import { useState } from 'react'
 import axios from 'axios'
 import toast, { Toaster } from 'react-hot-toast'
 import clsx from 'clsx'
+import useWindowSize from '../../Hooks/useWindowSize'
+import CONST from '../../constants'
 
 const Newsletter = () => {
+
+  const windowsize = useWindowSize()
+  const ismobile = windowsize.width < CONST.TABLET_SIZE
+
   const [email, setEmail] = useState('')
   const [state, setState] = useState('IDLE')
   const [errorMessage, setErrorMessage] = useState(null)
@@ -29,7 +35,7 @@ const Newsletter = () => {
       duration: 8000
     })
   const errornotify = () =>
-    toast.error(`${errorMessage}`, {
+    toast.error(`${errorMessage === null && "Hatalı bir giriş!" || errorMessage}`, {
       role: 'status',
       ariaLive: 'polite'
     })
@@ -73,10 +79,12 @@ const Newsletter = () => {
               color: 'var(--c-text-color)',
               padding: '16px',
               backgroundColor: 'var(--c-primary-80)',
-              backdropFilter: 'saturate(150%) blur(10px)'
+              backdropFilter: 'saturate(150%) blur(10px)',
+              border: '1px solid var(--c-border)',
+              marginTop:`${!ismobile ? "0" : "60px"}`
             }
           }}
-          position="bottom-right"
+          position={!ismobile ? "bottom-right" : "top-center"}
           reverseOrder={false}
         />
       </form>

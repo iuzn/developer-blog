@@ -1,41 +1,48 @@
 import React, { useState } from 'react'
-import { IMG } from '../../constants'
 import styles from './style.module.css'
 import ProfileBox from './profil-box'
+import { config } from '../../config'
+import useWindowSize from '../../Hooks/useWindowSize'
+import CONST from '../../constants'
 
-function Profile({flat,mobile}) {
+
+
+function Profile() {
   const [isShowProfile, isShowProfileset] = useState(false)
+  const windowsize = useWindowSize()
+  const ismobile = windowsize.width < CONST.TABLET_SIZE
+  const istablet = windowsize.width < CONST.DESKTOP_SIZE
+  let size
+  !istablet ? (size = '120') : !ismobile ? (size = '46') : (size = '36')
+  const source = config.avatarUrl.concat(`?s=${size}`)
+  const name = config.publicName
 
   return (
     <div className={styles.box}>
-      {IMG.map((img) => {
-        return (
-          <div key={img.src}>
-            <div>
-              <button
-                onClick={() => isShowProfileset(!isShowProfile)}
-                className={styles.button}
-              >
-                <img
-                  className={styles.image}
-                  src={img.src.concat(!flat && '?s=120'|| !mobile && '?s=46' || '?s=36') }
-                  alt={img.alt}
-                  width={!flat && '120'|| !mobile && '46' || '36'}
-                  height={!flat && '120'|| !mobile && '46' || '36'}
-                />
-              </button>
+      <div key={name}>
+        <div>
+          <button
+            onClick={() => isShowProfileset(!isShowProfile)}
+            className={styles.button}
+          >
+            <img
+              className={styles.image}
+              src={source}
+              alt={name}
+              width={size}
+              height={size}
+            />
+          </button>
 
-              {isShowProfile && (
-                <ProfileBox onClick={() => isShowProfileset(false)} />
-              )}
-            </div>
+          {isShowProfile && (
+            <ProfileBox onClick={() => isShowProfileset(false)} />
+          )}
+        </div>
 
-            <div>
-              <h2 className={styles.title}>{img.name}</h2>
-            </div>
-          </div>
-        )
-      })}
+        <div>
+          <h2 className={styles.title}>{name}</h2>
+        </div>
+      </div>
     </div>
   )
 }

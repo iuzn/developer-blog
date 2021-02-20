@@ -3,7 +3,7 @@ import React from 'react'
 
 
 export default {
-  TABLET_SIZE: 960,
+  TABLET_SIZE: 850,
   DESKTOP_SIZE: 1280
 }
 
@@ -83,11 +83,4 @@ export const LINK = [
     icon: <Icon.Figma/>,
     title: 'Figma'
   },
-]
-export const IMG = [
-  {
-    src: process.env.NEXT_PUBLIC_AVATAR_URL,
-    name: process.env.NEXT_PUBLIC_NAME,
-    alt: process.env.NEXT_PUBLIC_NAME
-  }
 ]

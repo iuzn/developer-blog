@@ -1,9 +1,11 @@
 import React, { useCallback, useEffect } from 'react'
-import { IMG, LINK } from '../../constants'
+import { LINK } from '../../constants'
 import styles from './style.module.css'
 import useOnclickOutside from 'react-cool-onclickoutside'
 import Button from '../button'
 import Kapat from '../icons/Kapat'
+import {config} from '../../config'
+
 
 function ProfileBox({  onClick = () => {} }) {
   const escFunction = useCallback((event) => {
@@ -35,37 +37,29 @@ function ProfileBox({  onClick = () => {} }) {
               <div className="px-6">
                 <div className="flex flex-wrap justify-center">
                   <div className="w-full lg:w-3/12 lg:order-2 flex justify-center ">
-                    {IMG.map((img) => {
-                      return (
                         <img
-                          key={img.name}
-                          src={img.src.concat('?s=120')}
+                          key={config.publicName}
+                          src={config.avatarUrl.concat('?s=120')}
                           width={'120'}
                           height={'120'}
                           className="rounded-full h-auto align-middle border-primary-2 border-4 absolute -m-16"
-                          alt={img.alt}
+                          alt={config.publicName}
                         />
-                      )
-                    })}
                   </div>
                 </div>
                 <div className="text-center mt-20">
-                  {IMG.map((img) => {
-                    return (
                       <h3
-                        key={img.name}
+                        key={config.publicName}
                         className="text-3xl font-semibold leading-normal mb-2 text-color-primary"
                       >
-                        {img.name}
+                        {config.publicName}
                       </h3>
-                    )
-                  })}
-
                   <div className="color-primary duration-150 flex gap-4 mt-10 text-5xl justify-center items-center ">
                     {LINK.map((link) => {
                       return (
                         <a
-                          className="hover:color-secondary  hover:bg-color-secondary bg-color-primary rounded-large color-primary flex-grow-0 flex-shrink-0 hover:m-0 transition-all duration-200 ease-in-out"
+                          className="hover:color-secondary  hover:bg-color-secondary bg-color-primary rounded-large color-primary flex-grow-0 flex-shrink-0 transition-all duration-200 ease-in-out"
+                          target={'_blank'}
                           key={link.key}
                           href={link.href}
                         >

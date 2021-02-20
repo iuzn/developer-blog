@@ -1,6 +1,5 @@
 import React from 'react'
 import cn from 'classnames'
-
 import useWindowSize from '../../Hooks/useWindowSize'
 import styles from './style.module.css'
 
