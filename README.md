@@ -13,7 +13,8 @@ I am not aware.
 - [ ] Pagenation
 - [ ] Image Optimizition (Responsive)
 - [ ] Detailed Theme Accessibility (Font, Color, Effects)
-- [ ] Infinite Scrool 
+- [ ] Infinite Scrool
+- [ ] Interchangeable Layout (May be a different design) 
 - [ ] One config file setup
 - [ ] Instagram Post Component
 - [ ] Twitter Post Component
