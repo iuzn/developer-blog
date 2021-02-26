@@ -19,5 +19,6 @@ I am not aware.
 - [ ] Youtube Post Component
 - [ ] Alternative Comment Service (Recently utteranc.es)
 - [ ] Alternative Notion Page Renderer (Recently react-notion)
+- [ ] Post Filter (Search all posts)
 
 If you want to code with me, [I'm a click away!](mailto:dev@ibrahimuzun.com?subject=[GitHub]%Developing%20new%20social%media)
