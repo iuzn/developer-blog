@@ -19,6 +19,7 @@ I am not aware.
 - [ ] Instagram Post Component
 - [ ] Twitter Post Component
 - [ ] Youtube Post Component
+- [ ] New Component Types Development Task
 - [ ] Alternative Comment Service (Recently utteranc.es)
 - [ ] Alternative Notion Page Renderer (Recently react-notion)
 - [ ] Post Filter (Search all posts)
