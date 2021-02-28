@@ -1,19 +1,19 @@
 .comments {
   width: 100%;
-  margin-top: 2em;
-  border-top: 1px solid var(--c-shadow-10);
+  margin-top: 1em;
+
 }
 
 .utterances {
-  margin-top: 2em;
+
+  margin-top: 1em;
   width: 100%;
 }
 
 @media only screen and (min-width: 1281px) {
   .utterances {
-    width: calc(100% + 60px);
+    width: 100%;
     position: relative;
-    left: -60px;
   }
 }
 

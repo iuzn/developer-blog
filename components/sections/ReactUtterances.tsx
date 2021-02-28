@@ -2,6 +2,8 @@ import React from 'react'
 
 import styles from './styles.module.css'
 
+import Loading from '../../components/loading'
+
 export type MappingType =
   | 'pathname'
   | 'url'
@@ -89,7 +91,8 @@ export class ReactUtterances extends React.Component<
     return (
       <div className={styles.comments}>
         <div className={styles.utterances} ref={this.reference}>
-          {this.state.pending && <p>Yorumlar yükleniyor...</p>}
+          {this.state.pending &&  <div className="flex justify-center content-center m-4"> <Loading size={40} />
+          </div>}
         </div>
       </div>
     )
