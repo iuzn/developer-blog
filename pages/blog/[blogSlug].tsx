@@ -15,6 +15,7 @@ import Loading from '../../components/loading'
 import { ReactUtterances } from '../../components/sections/ReactUtterances'
 import { useEffect } from 'react'
 
+
 interface PostProps {
   blocks: BlockMapType
   post: BlogPost
@@ -74,19 +75,20 @@ const BlogPosts: React.FC<PostProps> = ({
 
   const router = useRouter()
   useEffect(() => {
-const coll = document.getElementsByClassName('collapsible')
-    let i
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener('click', function () {
-        this.classList.toggle('active')
-        const content = this.nextElementSibling
-        if (content.style.display === 'block') {
-          content.style.display = 'none'
-        } else {
-          content.style.display = 'block'
-        }
-      })
+    const acc = document.getElementsByClassName("accordion");
+    let i;
+
+    for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    const panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
     }
+  });
+}
   })
   if (router.isFallback) {
     return (
@@ -138,10 +140,10 @@ const coll = document.getElementsByClassName('collapsible')
         </div>
         <article className="flex-1 my-6 post-container">
           <NotionRenderer blockMap={blocks} mapImageUrl={toNotionImageUrl} />
-          <button type="button" className="collapsible">
+          <button type="button" className="accordion">
             Yorumlar
           </button>
-          <div className="content">
+          <div className="panel">
             <ReactUtterances
               repo="iuzn/developer-blog"
               issueMap="issue-term"
