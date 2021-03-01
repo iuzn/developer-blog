@@ -72,12 +72,12 @@ const BlogPosts: React.FC<PostProps> = ({
   post,
   blocks
 }) => {
-
+  const [showComments, setShowComments] = React.useState(false)
+  const onClick = () => setShowComments(true)
   const router = useRouter()
   useEffect(() => {
     const acc = document.getElementsByClassName("accordion");
     let i;
-
     for (i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
     this.classList.toggle("active");
@@ -140,16 +140,16 @@ const BlogPosts: React.FC<PostProps> = ({
         </div>
         <article className="flex-1 my-6 post-container">
           <NotionRenderer blockMap={blocks} mapImageUrl={toNotionImageUrl} />
-          <button type="button" className="accordion">
+          <button onClick={onClick} type="button" className="accordion">
             Yorumlar
           </button>
-          <div className="panel">
+         { showComments ? <div className="panel">
             <ReactUtterances
               repo="iuzn/developer-blog"
               issueMap="issue-term"
               issueTerm="title"
             />
-          </div>
+          </div> : null }
           <Footer />
         </article>
       </Layout>

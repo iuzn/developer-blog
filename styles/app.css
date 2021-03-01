@@ -157,7 +157,9 @@ a:focus-visible {
 .active:after {
   content: "\2212";
 }
-
+.active{
+    overflow: visible;
+}
 .panel {
   padding: 0 18px;
   max-height: 0;
