@@ -52,7 +52,9 @@ button:focus {
 button:focus-visible {
   box-shadow: 0 0 0 3pt rgb(220, 63, 22);
 }
-
+input{
+  background-color: transparent;
+}
 input:active,
 input:focus {
   outline: none;
@@ -93,7 +95,7 @@ a:focus-visible {
 }
 .button-primary {
   cursor: pointer;
-  background: var(--c-yellow);
+  background: var(--c-yellow-80);
   color: var(--c-primary);
   border-radius: 99px;
   align-items: center;
@@ -101,8 +103,8 @@ a:focus-visible {
   text-decoration: none;
   font-weight: bold;
   &:hover {
-    color: var(--c-yellow);
-    background-color: var(--c-yellow-10);
+    color: var(--c-primary);
+    background-color: var(--c-yellow);
   }
 }
 

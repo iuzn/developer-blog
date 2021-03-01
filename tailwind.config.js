@@ -40,6 +40,15 @@ module.exports = {
       ...boxShadow,
       xs: '0 2px 2px rgba(0,0,0,0.02)',
       sm: '0 4px 4px rgba(0,0,0,0.02)'
+    },
+    colors: {
+      'primary': 'var(--c-primary)',
+      'secondary': 'var(--c-yellow)',
+      'secondary-20': 'var(--c-yellow-20)',
+      'secondary-40': 'var(--c-yellow-40)',
+      'secondary-60': 'var(--c-yellow-60)',
+      'secondary-80': 'var(--c-yellow-80)',
+      'text-color': 'var(--c-text-color)',
     }
   },
   variants: {

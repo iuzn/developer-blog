@@ -132,7 +132,7 @@ const BlogPosts: React.FC<PostProps> = ({
           <h1 className="text-2xl md:text-3xl font-bold sm:text-center mb-2">
             {post.title}
           </h1>
-          <div className="sm:text-center text-gray-600">
+          <div className="sm:text-center">
             <time dateTime={new Date(post.date).toISOString()}>
               {dateFormatter.format(new Date(post.date))}
             </time>

@@ -43,7 +43,7 @@ const Newsletter = () => {
     state === '' && toast.remove(loadingnotify())
   }
   return (
-    <div className="flex flex-col items-center p-8 m-10 bg-color-secondary rounded-large">
+    <div className="flex flex-col items-center p-8 m-10 bg-gradient-to-b from-secondary to-secondary-60 rounded-large">
       <h2 className="text-3xl font-bold text-center color-secondary">
         E-bültenime abone ol!
       </h2>
@@ -55,7 +55,7 @@ const Newsletter = () => {
           <input
             id={email}
             className={clsx(
-              'py-3 px-3 border-none bg-transparent w-48 sm:w-64'
+              'py-3 px-3 border-none w-48 sm:w-64'
             )}
             type="text"
             placeholder="E-posta Girin"
