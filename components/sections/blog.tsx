@@ -62,11 +62,12 @@ export const BlogPost: React.FC<
 export const Blog: React.FC<{
   blogpost: BlogPostData[]
   preview?: boolean
-}> = ({ blogpost, preview }) => (
+}> = ({ blogpost, preview }) =>{
+    return(
   <div>
     <div className="grid grid-cols-1 ">
       {blogpost.slice(0, preview ? 1 : undefined).map((p) => (
-        <BlogPost key={p.id} featured {...p} />
+        <BlogPost  key={p.id} featured {...p} />
       ))}
     </div>
 
@@ -85,3 +86,4 @@ export const Blog: React.FC<{
     )}
   </div>
 )
+}

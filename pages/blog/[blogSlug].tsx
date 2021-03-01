@@ -12,15 +12,14 @@ import { toNotionImageUrl } from '../../core/notion'
 import Header from '../../components/header/header'
 import { useRouter } from 'next/router'
 import Loading from '../../components/loading'
-import {ReactUtterances} from "../../components/sections/ReactUtterances";
-import {useEffect} from "react";
+import { ReactUtterances } from '../../components/sections/ReactUtterances'
+import { useEffect } from 'react'
 
 interface PostProps {
   blocks: BlockMapType
   post: BlogPost
   morePosts: BlogPost[]
 }
-
 export const getStaticPaths: GetStaticPaths = async () => {
   const table = await getBlogTable<BlogPost>(config.notionBlogTableId)
   return {
@@ -64,29 +63,30 @@ export const getStaticProps: GetStaticProps<
       blocks,
       morePosts
     },
-    revalidate: 1
+    revalidate: 10
   }
 }
 
+const BlogPosts: React.FC<PostProps> = ({
+  post,
+  blocks
+}) => {
 
-
-const BlogPosts: React.FC<PostProps> = ({post, blocks }) => {
   const router = useRouter()
-  useEffect(()=> {
-    const coll = document.getElementsByClassName("collapsible");
-    let i;
-
+  useEffect(() => {
+const coll = document.getElementsByClassName('collapsible')
+    let i
     for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    const content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
+      coll[i].addEventListener('click', function () {
+        this.classList.toggle('active')
+        const content = this.nextElementSibling
+        if (content.style.display === 'block') {
+          content.style.display = 'none'
+        } else {
+          content.style.display = 'block'
+        }
+      })
     }
-  });
-}
   })
   if (router.isFallback) {
     return (
@@ -138,19 +138,18 @@ const BlogPosts: React.FC<PostProps> = ({post, blocks }) => {
         </div>
         <article className="flex-1 my-6 post-container">
           <NotionRenderer blockMap={blocks} mapImageUrl={toNotionImageUrl} />
-<button type="button" className="collapsible">Yorumlar</button>
-<div className="content">
- <ReactUtterances
-          repo='iuzn/developer-blog'
-          issueMap='issue-term'
-          issueTerm='title'
-          theme={'github-light'}
-        />
-</div>
-
-        <Footer />
+          <button type="button" className="collapsible">
+            Yorumlar
+          </button>
+          <div className="content">
+            <ReactUtterances
+              repo="iuzn/developer-blog"
+              issueMap="issue-term"
+              issueTerm="title"
+            />
+          </div>
+          <Footer />
         </article>
-
       </Layout>
     </>
   )

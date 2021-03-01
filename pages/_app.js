@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
     themeSet(theme)
     localStorage.setItem('THEME', theme)
   }
-
+  const isDark= theme ==="light"
   useEffect(() => {
     document.documentElement.lang = 'tr'
     if (!theme) return
@@ -41,7 +41,7 @@ function MyApp({ Component, pageProps }) {
 
         <title>{siteTitle}</title>
       </Head>
-      <Component {...pageProps} />
+      <Component isDark={isDark} {...pageProps} />
     </StoreContext.Provider>
   )
 }

@@ -1,7 +1,6 @@
-import React from 'react'
-
+import React, {useContext} from 'react'
 import styles from './styles.module.css'
-
+import StoreContext from '../../store'
 import Loading from '../../components/loading'
 
 export type MappingType =
@@ -12,22 +11,12 @@ export type MappingType =
   | 'issue-number'
   | 'issue-term'
 
-export type Theme =
-  | 'github-light'
-  | 'github-dark'
-  | 'preferred-color-scheme'
-  | 'github-dark-orange'
-  | 'icy-dark'
-  | 'dark-blue'
-  | 'photon-dark'
-
 interface ReactUtterancesProps {
   repo: string
   issueMap: MappingType
   issueTerm?: string
   issueNumber?: number
   label?: string
-  theme: Theme
 }
 
 interface ReactUtterancesState {
@@ -68,6 +57,26 @@ export class ReactUtterances extends React.Component<
     scriptElement.defer = true
     scriptElement.setAttribute('repo', repo)
     scriptElement.setAttribute('crossorigin', 'annonymous')
+    const store = useContext(StoreContext) as any
+    let theme = ""
+    const isLight = store.theme === 'light'
+    const isDark = store.theme === 'dark'
+    const isDim = store.theme === 'dim'
+    const isSepia = store.theme === 'sepia'
+    if (!isLight){
+      theme = "isSepia"
+    }
+    if (!isDark){
+      theme = "github-dark"
+    }
+    if (!isDim){
+      theme = "icy-dark"
+    }
+    if (!isSepia){
+      theme = "boxy-light"
+    }
+    console.log(document.getElementsByTagName('html').item(0)!.classList.value)
+    scriptElement.setAttribute('theme', theme)
     scriptElement.onload = () => this.setState({ pending: false })
 
     if (label) {
@@ -91,8 +100,12 @@ export class ReactUtterances extends React.Component<
     return (
       <div className={styles.comments}>
         <div className={styles.utterances} ref={this.reference}>
-          {this.state.pending &&  <div className="flex justify-center content-center m-4"> <Loading size={40} />
-          </div>}
+          {this.state.pending && (
+            <div className="flex justify-center content-center m-4">
+              {' '}
+              <Loading size={40} />
+            </div>
+          )}
         </div>
       </div>
     )

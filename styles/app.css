@@ -86,8 +86,7 @@ a:focus-visible {
   color: var(--c-primary);
   background: var(--c-yellow);
 }
-.shadow{
-
+.shadow {
   -webkit-box-shadow: 0 0 50px 10px var(--c-yellow);
   -moz-box-shadow: 0 0 50px 10px var(--c-primary);
   box-shadow: 0 20px 80px -40px var(--c-yellow);
@@ -132,34 +131,30 @@ a:focus-visible {
 
 .bg-box-primary {
   background-color: var(--c-primary);
-  box-shadow:
-              0 1px 1px   var(--c-yellow-10),
-              0 2px 2px   var(--c-shadow-10),
-              0 4px 4px   var(--c-yellow-10),
-              0 6px 8px   var(--c-shadow-10),
-              0 8px 16px var(--c-yellow-10)
+  box-shadow: 0 1px 1px var(--c-yellow-10), 0 2px 2px var(--c-shadow-10),
+    0 4px 4px var(--c-yellow-10), 0 6px 8px var(--c-shadow-10),
+    0 8px 16px var(--c-yellow-10);
 }
 
 .collapsible {
-  background-color: #777;
   color: white;
   cursor: pointer;
   padding: 18px;
   width: 100%;
-  border: none;
   text-align: left;
   outline: none;
   font-size: 15px;
+  border: 1px solid var(--c-border);
 }
 
-.active, .collapsible:hover {
-  background-color: #555;
+.active,
+.collapsible:hover {
 }
 .content {
   padding: 0 18px;
   display: none;
   overflow: hidden;
-  background-color: #f1f1f1;
+  border: 1px solid var(--c-border);
 }
 
 .notion {
@@ -900,6 +895,6 @@ img.notion-nav-icon {
   margin: 0 2px;
   color: rgba(55, 53, 47, 0.4);
 }
-.blend{
+.blend {
   mix-blend-mode: multiply;
 }
