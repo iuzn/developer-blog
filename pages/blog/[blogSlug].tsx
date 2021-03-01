@@ -143,13 +143,13 @@ const BlogPosts: React.FC<PostProps> = ({
           <button onClick={onClick} type="button" className="accordion">
             Yorumlar
           </button>
-         { showComments ? <div className="panel">
+         { showComments && <div className="panel">
             <ReactUtterances
               repo="iuzn/developer-blog"
               issueMap="issue-term"
               issueTerm="title"
             />
-          </div> : null }
+          </div> }
           <Footer />
         </article>
       </Layout>
