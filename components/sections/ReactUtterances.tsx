@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import styles from './styles.module.css'
 import StoreContext from '../../store'
 import Loading from '../../components/loading'
@@ -57,25 +57,28 @@ export class ReactUtterances extends React.Component<
     scriptElement.defer = true
     scriptElement.setAttribute('repo', repo)
     scriptElement.setAttribute('crossorigin', 'annonymous')
-    const store = useContext(StoreContext) as any
-    let theme = ""
-    const isLight = store.theme === 'light'
-    const isDark = store.theme === 'dark'
-    const isDim = store.theme === 'dim'
-    const isSepia = store.theme === 'sepia'
-    if (!isLight){
-      theme = "isSepia"
+    const store = document
+      .getElementsByTagName('html')
+      .item(0)!
+      .classList.value.toString() as any
+    let theme = ''
+    const isLight = store === 'light'
+    const isDark = store === 'dark'
+    const isDim = store === 'dim'
+    const isSepia = store === 'sepia'
+    if (isLight) {
+      theme = 'github-light'
     }
-    if (!isDark){
-      theme = "github-dark"
+    if (isDark) {
+      theme = 'github-dark'
     }
-    if (!isDim){
-      theme = "icy-dark"
+    if (isDim) {
+      theme = 'icy-dark'
     }
-    if (!isSepia){
-      theme = "boxy-light"
+    if (isSepia) {
+      theme = 'boxy-light'
     }
-    console.log(document.getElementsByTagName('html').item(0)!.classList.value)
+
     scriptElement.setAttribute('theme', theme)
     scriptElement.onload = () => this.setState({ pending: false })
 
