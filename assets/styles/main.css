@@ -30,7 +30,9 @@
   .color-primary{
   color: var(--c-yellow);
 }
-
+.box-shadow{
+  box-shadow: 0 0 15px 5pt var(--c-yellow);
+}
 .bg-color-primary{
   background-color: var(--c-primary);
 }

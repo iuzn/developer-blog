@@ -28,7 +28,7 @@ flex-shrink: 0;
   display: grid;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
+  border-radius: 999px;
 }
 .title {
   display: none;
@@ -69,13 +69,13 @@ flex-shrink: 0;
   margin-bottom: 15px;
   font-size: 0;
   svg {
-
   color: var(--c-primary);
     border-radius: 99px;
     background-color: var(--c-yellow);
     font-size: 30px;
   }
 }
+.kapat:focus-visible,
 .kapat:hover {
   svg {
     color: var(--c-primary);

@@ -58,7 +58,7 @@ function ProfileBox({  onClick = () => {} }) {
                     {LINK.map((link) => {
                       return (
                         <a
-                          className="hover:color-secondary  hover:bg-color-secondary bg-color-primary rounded-large color-primary flex-grow-0 flex-shrink-0 transition-all duration-200 ease-in-out"
+                          className="hover:color-secondary  hover:bg-color-secondary focus:box-shadow  focus:bg-color-secondary focus:color-secondary bg-color-primary rounded-large color-primary flex-grow-0 flex-shrink-0 transition-all duration-200 ease-in-out"
                           target={'_blank'}
                           key={link.key}
                           href={link.href}
@@ -83,7 +83,7 @@ function ProfileBox({  onClick = () => {} }) {
                       </p>
                       <a
                         href={'/hakkimda'}
-                        className="color-primary border-primary-2 p-2  pr-3 pl-3  rounded-medium hover:bg-color-secondary hover:color-secondary transition duration-150 ease-in-out font-bold"
+                        className="color-primary border-primary-2 p-2  pr-3 pl-3  rounded-medium hover:bg-color-secondary focus:bg-color-secondary focus:color-secondary hover:color-secondary transition duration-150 ease-in-out font-bold"
                       >
                         Hakkımda daha fazlası
                       </a>

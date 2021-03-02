@@ -3,6 +3,7 @@ module.exports = {
     'tailwindcss',
     'autoprefixer',
     'postcss-nested',
+    'postcss-focus-visible',
 ['postcss-custom-media' ,
     {
       importFrom: [

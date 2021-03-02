@@ -61,6 +61,7 @@
   font-size: 0;
   svg {
     background-color: transparent;
-    font-size: 30px;
+    font-size: 32px;
+    margin: 4px;
   }
 }

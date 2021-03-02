@@ -28,25 +28,16 @@ body {
   background-color: var(--c-primary);
   color: var(--c-text-color);
 }
-embed > .comment-header {
-  color: red;
-  font-size: 8em;
-  font-weight: bold;
-}
-embed > .markdown-body,
 body::-webkit-scrollbar {
   width: 8px;
 }
-embed > .markdown-body,
 body {
   scrollbar-width: thin;
   scrollbar-color: var(--c-yellow) var(--c-yellow-10);
 }
-embed > .markdown-body,
 body::-webkit-scrollbar-track {
   background: var(--c-yellow-10);
 }
-embed > .markdown-body,
 body::-webkit-scrollbar-thumb {
   background-color: var(--c-yellow);
   border-radius: 6px;
@@ -58,7 +49,7 @@ button:focus {
   outline: none;
 }
 button:focus-visible {
-  box-shadow: 0 0 0 3pt rgb(220, 63, 22);
+  box-shadow: 0 0 15px 5pt var(--c-yellow);
 }
 input {
   background-color: transparent;
@@ -68,7 +59,7 @@ input:focus {
   outline: none;
 }
 input:focus-visible {
-  box-shadow: 0 0 0 3pt rgb(220, 63, 22);
+  box-shadow: 0 0 0 3pt var(--c-yellow);
 }
 input[type='text']:focus-visible {
   box-shadow: none;
@@ -84,7 +75,7 @@ a:focus {
   outline: none;
 }
 a:focus-visible {
-  box-shadow: 0 0 0 2pt rgb(220, 63, 22);
+  box-shadow: 0 0 0 2pt var(--c-yellow);
 }
 
 ::-moz-selection {
@@ -103,16 +94,20 @@ a:focus-visible {
 }
 .button-primary {
   cursor: pointer;
-  background: var(--c-yellow-80);
+  background: var(--c-yellow-light);
   color: var(--c-primary);
   border-radius: 99px;
   align-items: center;
   transition: var(--fade);
   text-decoration: none;
   font-weight: bold;
+    &:focus-visible{
+      background: var(--c-yellow);
+      box-shadow: 0 0 0 3px var(--c-yellow-lighter);
+    }
   &:hover {
-    color: var(--c-primary);
-    background-color: var(--c-yellow);
+    background: var(--c-yellow);
+    transition: var(--fade);
   }
 }
 
@@ -238,6 +233,10 @@ a:focus-visible {
   caret-color: var(--c-text-color);
   font-family: -apple-system, BlinkMacSystemFont, 'Inter', Roboto, Helvetica,
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+.bg-gradient{
+  background: var(--c-gradient);
 }
 
 .notion > * {

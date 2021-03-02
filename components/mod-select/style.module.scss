@@ -70,6 +70,7 @@
       pointer-events: none;
     }
   }
+  .button:focus-visible,
   .button:hover {
     box-shadow: 0 0 15px 3pt var(--c-yellow);
     transition: var(--fade);
@@ -101,6 +102,7 @@
   min-height: 40px;
   max-height: 65px;
   border-radius: 99px;
+
   &:hover {
     color: var(--c-primary);
     background-color: var(--c-yellow);
@@ -116,6 +118,7 @@
     font-size: 30px;
   }
 }
+.kapat:focus-visible,
 .kapat:hover {
   svg {
     border-radius: 99px;
