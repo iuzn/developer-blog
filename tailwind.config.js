@@ -55,13 +55,21 @@ module.exports = {
   variants: {
     extend: {
       borderWidth: ['group-hover', 'first', 'group-focus'],
-      borderRadius: ['responsive', 'hover', 'focus', 'group-hover', 'group-focus','focus-visible'],
+      borderRadius: [
+        'responsive',
+        'hover',
+        'focus',
+        'group-hover',
+        'group-focus'
+      ],
       textDecoration: ['hover', 'group-hover', 'group-focus'],
-      boxShadow: ['active', 'focus','focus-visible']
+      boxShadow: ['active', 'focus'],
+      backgroundColor: ['group-focus', 'group-hover'],
+      textColor: ['group-hover', 'group-focus']
     },
     fontSize: ['group-hover', 'hover', 'group-focus'],
-    textColor: ['responsive', 'hover', 'focus', 'group-hover', 'group-focus'],
-    backgroundColor: ['responsive', 'hover', 'focus', 'group-hover', 'group-focus'],
+    textColor: ['responsive', 'hover', 'focus'],
+    backgroundColor: ['responsive', 'hover', 'focus'],
     translate: ['hover', 'focus', 'group-hover', 'group-focus'],
     opacity: ['hover', 'group-hover', 'group-focus'],
     scale: ['hover', 'group-hover', 'group-focus']

@@ -1,6 +1,8 @@
 .navButton {
   padding: 10px;
+  &:focus{
 
+  }
   svg {
     font-size: 26px;
     color: inherit;
