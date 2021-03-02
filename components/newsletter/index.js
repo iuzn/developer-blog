@@ -43,7 +43,7 @@ const Newsletter = () => {
     state === '' && toast.remove(loadingnotify())
   }
   return (
-    <div className="flex flex-col items-center p-8 m-10 bg-gradient-to-b from-secondary to-secondary-60 rounded-large">
+    <div className="flex flex-col items-center p-8 m-10 bg-gradient-to-b from-secondary via-secondary-80 to-secondary-40 rounded-large">
       <h2 className="text-3xl font-bold text-center color-secondary">
         E-bültenime abone ol!
       </h2>

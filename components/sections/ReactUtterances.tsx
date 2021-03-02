@@ -57,10 +57,7 @@ export class ReactUtterances extends React.Component<
     scriptElement.defer = true
     scriptElement.setAttribute('repo', repo)
     scriptElement.setAttribute('crossorigin', 'annonymous')
-    const store = document
-      .getElementsByTagName('html')
-      .item(0)!
-      .classList.value.toString() as any
+    const store = localStorage.getItem('THEME')
     let theme = ''
     const isLight = store === 'light'
     const isDark = store === 'dark'
@@ -105,7 +102,6 @@ export class ReactUtterances extends React.Component<
         <div className={styles.utterances} ref={this.reference}>
           {this.state.pending && (
             <div className="flex justify-center content-center m-4">
-              {' '}
               <Loading size={40} />
             </div>
           )}

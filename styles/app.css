@@ -28,17 +28,25 @@ body {
   background-color: var(--c-primary);
   color: var(--c-text-color);
 }
-
+embed > .comment-header {
+  color: red;
+  font-size: 8em;
+  font-weight: bold;
+}
+embed > .markdown-body,
 body::-webkit-scrollbar {
   width: 8px;
 }
+embed > .markdown-body,
 body {
   scrollbar-width: thin;
   scrollbar-color: var(--c-yellow) var(--c-yellow-10);
 }
+embed > .markdown-body,
 body::-webkit-scrollbar-track {
   background: var(--c-yellow-10);
 }
+embed > .markdown-body,
 body::-webkit-scrollbar-thumb {
   background-color: var(--c-yellow);
   border-radius: 6px;
@@ -52,7 +60,7 @@ button:focus {
 button:focus-visible {
   box-shadow: 0 0 0 3pt rgb(220, 63, 22);
 }
-input{
+input {
   background-color: transparent;
 }
 input:active,
@@ -139,33 +147,88 @@ a:focus-visible {
 }
 .accordion {
   cursor: pointer;
+  text-decoration: underline var(--c-yellow-80);
   padding: 18px;
   width: 100%;
-  border: none;
   text-align: left;
   outline: none;
-  font-size: 15px;
-  transition: 0.4s;
+  font-size: 1.5em;
+  transition: var(--fade);
+  border: 1px solid var(--c-border);
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+    &:hover{
+      background-color: var(--c-yellow-10);
+      &:after {
+        transition: var(--fade);
+          color: var(--c-yellow);
+
+      }
+}
 }
 
+.accordion-open {
+  cursor: pointer;
+  text-decoration: underline var(--c-yellow-80);
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  font-size: 1.5em;
+  transition: var(--fade);
+  border: 1px solid var(--c-border);
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &:hover{
+      background-color: var(--c-yellow-10);
+      &:after {
+        transition: var(--fade);
+          color: var(--c-yellow);
+
+      }
+}
+
+}
 
 .accordion:after {
-  content: '\002B';
-  font-weight: bold;
+  content: 'Göster';
+  color: var(--c-yellow-60);
+  &:hover{
+    color: var(--c-yellow);
+  }
+  font-weight: lighter;
   float: right;
-  margin-left: 5px;
+  font-size: 18px;
 }
 
-.active:after {
-  content: "\2212";
+.accordion-open:after {
+  content: 'Gizle';
+  color: var(--c-yellow-60);
+  &:hover{
+    color: var(--c-yellow);
+  }
+  font-weight: lighter;
+  font-size: 18px;
+  float: right;
 }
 .panel {
   padding: 0 18px;
-  max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
+  visibility: hidden;
+  max-height: 0;
 }
-
+.panel-active {
+  visibility: visible;
+  overflow: hidden;
+  padding: 0 18px;
+  max-height: max-content;
+  border: solid var(--c-border);
+  border-width: 0 1px 1px 1px;
+}
 .notion {
   padding-top: 1rem;
   padding-bottom: 1rem;

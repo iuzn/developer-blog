@@ -1,19 +1,19 @@
 import * as React from 'react'
-import { NextSeo } from 'next-seo'
-import { NotionRenderer, BlockMapType } from 'react-notion'
-import { config } from '../../config'
+import {useEffect, useState} from 'react'
+import {NextSeo} from 'next-seo'
+import {BlockMapType, NotionRenderer} from 'react-notion'
+import {config} from '../../config'
 import Layout from '../../components/layout/index'
-import { getBlogTable, getPageBlocks } from '../../core/blog'
-import { dateFormatter } from '../../core/utils'
-import { BlogPost } from '../../types/blog'
-import { GetStaticProps, GetStaticPaths } from 'next'
-import { Footer } from '../../components/sections/footer'
-import { toNotionImageUrl } from '../../core/notion'
+import {getBlogTable, getPageBlocks} from '../../core/blog'
+import {dateFormatter} from '../../core/utils'
+import {BlogPost} from '../../types/blog'
+import {GetStaticPaths, GetStaticProps} from 'next'
+import {Footer} from '../../components/sections/footer'
+import {toNotionImageUrl} from '../../core/notion'
 import Header from '../../components/header/header'
-import { useRouter } from 'next/router'
+import {useRouter} from 'next/router'
 import Loading from '../../components/loading'
-import { ReactUtterances } from '../../components/sections/ReactUtterances'
-import { useEffect } from 'react'
+import {ReactUtterances} from '../../components/sections/ReactUtterances'
 
 
 interface PostProps {
@@ -72,10 +72,10 @@ const BlogPosts: React.FC<PostProps> = ({
   post,
   blocks
 }) => {
-  const [showComments, setShowComments] = React.useState(false)
-  const onClick = () => setShowComments(true)
+  const [modal, setModal] = useState(false);
+  const toggle = () => setModal(!modal);
   const router = useRouter()
-  useEffect(() => {
+  useEffect(()=>{
     const acc = document.getElementsByClassName("accordion");
     let i;
     for (i = 0; i < acc.length; i++) {
@@ -140,16 +140,16 @@ const BlogPosts: React.FC<PostProps> = ({
         </div>
         <article className="flex-1 my-6 post-container">
           <NotionRenderer blockMap={blocks} mapImageUrl={toNotionImageUrl} />
-          <button onClick={onClick} type="button" className="accordion">
+          <button onClick={toggle} type="button" id="yorum" className={!modal ? "accordion" : "accordion-open"}>
             Yorumlar
           </button>
-         { showComments && <div className="panel">
+          <div className={!modal ? "panel" : "panel-active"}>
             <ReactUtterances
               repo="iuzn/developer-blog"
               issueMap="issue-term"
               issueTerm="title"
             />
-          </div> }
+          </div>
           <Footer />
         </article>
       </Layout>
