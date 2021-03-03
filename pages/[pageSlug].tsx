@@ -1,19 +1,19 @@
 import * as React from 'react'
 import { NextSeo } from 'next-seo'
-import { NotionRenderer, BlockMapType } from 'react-notion'
 import { config } from '../config'
 import Layout from '../components/layout/index'
-import { getBlogTable, getPageBlocks } from '../core/blog'
+import { getBlogTable } from '../core/blog'
 import { CustomPage } from '../types/custom-page'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { Footer } from '../components/sections/footer'
-import { toNotionImageUrl } from '../core/notion'
 import Header from '../components/header/header'
 import { useRouter } from 'next/router'
 import Loading from '../components/loading'
+import { NotionAPI } from 'notion-client'
+
+import { NotionRenderer } from 'react-notion-x'
 
 interface PostProps {
-  blocks: BlockMapType
   post: CustomPage
   morePosts: CustomPage[]
 }
@@ -25,6 +25,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     fallback: true
   }
 }
+const notion = new NotionAPI()
 
 export const getStaticProps: GetStaticProps<
   PostProps,
@@ -50,20 +51,20 @@ export const getStaticProps: GetStaticProps<
   if (!post || (!post.published && process.env.NODE_ENV !== 'development')) {
     throw Error(`Bu adres için gönderi bulunamadı: ${slug}`)
   }
-
-  const blocks = await getPageBlocks(post.id)
-
+ const recordMap = await notion.getPage(post.id)
   return {
     props: {
       post,
-      blocks,
+      recordMap,
       morePosts
     },
-    revalidate: 1
+    revalidate: 10
   }
 }
-
-const BlogPosts: React.FC<PostProps> = ({ post, blocks }) => {
+interface recordMapProps {
+  recordMap: any
+}
+const BlogPosts: React.FC<PostProps & recordMapProps> = ({ post, recordMap }) => {
   const router = useRouter()
   if (router.isFallback) {
     return (
@@ -95,7 +96,7 @@ const BlogPosts: React.FC<PostProps> = ({ post, blocks }) => {
       <Layout>
         <Header title={post.title} />
         <article className="flex-1 my-6 post-container">
-          <NotionRenderer blockMap={blocks} mapImageUrl={toNotionImageUrl} />
+          <NotionRenderer recordMap={recordMap}  />
         </article>
         <Footer />
       </Layout>
