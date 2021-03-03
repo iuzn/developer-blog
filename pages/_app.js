@@ -1,25 +1,24 @@
-import React, {useEffect, useState} from 'react';
-import Head from 'next/head';
-import StoreContext from '../store';
-import '../assets/styles/main.css';
-import '../assets/styles/prism.css';
-import '../styles/app.css';
+import React, { useEffect, useState } from 'react'
+import Head from 'next/head'
+import StoreContext from '../store'
+import '../assets/styles/main.css'
+import '../assets/styles/prism.css'
+import '../styles/app.css'
 
 function MyApp({ Component, pageProps }) {
   const siteTitle = process.env.NEXT_PUBLIC_BLOG_TITLE
   const [theme, themeSet] = useState(null)
 
   useEffect(() => {
-
     const theme = localStorage.getItem('THEME') || 'system'
     themeSet(theme)
-
   }, [])
 
   const changeTheme = (theme) => {
     themeSet(theme)
     localStorage.setItem('THEME', theme)
   }
+  const isSystem = theme === 'system'
 
   useEffect(() => {
     document.documentElement.lang = 'tr'
@@ -32,31 +31,43 @@ function MyApp({ Component, pageProps }) {
     $html.classList.remove('dark')
     console.log(theme)
     $html.classList.add(theme.toString())
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && theme==="system") {
-    $html.classList.remove('light')
-    $html.classList.remove('dim')
-    $html.classList.remove('sepia')
-    $html.classList.add("dark")
-}
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches && theme==="system") {
-    $html.classList.remove('dark')
-    $html.classList.remove('dim')
-    $html.classList.remove('sepia')
-    $html.classList.add("light")
-}
-    if(theme === "system"){
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
- e.matches ? $html.classList.remove('light') || $html.classList.add('dark') : $html.classList.remove('dark') || $html.classList.add('light')
-})
-    }
+    if (isSystem) {
+      if (
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      ) {
+        window
+          .matchMedia('(prefers-color-scheme: dark)')
+          .addEventListener('change', (e) => {
+            e.matches
+              ? $html.classList.remove('light') || $html.classList.add('dark')
+              : $html.classList.remove('dark') || $html.classList.add('light')
+          })
+        $html.classList.add('dark')
+      } else{
+        window
+          .matchMedia('(prefers-color-scheme: light)')
+          .addEventListener('change', (e) => {
+            e.matches
+              ? $html.classList.remove('dark') || $html.classList.add('light')
+              : $html.classList.remove('light') || $html.classList.add('dark')
+          })
+        $html.classList.add('light')
 
+      }
+
+
+    }
   }, [theme])
 
   return (
     <StoreContext.Provider value={{ siteTitle, theme, changeTheme }}>
       <Head>
-        <link rel="preconnect" href="https://fonts.gstatic.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
 
         <link rel="shortcut icon" href={process.env.NEXT_PUBLIC_FAVICON_URL} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
