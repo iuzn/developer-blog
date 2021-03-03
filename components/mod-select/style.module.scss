@@ -52,7 +52,9 @@
 
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-content: center;
+
   position: relative;
   width: 100%;
   margin: 0 auto;
@@ -126,6 +128,9 @@
     background-color: rgb(220, 63, 22);
   }
 }
+.container [id='System'] {
+  background: var(--c-gradient);
+}
 .container [id='Light'] {
   background-color: white;
 }
@@ -139,6 +144,17 @@
   background-color: rgb(21, 41, 39);
 }
 
+:global(.system):root {
+  .container [id='System'] {
+    border: 3px solid var(--c-primary);
+    svg:nth-child(1) {
+      visibility: visible;
+      opacity: 1;
+      color: var(--c-primary);
+      border: transparent;
+    }
+  }
+}
 :global(.light):root {
   .container [id='Light'] {
     border: 3px solid var(--c-yellow);

@@ -1,33 +1,53 @@
-import React, { useEffect, useState } from 'react'
-import Head from 'next/head'
-import StoreContext from '../store'
-import '../assets/styles/main.css'
-import '../assets/styles/prism.css'
-import '../styles/app.css'
+import React, {useEffect, useState} from 'react';
+import Head from 'next/head';
+import StoreContext from '../store';
+import '../assets/styles/main.css';
+import '../assets/styles/prism.css';
+import '../styles/app.css';
 
 function MyApp({ Component, pageProps }) {
   const siteTitle = process.env.NEXT_PUBLIC_BLOG_TITLE
   const [theme, themeSet] = useState(null)
 
   useEffect(() => {
-    const theme = localStorage.getItem('THEME') || 'light'
+    let system = window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+  return e.matches ? "system dark" : "system light"
+})
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    system= "system dark"
+}
+    const theme = localStorage.getItem('THEME') || {system}
     themeSet(theme)
+
   }, [])
 
   const changeTheme = (theme) => {
     themeSet(theme)
     localStorage.setItem('THEME', theme)
   }
-  const isDark= theme ==="light"
+
   useEffect(() => {
     document.documentElement.lang = 'tr'
     if (!theme) return
     const $html = document.querySelector('html')
+    $html.classList.remove('system')
     $html.classList.remove('light')
     $html.classList.remove('dim')
     $html.classList.remove('sepia')
     $html.classList.remove('dark')
     $html.classList.add(theme.toString())
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && theme==="system") {
+    $html.classList.remove('light')
+    $html.classList.remove('dim')
+    $html.classList.remove('sepia')
+    $html.classList.add("dark")
+}
+    if(theme === "system"){
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+  return e.matches ? $html.classList.remove('light') || $html.classList.add('dark') : $html.classList.remove('dark') || $html.classList.add('light')
+})
+    }
+
   }, [theme])
 
   return (
@@ -41,7 +61,7 @@ function MyApp({ Component, pageProps }) {
 
         <title>{siteTitle}</title>
       </Head>
-      <Component isDark={isDark} {...pageProps} />
+      <Component {...pageProps} />
     </StoreContext.Provider>
   )
 }
