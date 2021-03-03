@@ -38,6 +38,12 @@ function MyApp({ Component, pageProps }) {
     $html.classList.remove('sepia')
     $html.classList.add("dark")
 }
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches && theme==="system") {
+    $html.classList.remove('dark')
+    $html.classList.remove('dim')
+    $html.classList.remove('sepia')
+    $html.classList.add("light")
+}
     if(theme === "system"){
       window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
  e.matches ? $html.classList.remove('light') || $html.classList.add('dark') : $html.classList.remove('dark') || $html.classList.add('light')
