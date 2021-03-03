@@ -10,13 +10,8 @@ function MyApp({ Component, pageProps }) {
   const [theme, themeSet] = useState(null)
 
   useEffect(() => {
-    let system = window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-  return e.matches ? "system dark" : "system light"
-})
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    system= "system dark"
-}
-    const theme = localStorage.getItem('THEME') || {system}
+
+    const theme = localStorage.getItem('THEME') || 'system'
     themeSet(theme)
 
   }, [])
@@ -35,6 +30,7 @@ function MyApp({ Component, pageProps }) {
     $html.classList.remove('dim')
     $html.classList.remove('sepia')
     $html.classList.remove('dark')
+    console.log(theme)
     $html.classList.add(theme.toString())
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && theme==="system") {
     $html.classList.remove('light')
@@ -44,7 +40,7 @@ function MyApp({ Component, pageProps }) {
 }
     if(theme === "system"){
       window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-  return e.matches ? $html.classList.remove('light') || $html.classList.add('dark') : $html.classList.remove('dark') || $html.classList.add('light')
+ e.matches ? $html.classList.remove('light') || $html.classList.add('dark') : $html.classList.remove('dark') || $html.classList.add('light')
 })
     }
 
