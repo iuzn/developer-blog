@@ -39,25 +39,31 @@ function MyApp({ Component, pageProps }) {
         window
           .matchMedia('(prefers-color-scheme: dark)')
           .addEventListener('change', (e) => {
-            e.matches
-              ? $html.classList.remove('light') || $html.classList.add('dark')
-              : $html.classList.remove('dark') || $html.classList.add('light')
+            if (e.matches) {
+              $html.classList.remove('light')
+              $html.classList.add('dark')
+            } else {
+              $html.classList.remove('dark')
+              $html.classList.add('light')
+            }
           })
         $html.classList.add('dark')
-      } else{
+      } else {
         window
           .matchMedia('(prefers-color-scheme: light)')
           .addEventListener('change', (e) => {
-            e.matches
-              ? $html.classList.remove('dark') || $html.classList.add('light')
-              : $html.classList.remove('light') || $html.classList.add('dark')
+            if (e.matches) {
+              $html.classList.remove('dark')
+              $html.classList.add('light')
+            } else {
+              $html.classList.remove('light')
+              $html.classList.add('dark')
+            }
           })
         $html.classList.add('light')
-
       }
-
-
     }
+    console.log(isSystem)
   }, [theme])
 
   return (
