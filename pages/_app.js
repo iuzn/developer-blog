@@ -29,7 +29,6 @@ function MyApp({ Component, pageProps }) {
     $html.classList.remove('dim')
     $html.classList.remove('sepia')
     $html.classList.remove('dark')
-    console.log(theme)
     $html.classList.add(theme.toString())
     if (isSystem) {
       if (
@@ -63,7 +62,8 @@ function MyApp({ Component, pageProps }) {
         $html.classList.add('light')
       }
     }
-    console.log(isSystem)
+    console.log(isSystem+ " "+ theme)
+
   }, [theme])
 
   return (
