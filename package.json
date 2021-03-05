@@ -20,7 +20,7 @@
     "dayjs": "^1.9.6",
     "next": "^10.0.7",
     "next-seo": "^4.17.0",
-    "notion-client": "^4.3.0",
+    "notion-client": "^4.3.2",
     "notion-utils": "^4.3.0",
     "react": "^16.14.0",
     "react-cool-onclickoutside": "^1.5.9",

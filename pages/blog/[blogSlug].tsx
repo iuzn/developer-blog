@@ -13,7 +13,7 @@ import {toNotionImageUrl} from '../../core/notion'
 import Header from '../../components/header/header'
 import {useRouter} from 'next/router'
 import Loading from '../../components/loading'
-import {ReactUtterances} from '../../components/sections/ReactUtterances'
+import {Index} from '../../components/comments'
 
 
 interface PostProps {
@@ -144,7 +144,7 @@ const BlogPosts: React.FC<PostProps> = ({
             Yorumlar
           </button>
           <div className={!modal ? "panel" : "panel-active"}>
-            <ReactUtterances
+            <Index
               repo="iuzn/developer-blog"
               issueMap="issue-term"
               issueTerm="title"

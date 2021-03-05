@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
-import styles from './styles.module.css'
+import styles from '../sections/styles.module.css'
 import StoreContext from '../../store'
-import Loading from '../../components/loading'
+import Loading from '../loading'
 
 export type MappingType =
   | 'pathname'
@@ -23,7 +23,7 @@ interface ReactUtterancesState {
   pending: boolean
 }
 
-export class ReactUtterances extends React.Component<
+export class Index extends React.Component<
   ReactUtterancesProps,
   ReactUtterancesState
 > {
@@ -75,8 +75,8 @@ export class ReactUtterances extends React.Component<
     if (isSepia) {
       theme = 'boxy-light'
     }
-
     scriptElement.setAttribute('theme', theme)
+
     scriptElement.onload = () => this.setState({ pending: false })
 
     if (label) {
