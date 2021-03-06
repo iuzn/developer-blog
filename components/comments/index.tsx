@@ -58,21 +58,17 @@ export class Index extends React.Component<
     scriptElement.setAttribute('repo', repo)
     scriptElement.setAttribute('crossorigin', 'annonymous')
     const store = localStorage.getItem('THEME')
-    let theme = ''
-    const isLight = store === 'light'
-    const isDark = store === 'dark'
-    const isDim = store === 'dim'
-    const isSepia = store === 'sepia'
-    if (isLight) {
+    let theme = 'light'
+    if (store === 'light') {
       theme = 'github-light'
     }
-    if (isDark) {
+    if (store === 'dark') {
       theme = 'github-dark'
     }
-    if (isDim) {
+    if (store === 'dim') {
       theme = 'icy-dark'
     }
-    if (isSepia) {
+    if (store === 'sepia') {
       theme = 'boxy-light'
     }
     scriptElement.setAttribute('theme', theme)
@@ -90,8 +86,6 @@ export class Index extends React.Component<
     } else {
       scriptElement.setAttribute('issue-term', issueMap)
     }
-
-    // TODO: Check current availability
     this.scriptElement = scriptElement
     this.reference.current!.appendChild(scriptElement)
   }

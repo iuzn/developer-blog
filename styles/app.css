@@ -1297,7 +1297,6 @@ img.notion-nav-icon {
 .notion-title + .notion-h3 {
   margin-top: 0;
 }
-/* TODO: notion-page-content */
 .notion-h1:first-child {
   margin-top: 0;
 }
