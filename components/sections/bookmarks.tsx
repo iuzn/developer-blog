@@ -82,7 +82,6 @@ export const Bookmark: React.FC<
 export const Bookmarks: React.FC<{
   bookmark: BookmarkData[]
   preview?: boolean
-  onClick: React.MouseEventHandler<HTMLButtonElement>
 }> = ({ bookmark, preview }) => {
   const filteredArray = bookmark
     .map((p) => p.tags)
