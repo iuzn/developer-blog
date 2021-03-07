@@ -45,9 +45,10 @@ module.exports = {
     colors: {
       primary: 'var(--c-primary)',
       secondary: 'var(--c-yellow)',
+      gradient:'var(--c-gradient)',
       'secondary-20': 'var(--c-yellow-20)',
       'secondary-40': 'var(--c-yellow-40)',
-      'secondary-60': 'var(--c-gradient)',
+      'secondary-60': 'var(--c-yellow-60)',
       'secondary-80': 'var(--c-yellow-80)',
       'text-color': 'var(--c-text-color)'
     }

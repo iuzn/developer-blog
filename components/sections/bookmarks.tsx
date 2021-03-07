@@ -101,14 +101,14 @@ export const Bookmarks: React.FC<{
         </div>
       </div>
 
-        {!preview && <div className="pt-8 flex flex-wrap justify-around md:justify-start ">
+        {!preview && <div className="pt-8 flex flex-wrap justify-around md:justify-start gap-1 ">
           <button
               onClick={() => setTagName("Hepsi")}
-              className={tagName === "Hepsi" ? "inline-flex items-center px-3 py-1 rounded-large text-sm font-medium" +
-                  " leading-5 mr-2 bg-color-primary color-primary border-color-secondary" +
-                  " hover:bg-color-primary" : "inline-flex items-center px-3 py-1 rounded-large text-sm font-medium" +
-                  " leading-5 mr-2 border-color-primary bg-color-secondary color-secondary" +
-                  " hover:border-color-secondary hover:color-primary  hover:bg-color-primary"}
+              className={tagName === "Hepsi" ? "inline-flex items-center px-3 py-1 rounded-large text-sm font-bold	" +
+                  "leading-5 mr-2 bg-color-primary color-primary border-color-secondary" : "inline-flex items-center mr-2" +
+                  " px-3 py-1 rounded-large text-sm font-bold" +
+                  " leading-5  bg-gradient color-secondary " +
+                  "border-color-primary  hover:border-secondary  hover:bg-primary"}
             >
               Hepsi
             </button>

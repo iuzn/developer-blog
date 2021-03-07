@@ -40,6 +40,9 @@
   .box-shadow:focus-visible {
     box-shadow: 0 0 15px 5pt var(--c-yellow);
   }
+  .bg-color-gradient {
+    background-color: var(--c-gradient);
+  }
   .bg-color-primary {
     background-color: var(--c-primary);
   }
