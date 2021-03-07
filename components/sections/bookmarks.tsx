@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Bookmark as BookmarkData } from '../../types/bookmark'
 import { toNotionImageUrl } from '../../core/notion'
 import Link from 'next/link'
@@ -82,22 +82,73 @@ export const Bookmark: React.FC<
 export const Bookmarks: React.FC<{
   bookmark: BookmarkData[]
   preview?: boolean
-}> = ({ bookmark, preview }) => (
-  <div className="container ">
-    <div className="m-auto max-w-3xl">
-      <h1 className="text-4xl font-bold dark:text-blue-400">
-        {preview && 'Yer imleri'}
-      </h1>
-      <div className="text-2xl ">
-        {preview && 'İnternette dikkatimi çeken sayfalar'}
+  onClick: React.MouseEventHandler<HTMLButtonElement>
+}> = ({ bookmark, preview }) => {
+  const filteredArray = bookmark
+    .map((p) => p.tags)
+    .map((ar) => JSON.stringify(ar[0]))
+    .filter((itm, idx, arr) => arr.indexOf(itm) === idx)
+    .map((str) => JSON.parse(str))
+    const [tagName, setTagName] = useState("Hepsi")
+
+  return (
+    <div className="container ">
+      <div className="m-auto max-w-3xl">
+        <h1 className="text-4xl font-bold dark:text-blue-400">
+          {preview && 'Yer imleri'}
+        </h1>
+        <div className="text-2xl ">
+          {preview && 'İnternette dikkatimi çeken sayfalar'}
+        </div>
+      </div>
+      <div className="pt-8 flex flex-wrap justify-around md:justify-start ">
+        {!preview && <div>
+          <button
+              onClick={() => setTagName("Hepsi")}
+              className={tagName === "Hepsi" ? "inline-flex items-center px-3 py-1 rounded-large text-sm font-medium" +
+                  " leading-5 mr-2 bg-color-primary color-primary border-color-secondary" +
+                  " hover:bg-color-primary" : "inline-flex items-center px-3 py-1 rounded-large text-sm font-medium" +
+                  " leading-5 mr-2 border-color-primary bg-color-secondary color-secondary" +
+                  " hover:border-color-secondary hover:color-primary  hover:bg-color-primary"}
+            >
+              Hepsi
+            </button>
+            {
+               filteredArray.sort().map((a) => (
+            <button
+              key={a}
+              onClick={() => setTagName(a)}
+              className={tagName === a ? "inline-flex items-center px-3 py-1 rounded-large text-sm font-medium" +
+                  " leading-5 mr-2 bg-color-primary color-primary border-color-secondary" +
+                  " hover:bg-color-primary" : "inline-flex items-center px-3 py-1 rounded-large text-sm font-medium" +
+                  " leading-5 mr-2 border-color-primary bg-color-secondary color-secondary" +
+                  " hover:border-color-secondary hover:color-primary  hover:bg-color-primary"}
+            >
+              {a}
+            </button>
+          ))
+            }
+        </div>
+          }
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-1  ">
+        {preview
+          ? bookmark.slice(0, 3).map((p) => (
+              <div key={p.id} className="p-4 ">
+                <Bookmark featured {...p} />
+              </div>
+            )) : tagName==="Hepsi" ? bookmark.map((p) => (
+              <div key={p.id} className="p-4 ">
+                <Bookmark featured {...p} />
+              </div>
+            )):  bookmark.filter((p) => p.tags.includes(tagName)).map((p) => (
+                <div key={p.id} className="p-4 ">
+                  <Bookmark featured {...p} />
+                </div>
+              ))
+
+          }
       </div>
     </div>
-    <div className="grid grid-cols-1 sm:grid-cols-1  ">
-      {bookmark.slice(0, preview ? 3 : undefined).map((p) => (
-        <div key={p.id} className="p-4 ">
-          <Bookmark featured {...p} />
-        </div>
-      ))}
-    </div>
-  </div>
-)
+  )
+}

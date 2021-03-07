@@ -65,8 +65,10 @@ module.exports = {
       textDecoration: ['hover', 'group-hover', 'group-focus'],
       boxShadow: ['active', 'focus'],
       backgroundColor: ['group-focus', 'group-hover'],
-      textColor: ['group-hover', 'group-focus']
+      textColor: ['group-hover', 'group-focus'],
+
     },
+      border:['hover','focus'],
     fontSize: ['group-hover', 'hover', 'group-focus'],
     textColor: ['responsive', 'hover', 'focus'],
     backgroundColor: ['responsive', 'hover', 'focus'],

@@ -7,12 +7,10 @@
 }
 
 .post-container {
-
   @apply max-w-3xl mx-auto w-full;
   @media (--d) {
     @apply max-w-4xl mx-auto w-full px-4;
   }
-
 }
 
 .achievement-notion .notion-text {
@@ -32,38 +30,43 @@
 }
 
 @variants group-hover, hover, focus, responsive {
-  .color-primary{
-  color: var(--c-yellow);
-}
+  .color-primary {
+    color: var(--c-yellow);
+  }
 
-.box-shadow{
-  box-shadow: 0 0 15px 5pt var(--c-yellow);
-}
-.box-shadow:focus-visible{
-  box-shadow: 0 0 15px 5pt var(--c-yellow);
-}
-.bg-color-primary{
-  background-color: var(--c-primary);
-}
-.bg-color-secondary{
-  background-color: var(--c-yellow);
-}
-.bg-color-secondary-40{
-  background-color: var(--c-yellow-40);
-}
+  .box-shadow {
+    box-shadow: 0 0 15px 5pt var(--c-yellow);
+  }
+  .box-shadow:focus-visible {
+    box-shadow: 0 0 15px 5pt var(--c-yellow);
+  }
+  .bg-color-primary {
+    background-color: var(--c-primary);
+  }
+  .bg-color-secondary {
+    background-color: var(--c-yellow);
+  }
+  .bg-color-secondary-40 {
+    background-color: var(--c-yellow-40);
+  }
 
-.bg-color-secondary-60{
-  background-color: var(--c-yellow-60);
-}
+  .bg-color-secondary-60 {
+    background-color: var(--c-yellow-60);
+  }
 
-.color-secondary{
-  color: var(--c-primary);
-}
-.color-primary-40{
+  .border-color-primary {
+    border: 2px solid var(--c-primary);
+  }
+  .border-color-secondary {
+    border: 2px solid var(--c-yellow);
+  }
+  .color-secondary {
+    color: var(--c-primary);
+  }
+  .color-primary-40 {
     color: var(--c-yellow-40);
-}
-.color-primary-60{
+  }
+  .color-primary-60 {
     color: var(--c-yellow-60);
-}
-
+  }
 }
