@@ -100,8 +100,8 @@ export const Bookmarks: React.FC<{
           {preview && 'İnternette dikkatimi çeken sayfalar'}
         </div>
       </div>
-      <div className="pt-8 flex flex-wrap justify-around md:justify-start ">
-        {!preview && <div>
+
+        {!preview && <div className="pt-8 flex flex-wrap justify-around md:justify-start ">
           <button
               onClick={() => setTagName("Hepsi")}
               className={tagName === "Hepsi" ? "inline-flex items-center px-3 py-1 rounded-large text-sm font-medium" +
@@ -129,7 +129,6 @@ export const Bookmarks: React.FC<{
             }
         </div>
           }
-      </div>
       <div className="grid grid-cols-1 sm:grid-cols-1  ">
         {preview
           ? bookmark.slice(0, 3).map((p) => (
