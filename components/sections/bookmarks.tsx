@@ -106,7 +106,7 @@ export const Bookmarks: React.FC<{
               onClick={() => setTagName("Hepsi")}
               className={tagName === "Hepsi" ? "inline-flex items-center px-3 py-1 rounded-large text-sm font-bold	" +
                   "leading-5 mr-2 bg-color-primary color-primary border-color-secondary" : "inline-flex items-center mr-2" +
-                  " px-3 py-1 rounded-large text-sm font-bold" +
+                  " px-3 py-1 rounded-large  text-sm font-bold" +
                   " leading-5  bg-gradient color-secondary " +
                   "border-color-primary  hover:border-secondary  hover:bg-primary"}
             >

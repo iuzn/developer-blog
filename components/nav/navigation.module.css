@@ -11,3 +11,8 @@
     margin-top: 8px;
   }
 }
+.hiddentext{
+  display: block;
+  visibility: visible;
+  color: red;
+}
