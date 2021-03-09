@@ -22,7 +22,7 @@ function Navigation({ flat }) {
             className={styles.navButton}
           >
             {selected ? menu.iconSelected : menu.icon}{menu.title}
-            {showTitle ? <TextTitle>{menu.title}</TextTitle> : <p className={styles.hiddentext}>Yazı</p>}
+            {showTitle ? <TextTitle>{menu.title}</TextTitle> : <p className={styles.hiddentext}>{menu.title}</p>}
           </NavigationButton>
         )
       })}
