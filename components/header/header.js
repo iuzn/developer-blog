@@ -9,6 +9,7 @@ import { useRouter } from 'next/router'
 import Button from '../button'
 import { ModFilled } from '../icons'
 import Profile from '../profile-box/profile';
+import { config } from '../../config'
 
 function Header(props) {
   const router = useRouter()
@@ -17,7 +18,7 @@ function Header(props) {
     <div className={cn(styles.header)}>
       <div className={styles.profile}>
         <Profile/>
-
+        <span>{config.publicName}</span>
       </div>
       <div className={styles.headertext}>
         {MENU.map((menu) => {
@@ -35,7 +36,9 @@ function Header(props) {
             alt="Temayı değiştir."
           className={styles.buton}
           onClick={() => isShowModset(!isShowMod)}
-        >Temayı Değiştir
+        ><span  className={styles.hiddentext}>
+          Temayı Değiştir
+        </span>
           <ModFilled />
         </Button>
         {isShowMod && <ModSelect onClick={() => isShowModset(false)} />}

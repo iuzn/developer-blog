@@ -58,6 +58,7 @@ const Newsletter = () => {
               'py-3 px-3 border-none w-48 sm:w-64'
             )}
             type="text"
+            inputMode="email"
             placeholder="E-posta Girin"
             value={email}
             onKeyPress={(e) => {

@@ -20,7 +20,8 @@
     padding: 8px;
     opacity: 0;
   }
-  &:focus{
+  &:focus-visible,
+  &:hover{
     .hiddentext {
       margin-left: 40px;
           font-size: 16px;

@@ -55,6 +55,26 @@
     display: none;
     visibility: hidden;
   }
+    span {
+    font-size: 0;
+    display: none;
+    color: var(--c-primary);
+    border-radius: 8px;
+    background: var(--c-gradient);
+    padding: 8px;
+    opacity: 0;
+  }
+  &:focus-visible,
+  &:hover{
+    span {
+      top: 56px;
+          font-size: 12px;
+      opacity: 100%;
+      position: fixed;
+      display: block;
+          transition: var(--fade);
+    }
+  }
 }
 .buton {
   font-size: 0;
@@ -62,5 +82,25 @@
     background-color: transparent;
     font-size: 32px;
     margin: 4px;
+  }
+    .hiddentext {
+    font-size: 0;
+    display: none;
+    color: var(--c-primary);
+    border-radius: 8px;
+    background: var(--c-gradient);
+    padding: 8px;
+    opacity: 0;
+  }
+  &:focus-visible,
+  &:hover{
+    .hiddentext {
+      top: 56px;
+          font-size: 12px;
+      opacity: 100%;
+      position: fixed;
+      display: block;
+          transition: var(--fade);
+    }
   }
 }

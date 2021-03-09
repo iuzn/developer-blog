@@ -18,9 +18,7 @@ function Profile() {
   const name = config.publicName
 
   return (
-    <div className={styles.box}>
-      <div key={name}>
-        <div>
+    <div key={name} className={styles.box}>
           <button
             onClick={() => isShowProfileset(!isShowProfile)}
             className={styles.button}
@@ -32,17 +30,12 @@ function Profile() {
               width={size}
               height={size}
             />
+            <h2 className={styles.title}>{name}</h2>
           </button>
 
           {isShowProfile && (
             <ProfileBox onClick={() => isShowProfileset(false)} />
           )}
-        </div>
-
-        <div>
-          <h2 className={styles.title}>{name}</h2>
-        </div>
-      </div>
     </div>
   )
 }
