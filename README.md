@@ -11,7 +11,7 @@ I am not aware.
 
 ### TODO
 - [ ] Pagenation
-- [ ] Image Optimizition (Responsive)
+- [x] Image Optimizition (Responsive)
 - [ ] Detailed Theme Accessibility (Font, Color, Effects)
 - [ ] Infinite Scrool
 - [ ] Interchangeable Layout (May be a different design) 
@@ -23,5 +23,6 @@ I am not aware.
 - [ ] Alternative Comment Service (Recently utteranc.es)
 - [ ] Alternative Notion Page Renderer (Recently react-notion)
 - [ ] Post Filter (Search all posts)
+- [x] Bookmark Filter
 
 If you want to code with me, [I'm a click away!](mailto:dev@ibrahimuzun.com?subject=[GitHub]%Developing%20new%20social%media)

@@ -146,7 +146,6 @@
       }
       @media (--t) {
         top: auto;
-
         display: block;
         margin-left: 80px;
       }

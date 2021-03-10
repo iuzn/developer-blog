@@ -4,9 +4,6 @@
   flex-direction: column;
   align-items: flex-start;
 }
-.hiddentext {
-  display: none;
-}
 .navButton {
   font-size: 0;
   & + & {
@@ -35,6 +32,9 @@
       position: fixed;
       display: block;
       backdrop-filter: blur(8px);
+          @media (--d) {
+      visibility: hidden;
+    }
     }
   }
   &:visited {
