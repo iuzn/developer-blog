@@ -5,8 +5,6 @@ import { config } from '../../config'
 import useWindowSize from '../../Hooks/useWindowSize'
 import CONST from '../../constants'
 
-
-
 function Profile() {
   const [isShowProfile, isShowProfileset] = useState(false)
   const windowsize = useWindowSize()
@@ -19,23 +17,21 @@ function Profile() {
 
   return (
     <div key={name} className={styles.box}>
-          <button
-            onClick={() => isShowProfileset(!isShowProfile)}
-            className={styles.button}
-          >
-            <img
-              className={styles.image}
-              src={source}
-              alt={name}
-              width={size}
-              height={size}
-            />
-            <h2 className={styles.title}>{name}</h2>
-          </button>
-
-          {isShowProfile && (
-            <ProfileBox onClick={() => isShowProfileset(false)} />
-          )}
+      <button
+        onClick={() => isShowProfileset(!isShowProfile)}
+        className={styles.button}
+      >
+        <img
+          className={styles.image}
+          src={source}
+          alt={name}
+          width={size}
+          height={size}
+        />
+        <h2 className={styles.title}>{name}</h2>
+        <h2 className={styles.hiddentitle}>{name}</h2>
+      </button>
+      {isShowProfile && <ProfileBox onClick={() => isShowProfileset(false)} />}
     </div>
   )
 }

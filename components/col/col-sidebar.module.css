@@ -10,7 +10,7 @@
     visibility: visible;
     width: 100vw;
     bottom: 0;
-    transition: bottom 0.3s;
+    transition: bottom var(--fade);
     justify-content: center;
     z-index: 2;
   }
@@ -23,8 +23,7 @@
   @media (--m) {
     display: none;
     visibility: hidden;
-      z-index: 2;
-
+    z-index: 2;
   }
   z-index: 3;
   padding-left: 20px;
@@ -56,44 +55,54 @@
   flex-direction: row;
   flex: 1;
   padding: 0 2rem;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .footer {
   margin: auto auto 14px;
 }
-
+.hiddentext {
+  visibility: hidden;
+  display: none;
+}
 .navButton {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 0;
-  && svg{
-      font-size: 6vw;
+
+  && svg {
+    font-size: 8vw;
   }
   @media (--m) {
-    svg{
+    svg {
       font-size: 1.2rem;
-  }
+    }
   }
   .hiddentext {
     font-size: 0;
-    display: none;
-    color: var(--c-primary);
-    border-radius: 8px;
-    background: var(--c-gradient);
-    padding: 8px;
+    font-weight: bold;
+    visibility: hidden;
     opacity: 0;
+    position: fixed;
+    display: block;
+    color: var(--c-primary);
+    border-radius: 999px;
+    backdrop-filter: blur(8px);
+    background: var(--c-yellow-80);
+    padding: 12px;
   }
   &:focus-visible,
-  &:hover{
+  &:hover {
     .hiddentext {
-      bottom: 56px;
-      font-size: 16px;
+      visibility: visible;
       opacity: 100%;
+      bottom: 100%;
+      font-size: 0.8rem;
       position: fixed;
       display: block;
-          transition: var(--fade);
+      transition: var(--fade);
+      margin-bottom: 2px;
     }
   }
 }

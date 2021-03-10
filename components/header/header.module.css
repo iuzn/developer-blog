@@ -12,16 +12,13 @@
   background-color: var(--c-primary);
 
   @media (--m) {
-  grid-template-columns: 80px auto 80px;
-
+    grid-template-columns: 80px auto 80px;
   }
-    @media (--t) {
+  @media (--t) {
     grid-template-columns: auto 80px;
-
   }
-   grid-template-columns: 0 auto 80px;
+  grid-template-columns: 0 auto 80px;
   color: var(--c-text-color);
-
 }
 
 .headertext {
@@ -32,11 +29,10 @@
   color: var(--c-yellow);
   text-align: center;
   @media (--t) {
-
-  text-align: left; }
+    text-align: left;
+  }
   @media (--d) {
-
-  text-align: left;
+    text-align: left;
     color: var(--c-text-color);
   }
 }
@@ -48,32 +44,12 @@
 
 .profile {
   place-self: center;
-   display: block;
+  display: block;
   visibility: visible;
   width: 36px;
-    @media (--t) {
+  @media (--t) {
     display: none;
     visibility: hidden;
-  }
-    span {
-    font-size: 0;
-    display: none;
-    color: var(--c-primary);
-    border-radius: 8px;
-    background: var(--c-gradient);
-    padding: 8px;
-    opacity: 0;
-  }
-  &:focus-visible,
-  &:hover{
-    span {
-      top: 56px;
-          font-size: 12px;
-      opacity: 100%;
-      position: fixed;
-      display: block;
-          transition: var(--fade);
-    }
   }
 }
 .buton {
@@ -83,24 +59,37 @@
     font-size: 32px;
     margin: 4px;
   }
-    .hiddentext {
+  .hiddentext {
     font-size: 0;
-    display: none;
-    color: var(--c-primary);
-    border-radius: 8px;
-    background: var(--c-gradient);
-    padding: 8px;
+    font-weight: bold;
+    visibility: hidden;
     opacity: 0;
+    position: fixed;
+    right: 0;
+    @media (--d) {
+      right: auto;
+    }
+    color: var(--c-primary);
+    border-radius: 999px;
+    background: var(--c-yellow-80);
+    padding: 12px;
   }
   &:focus-visible,
-  &:hover{
+  &:hover {
     .hiddentext {
-      top: 56px;
-          font-size: 12px;
+      visibility: visible;
       opacity: 100%;
+      top: 56px;
+      font-size: 16px;
       position: fixed;
       display: block;
-          transition: var(--fade);
+      backdrop-filter: blur(8px);
+      transition: all ease-in-out var(--fade);
+    }
+  }
+  &:visited {
+    .hiddentext {
+      display: none;
     }
   }
 }

@@ -18,7 +18,6 @@ function Header(props) {
     <div className={cn(styles.header)}>
       <div className={styles.profile}>
         <Profile/>
-        <span>{config.publicName}</span>
       </div>
       <div className={styles.headertext}>
         {MENU.map((menu) => {

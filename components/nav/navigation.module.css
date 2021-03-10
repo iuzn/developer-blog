@@ -4,31 +4,42 @@
   flex-direction: column;
   align-items: flex-start;
 }
-
+.hiddentext {
+  display: none;
+}
 .navButton {
   font-size: 0;
   & + & {
     margin-top: 8px;
   }
-
   .hiddentext {
     font-size: 0;
-    display: none;
+    font-weight: bold;
+    visibility: hidden;
     color: var(--c-primary);
-    border-radius: 8px;
-    background: var(--c-gradient);
-    padding: 8px;
+    position: fixed;
+    display: block;
+    border-radius: 999px;
+    background: var(--c-yellow-60);
+    padding: 12px;
     opacity: 0;
+    transition: all ease-in-out var(--fade);
   }
   &:focus-visible,
-  &:hover{
+  &:hover {
     .hiddentext {
+      visibility: visible;
       margin-left: 40px;
-          font-size: 16px;
+      font-size: 16px;
       opacity: 100%;
       position: fixed;
       display: block;
-          transition: var(--fade);
+      backdrop-filter: blur(8px);
+    }
+  }
+  &:visited {
+    .hiddentext {
+      display: none;
     }
   }
 }

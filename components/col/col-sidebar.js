@@ -16,7 +16,10 @@ function Sidebar({ flat, mobile }) {
       if (prevScrollpos > currentScrollPos) {
         document.getElementById('wrapper').style.bottom = '0'
       } else {
-        document.getElementById('wrapper').style.bottom = '-50px'
+        document.getElementById('wrapper').style.bottom = '-80px'
+      }
+      if (prevScrollpos === currentScrollPos) {
+        document.getElementById('wrapper').style.bottom = '0'
       }
       prevScrollpos = currentScrollPos
     }

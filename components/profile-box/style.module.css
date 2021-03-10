@@ -23,60 +23,90 @@
     border-radius: 999px;
   }
 }
+.title {
+  display: none;
+}
+.hiddentitle {
+  display: none;
+}
 .button {
   cursor: pointer;
   flex-shrink: 0;
   display: grid;
   border-radius: 999px;
-@media (--d) {
-    &:focus-visible,
-  &:hover {
+  transition: all ease-in-out var(--fade);
+  @media (--d) {
     .title {
-      background: var(--c-gradient);
+      display: inline-block;
+      position: absolute;
+      padding: 144px 20px 0;
+      font-size: 32px;
+      line-height: 32px;
+      font-weight: bold;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      background: var(--c-text-color);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-align: center;
+    }
+    &:focus-visible,
+    &:hover {
+      .title {
+        background: var(--c-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
   }
 }
-    @media (--t) {
-       h2 {
+.button {
+  .hiddentitle {
     font-size: 0;
-    display: none;
-    color: var(--c-primary);
-    border-radius: 8px;
-    background: var(--c-gradient);
-    padding: 8px;
+    font-weight: bold;
+    visibility: hidden;
     opacity: 0;
+    position: fixed;
+    display: flex;
+    left: 0;
+    color: var(--c-primary);
+    border-radius: 999px;
+    background: var(--c-yellow-60);
+    padding: 12px;
   }
   &:focus-visible,
-  &:hover{
-    h2 {
-      margin-left: 56px;
-          font-size: 16px;
+  &:hover {
+    .hiddentitle {
+      visibility: visible;
       opacity: 100%;
+      font-size: 16px;
       position: fixed;
-      display: block;
-          transition: var(--fade);
+      backdrop-filter: blur(8px);
+      transition: all var(--fade);
+      @media (--m) {
+        display: block;
+        top: 56px;
+      }
+      @media (--t) {
+        top: auto;
+
+        display: block;
+        margin-left: 80px;
+      }
+      @media (--d) {
+        display: none;
+      }
     }
   }
+  &:visited {
+    .hiddentitle {
+      display: none;
+    }
   }
 }
-.title {
-  display: none;
-  @media (--d) {
-    display: inline-block;
-    position: absolute;
-    padding: 144px 20px 0;
-    font-size: 32px;
-    line-height: 32px;
-    font-weight: bold;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    text-align: center;
-  }
-}
+
 .overlay {
   position: fixed;
   left: 0;
