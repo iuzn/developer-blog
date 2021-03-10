@@ -2,19 +2,10 @@ import React, { useState } from 'react'
 import styles from './style.module.css'
 import ProfileBox from './profil-box'
 import { config } from '../../config'
-import useWindowSize from '../../Hooks/useWindowSize'
-import CONST from '../../constants'
 
 function Profile() {
   const [isShowProfile, isShowProfileset] = useState(false)
-  const windowsize = useWindowSize()
-  const ismobile = windowsize.width < CONST.TABLET_SIZE
-  const istablet = windowsize.width < CONST.DESKTOP_SIZE
-  let size
-  !istablet ? (size = '120') : !ismobile ? (size = '46') : (size = '36')
-  const source = config.avatarUrl.concat(`?s=${size}`)
   const name = config.publicName
-
   return (
     <div key={name} className={styles.box}>
       <button
@@ -22,11 +13,25 @@ function Profile() {
         className={styles.button}
       >
         <img
-          className={styles.image}
-          src={source}
+          className={styles.mobileImage}
+          src={config.avatarUrl.concat(`?s=36`)}
           alt={name}
-          width={size}
-          height={size}
+          width={36}
+          height={36}
+        />
+        <img
+          className={styles.tabletImage}
+          src={config.avatarUrl.concat(`?s=46`)}
+          alt={name}
+          width={46}
+          height={46}
+        />
+        <img
+          className={styles.desktopImage}
+          src={config.avatarUrl.concat(`?s=120`)}
+          alt={name}
+          width={120}
+          height={120}
         />
         <h2 className={styles.title}>{name}</h2>
         <h2 className={styles.hiddentitle}>{name}</h2>
