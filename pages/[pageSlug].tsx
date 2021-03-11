@@ -11,9 +11,8 @@ import Header from '../components/header/header'
 import { useRouter } from 'next/router'
 import Loading from '../components/loading'
 import { NotionAPI } from 'notion-client'
-import Link from 'next/link'
 import { Tweet } from 'react-static-tweets'
-import { NotionRenderer, Code, Collection, CollectionRow } from 'react-notion-x'
+import { NotionRenderer, Code, Collection } from 'react-notion-x'
 
 
 interface PostProps {
