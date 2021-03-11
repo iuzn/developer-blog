@@ -1,23 +1,27 @@
 import * as React from 'react'
-import {useEffect, useState} from 'react'
-import {NextSeo} from 'next-seo'
-import {BlockMapType, NotionRenderer} from 'react-notion'
-import {config} from '../../config'
-import Layout from '../../components/layout/index'
-import {getBlogTable, getPageBlocks} from '../../core/blog'
-import {dateFormatter} from '../../core/utils'
-import {BlogPost} from '../../types/blog'
-import {GetStaticPaths, GetStaticProps} from 'next'
-import {Footer} from '../../components/sections/footer'
-import {toNotionImageUrl} from '../../core/notion'
-import Header from '../../components/header/header'
-import {useRouter} from 'next/router'
-import Loading from '../../components/loading'
-import {Index} from '../../components/comments'
+import { useEffect, useState } from 'react'
+import { NextSeo } from 'next-seo'
+import dynamic from 'next/dynamic'
+import { GetStaticPaths, GetStaticProps } from 'next'
+import { useRouter } from 'next/router'
 
+import { NotionRenderer, Code, Collection } from 'react-notion-x'
+import { NotionAPI } from 'notion-client'
+import { Tweet } from 'react-static-tweets'
+
+import { getBlogTable } from '../../core/blog'
+import { dateFormatter } from '../../core/utils'
+
+import { BlogPost } from '../../types/blog'
+import { config } from '../../config'
+import { toNotionImageUrl } from '../../core/notion'
+import { Footer } from '../../components/sections/footer'
+import Layout from '../../components/layout/index'
+import Header from '../../components/header/header'
+import Loading from '../../components/loading'
+import { Index } from '../../components/comments'
 
 interface PostProps {
-  blocks: BlockMapType
   post: BlogPost
   morePosts: BlogPost[]
 }
@@ -30,6 +34,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
     fallback: true
   }
 }
+
+const notion = new NotionAPI()
+const Pdf = dynamic(() => import('react-notion-x').then((notion) => notion.Pdf))
+
+const Equation = dynamic(() =>
+  import('react-notion-x').then((notion) => notion.Equation)
+)
+
+const Modal = dynamic(
+  () => import('react-notion-x').then((notion) => notion.Modal),
+  { ssr: false }
+)
 
 export const getStaticProps: GetStaticProps<
   PostProps,
@@ -56,40 +72,41 @@ export const getStaticProps: GetStaticProps<
     throw Error(`Failed to find post for slug: ${slug}`)
   }
 
-  const blocks = await getPageBlocks(post.id)
+  const recordMap = await notion.getPage(post.id)
 
   return {
     props: {
       post,
-      blocks,
+      recordMap,
       morePosts
     },
     revalidate: 10
   }
 }
-
-const BlogPosts: React.FC<PostProps> = ({
-  post,
-  blocks
-}) => {
-  const [modal, setModal] = useState(false);
-  const toggle = () => setModal(!modal);
-  const router = useRouter()
-  useEffect(()=>{
-    const acc = document.getElementsByClassName("accordion");
-    let i;
-    for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    const panel = this.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    }
-  });
+interface recordMapProps {
+  recordMap: any
 }
+const BlogPosts: React.FC<PostProps & recordMapProps> = ({ post, recordMap }) => {
+
+  const [modal, setModal] = useState(false)
+  const toggle = () => setModal(!modal)
+  useEffect(() => {
+    const acc = document.getElementsByClassName('accordion')
+    let i
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener('click', function () {
+        this.classList.toggle('active')
+        const panel = this.nextElementSibling
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + 'px'
+        }
+      })
+    }
   })
+
+  const router = useRouter()
   if (router.isFallback) {
     return (
       <>
@@ -139,11 +156,26 @@ const BlogPosts: React.FC<PostProps> = ({
           </div>
         </div>
         <article className="flex-1 my-6 post-container">
-          <NotionRenderer blockMap={blocks} mapImageUrl={toNotionImageUrl} />
-          <button onClick={toggle} type="button" id="yorum" className={!modal ? "accordion" : "accordion-open"}>
+          <NotionRenderer
+            components={{
+              code: Code,
+              collection: Collection,
+              tweet: Tweet,
+              modal: Modal,
+              pdf: Pdf,
+              equation: Equation
+            }}
+            recordMap={recordMap}
+          />
+          <button
+            onClick={toggle}
+            type="button"
+            id="yorum"
+            className={!modal ? 'accordion' : 'accordion-open'}
+          >
             Yorumlar
           </button>
-          <div className={!modal ? "panel" : "panel-active"}>
+          <div className={!modal ? 'panel' : 'panel-active'}>
             <Index
               repo="iuzn/developer-blog"
               issueMap="issue-term"

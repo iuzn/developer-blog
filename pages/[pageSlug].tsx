@@ -1,19 +1,21 @@
 import * as React from 'react'
 import { NextSeo } from 'next-seo'
 import dynamic from 'next/dynamic'
-import { config } from '../config'
-import Layout from '../components/layout/index'
-import { getBlogTable } from '../core/blog'
-import { CustomPage } from '../types/custom-page'
 import { GetStaticProps, GetStaticPaths } from 'next'
-import { Footer } from '../components/sections/footer'
-import Header from '../components/header/header'
 import { useRouter } from 'next/router'
-import Loading from '../components/loading'
+
+import { NotionRenderer, Code, Collection } from 'react-notion-x'
 import { NotionAPI } from 'notion-client'
 import { Tweet } from 'react-static-tweets'
-import { NotionRenderer, Code, Collection } from 'react-notion-x'
 
+import { getBlogTable } from '../core/blog'
+
+import { CustomPage } from '../types/custom-page'
+import { config } from '../config'
+import Layout from '../components/layout/index'
+import { Footer } from '../components/sections/footer'
+import Header from '../components/header/header'
+import Loading from '../components/loading'
 
 interface PostProps {
   post: CustomPage
@@ -27,6 +29,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     fallback: true
   }
 }
+
 const notion = new NotionAPI()
 const Pdf = dynamic(() => import('react-notion-x').then((notion) => notion.Pdf))
 
@@ -63,7 +66,7 @@ export const getStaticProps: GetStaticProps<
   if (!post || (!post.published && process.env.NODE_ENV !== 'development')) {
     throw Error(`Bu adres için gönderi bulunamadı: ${slug}`)
   }
- const recordMap = await notion.getPage(post.id)
+  const recordMap = await notion.getPage(post.id)
   return {
     props: {
       post,
@@ -76,7 +79,10 @@ export const getStaticProps: GetStaticProps<
 interface recordMapProps {
   recordMap: any
 }
-const BlogPosts: React.FC<PostProps & recordMapProps> = ({ post, recordMap }) => {
+const Post: React.FC<PostProps & recordMapProps> = ({
+  post,
+  recordMap
+}) => {
   const router = useRouter()
   if (router.isFallback) {
     return (
@@ -109,19 +115,20 @@ const BlogPosts: React.FC<PostProps & recordMapProps> = ({ post, recordMap }) =>
         <Header title={post.title} />
         <article className="flex-1 my-6 post-container">
           <NotionRenderer
-              components={{
-          code: Code,
-          collection: Collection,
-          tweet: Tweet,
-          modal: Modal,
-          pdf: Pdf,
-          equation: Equation
-        }}
-              recordMap={recordMap}  />
+            components={{
+              code: Code,
+              collection: Collection,
+              tweet: Tweet,
+              modal: Modal,
+              pdf: Pdf,
+              equation: Equation
+            }}
+            recordMap={recordMap}
+          />
         </article>
         <Footer />
       </Layout>
     </>
   )
 }
-export default BlogPosts
+export default Post
