@@ -6,11 +6,11 @@ import Button from '../button'
 import useOnclickOutside from 'react-cool-onclickoutside'
 
 const THEME = {
-  system: 'System',
-  light: 'Light',
-  dim: 'Dim',
-  dark: 'Dark',
-  sepia: 'Sepia',
+  system: {id:'System',name:'Sistem'},
+  light: {id:'Light',name:'Aydınlık'},
+  dim: {id:'Dim',name:'Hacker'},
+  dark: {id:'Dark',name:'Karanlık'},
+  sepia: {id:'Sepia',name:'Kahve'},
   null: ''
 }
 
@@ -33,7 +33,6 @@ function ModSelect({ onClick = () => {} }) {
   const ref = useOnclickOutside(() => {
     onClick()
   })
-
   return (
     <div className={styles.overlay}>
       <div ref={ref} className={styles.mod}>
@@ -55,11 +54,10 @@ function ModSelect({ onClick = () => {} }) {
             const handleChange = (event) => {
               store.changeTheme(event.target.value)
             }
-            return (<button key={theme} id={THEME[theme]} className={styles.button} value={valueOption} checked={theme === store.theme} onClick={handleChange}><Check/></button>
+            return (<button key={theme} id={THEME[theme].id} className={styles.button} value={valueOption} checked={theme === store.theme} onClick={handleChange}><span>{THEME[theme].name}</span><Check/></button>
             )
           })}
         </div>
-
       </div>
     </div>
   )

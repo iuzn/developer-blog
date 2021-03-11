@@ -23,7 +23,7 @@ function Navigation({ flat }) {
           >
             {selected ? menu.iconSelected : menu.icon}
             {menu.title}
-            {showTitle && <TextTitle>{menu.title}</TextTitle>}
+            {showTitle && <TextTitle>{menu.title}</TextTitle>}{menu.title}
             <span className={styles.hiddentext}>{menu.title}</span>
           </NavigationButton>
         )

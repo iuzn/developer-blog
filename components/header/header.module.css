@@ -85,6 +85,9 @@
       display: block;
       backdrop-filter: blur(8px);
       transition: all ease-in-out var(--fade);
+          @media (--m) {
+      display: none;
+    }
     }
   }
   &:visited {

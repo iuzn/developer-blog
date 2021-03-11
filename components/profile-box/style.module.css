@@ -141,20 +141,20 @@
       backdrop-filter: blur(8px);
       transition: all var(--fade);
       @media (--m) {
-        display: block;
-        top: 56px;
+        display: none;
       }
       @media (--t) {
         top: auto;
         display: block;
-        margin-left: 80px;
+        position: fixed;
+        margin-left: 8%;
       }
       @media (--d) {
         display: none;
       }
     }
   }
-  &:visited {
+  &:visited{
     .hiddentitle {
       display: none;
     }

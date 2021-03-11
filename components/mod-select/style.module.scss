@@ -90,6 +90,7 @@
 }
 .button {
   display: flex;
+  justify-content: center;
   align-items: center;
   box-sizing: border-box;
   outline-style: none;
@@ -104,18 +105,26 @@
   min-height: 40px;
   max-height: 65px;
   border-radius: 99px;
-
+  & span {
+    position: fixed;
+    visibility: hidden;
+    font-size: 0;
+    color: var(--c-yellow);
+    pointer-events: none;
+  }
+  &:focus-visible,
   &:hover {
     color: var(--c-primary);
     background-color: var(--c-yellow);
   }
 }
 .kapat {
-  display: grid;
-  grid-row-end: auto;
+  display: flex;
+  justify-content: center;
   margin: -15px -15px auto auto;
-  font-size: 0;
   color: var(--c-yellow);
+  align-content: center;
+  font-size: 0;
   svg {
     font-size: 30px;
   }
@@ -126,6 +135,11 @@
     border-radius: 99px;
     color: var(--c-primary);
     background-color: rgb(220, 63, 22);
+  }
+}
+.kapat:visited {
+  svg {
+    visibility: hidden;
   }
 }
 .container [id='System'] {
