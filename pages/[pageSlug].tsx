@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { NextSeo } from 'next-seo'
+import dynamic from 'next/dynamic'
 import { config } from '../config'
 import Layout from '../components/layout/index'
 import { getBlogTable } from '../core/blog'
@@ -10,8 +11,10 @@ import Header from '../components/header/header'
 import { useRouter } from 'next/router'
 import Loading from '../components/loading'
 import { NotionAPI } from 'notion-client'
+import Link from 'next/link'
+import { Tweet } from 'react-static-tweets'
+import { NotionRenderer, Code, Collection, CollectionRow } from 'react-notion-x'
 
-import { NotionRenderer } from 'react-notion-x'
 
 interface PostProps {
   post: CustomPage
@@ -26,6 +29,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 const notion = new NotionAPI()
+const Pdf = dynamic(() => import('react-notion-x').then((notion) => notion.Pdf))
+
+const Equation = dynamic(() =>
+  import('react-notion-x').then((notion) => notion.Equation)
+)
+
+const Modal = dynamic(
+  () => import('react-notion-x').then((notion) => notion.Modal),
+  { ssr: false }
+)
 
 export const getStaticProps: GetStaticProps<
   PostProps,
@@ -96,7 +109,41 @@ const BlogPosts: React.FC<PostProps & recordMapProps> = ({ post, recordMap }) =>
       <Layout>
         <Header title={post.title} />
         <article className="flex-1 my-6 post-container">
-          <NotionRenderer recordMap={recordMap}  />
+          <NotionRenderer
+              components={{
+          pageLink: ({
+            href,
+            as,
+            passHref,
+            prefetch,
+            replace,
+            scroll,
+            shallow,
+            locale,
+            ...props
+          }) => (
+            <Link
+              href={href}
+              as={as}
+              passHref={passHref}
+              prefetch={prefetch}
+              replace={replace}
+              scroll={scroll}
+              shallow={shallow}
+              locale={locale}
+            >
+              <a {...props} />
+            </Link>
+          ),
+          code: Code,
+          collection: Collection,
+          collectionRow: CollectionRow,
+          tweet: Tweet,
+          modal: Modal,
+          pdf: Pdf,
+          equation: Equation
+        }}
+              recordMap={recordMap}  />
         </article>
         <Footer />
       </Layout>

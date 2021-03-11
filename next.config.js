@@ -2,7 +2,7 @@ const path = require('path')
 
 const withPlugins = require("next-compose-plugins");
 
-const withSvgr = (nextConfig = {}, nextComposePlugins = {}) => {
+const withSvgr = (nextConfig = {}) => {
   return Object.assign({}, nextConfig, {
     webpack(config, options) {
       config.module.rules.push({
@@ -18,9 +18,18 @@ const withSvgr = (nextConfig = {}, nextComposePlugins = {}) => {
     },
   });
 };
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true'
+})
 
 module.exports = withPlugins([withSvgr], {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')]
   }
 });
+
+module.exports = withBundleAnalyzer({
+  images: {
+    domains: ['pbs.twimg.com']
+  }
+})

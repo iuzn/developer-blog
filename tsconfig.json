@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2016",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "strict": true,
+    "strict": false,
     "noEmit": true,
     "noImplicitThis": false,
     "esModuleInterop": true,
@@ -14,7 +14,9 @@
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
     "types": ["node"],
-    "skipLibCheck": true
+    "baseUrl": ".",
+    "skipLibCheck": true,
+    "typeRoots": ["./node_modules/@types"]
   },
   "exclude": ["node_modules"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
