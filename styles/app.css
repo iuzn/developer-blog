@@ -446,9 +446,6 @@ a:focus-visible {
   list-style: none;
 }
 
-.static-tweet-summary::-webkit-details-marker {
-  display: none;
-}
 
 .static-tweet-table-container {
   display: flex;
