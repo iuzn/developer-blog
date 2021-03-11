@@ -72,4 +72,7 @@
   .color-primary-60 {
     color: var(--c-yellow-60);
   }
+  .color-primary-80 {
+    color: var(--c-yellow-80);
+  }
 }

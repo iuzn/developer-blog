@@ -53,10 +53,10 @@ export const Bookmark: React.FC<
           <p className="mt-2 pb-3 whitespace-nowrap	overflow-hidden overflow-ellipsis">
             {description}
           </p>
-          <time className="inline-flex mr-4 color-primary-60 md:group-hover:color-secondary md:focus:color-secondary">
+          <time className="inline-flex mr-4 color-primary-80 md:group-hover:color-secondary md:focus:color-secondary">
             {dateFormatter.format(new Date(created))}
           </time>
-          <p className="inline-flex mr-4 color-primary-60 md:group-hover:color-secondary md:focus:color-secondary">
+          <p className="inline-flex mr-4 color-primary-80 md:group-hover:color-secondary md:focus:color-secondary">
             {new URL(link).hostname}
           </p>
           {tags &&

@@ -35,7 +35,7 @@ function Header(props) {
             alt="Temayı değiştir."
           className={styles.buton}
           onClick={() => isShowModset(!isShowMod)}
-        ><span  className={styles.hiddentext}>
+        >Temayı Değiştir<span  className={styles.hiddentext}>
           Temayı Değiştir
         </span>
           <ModFilled />
