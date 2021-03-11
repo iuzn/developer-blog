@@ -109,13 +109,24 @@
     position: fixed;
     visibility: hidden;
     font-size: 0;
+    opacity: 0;
     color: var(--c-yellow);
     pointer-events: none;
+    transition: all ease-in-out var(--fade);
   }
   &:focus-visible,
   &:hover {
     color: var(--c-primary);
     background-color: var(--c-yellow);
+    span {
+      position: fixed;
+      visibility: visible;
+      font-size: 1em;
+      color: var(--c-yellow);
+      opacity: 1;
+      margin-top: 100px;
+      pointer-events: none;
+    }
   }
 }
 .kapat {

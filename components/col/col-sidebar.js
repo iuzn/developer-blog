@@ -42,6 +42,7 @@ function Sidebar({ flat, mobile }) {
                 className={styles.navButton}
               >
                 {selected ? menu.iconSelected : menu.icon}
+                {menu.title}
                 <span className={styles.hiddentext}>{menu.title}</span>
               </NavigationButton>
             )

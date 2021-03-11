@@ -54,7 +54,7 @@ function ModSelect({ onClick = () => {} }) {
             const handleChange = (event) => {
               store.changeTheme(event.target.value)
             }
-            return (<button key={theme} id={THEME[theme].id} className={styles.button} value={valueOption} checked={theme === store.theme} onClick={handleChange}><span>{THEME[theme].name}</span><Check/></button>
+            return (<button key={theme} id={THEME[theme].id} className={styles.button} value={valueOption} checked={theme === store.theme} onClick={handleChange}><Check/><span>{THEME[theme].name}</span></button>
             )
           })}
         </div>
