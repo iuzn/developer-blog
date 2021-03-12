@@ -12,18 +12,17 @@
     @apply max-w-4xl mx-auto w-full px-4;
   }
 }
-
-.achievement-notion .notion-text {
-}
+bnmöh
 
 .achievement-notion .notion-link,
 .achievement-notion .notion-text {
   @apply break-normal;
 }
 
+.notion-asset-wrapper-pdf,
 .notion-asset-wrapper img,
 .notion-asset-wrapper iframe {
-  @apply overflow-hidden rounded;
+  @apply overflow-hidden rounded-medium;
 }
 .aspect-16x9 {
   padding-bottom: 56.25%;

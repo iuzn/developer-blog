@@ -409,7 +409,10 @@ a:focus-visible {
 .static-tweet-h6 {
   font-size: 0.875rem;
 }
-
+.static-tweet p {
+  margin-top: 8px;
+  margin-bottom: 3px;
+}
 .static-tweet ul {
   margin: var(--text-margin);
   list-style-type: none;
@@ -638,6 +641,10 @@ a:focus-visible {
   height: 2.25rem;
   width: 2.25rem;
   margin-right: 0.625rem;
+  border-radius: 99px;
+}
+.static-tweet-header-avatar img {
+  border-radius: 99px;
 }
 .static-tweet-header-author {
   display: flex;
@@ -720,6 +727,14 @@ a:focus-visible {
   border-top: var(--tweet-border);
 }
 
+.katex {
+  font: 1.21em / 1.2 KaTeX_Main, 'Times New Roman', serif;
+  text-indent: 0;
+  text-rendering: auto;
+  .katex-html {
+    display: none;
+  }
+}
 .notion {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -2048,14 +2063,16 @@ svg.notion-page-icon {
   margin: 4px 0;
 }
 
-.notion-text:first-child {
-  margin-top: 8px;
+.notion-text {
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-yellow) var(--c-yellow-10);
 }
 
 .notion-text-children {
   padding-left: 1.5em;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .notion .notion-code {
@@ -2188,6 +2205,7 @@ svg.notion-page-icon {
 .notion-collection {
   align-self: center;
   min-width: 100%;
+  float: left;
 }
 
 .notion-collection-header {
@@ -2977,7 +2995,6 @@ svg.notion-page-icon {
   position: relative;
   display: inline-flex;
   color: inherit;
-  user-select: none;
   border-radius: 3px;
   transition: background 20ms ease-in 0s;
 }
@@ -2996,16 +3013,16 @@ svg.notion-page-icon {
   max-width: 100%;
   padding: 4px 8px;
   margin: 4px 0;
-  cursor: pointer;
 }
 
 .notion-equation:hover {
-  background: var(--bg-color-0);
+  background: var(--c-yellow-10);
 }
 
 .notion-equation:active,
 .notion-equation:focus {
-  background: var(--select-color-2);
+  color: var(--c-primary);
+  background: var(--c-yellow-60);
 }
 
 .notion-frame .katex-display .katex {
