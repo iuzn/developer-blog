@@ -1,20 +1,26 @@
 import * as React from 'react'
 import { NextSeo } from 'next-seo'
-import { NotionRenderer, BlockMapType } from 'react-notion'
+import dynamic from 'next/dynamic'
+import { GetStaticProps, GetStaticPaths } from 'next'
+import { useRouter } from 'next/router'
+
+import { NotionAPI } from 'notion-client'
+import { NotionRenderer, Code, Collection } from 'react-notion-x'
+import { Tweet } from 'react-static-tweets'
+import { toNotionImageUrl } from '../../core/notion'
+
+import { getBlogTable } from '../../core/blog'
+import { dateFormatter } from '../../core/utils'
+import * as types from '../../types/othertypes'
+import { Project } from '../../types/project'
+
 import { config } from '../../config'
 import Layout from '../../components/layout/index'
-import { getBlogTable, getPageBlocks } from '../../core/blog'
-import { Project } from '../../types/project'
-import { GetStaticProps, GetStaticPaths } from 'next'
 import { Footer } from '../../components/sections/footer'
-import { toNotionImageUrl } from '../../core/notion'
 import Header from '../../components/header/header'
-import { useRouter } from 'next/router'
 import Loading from '../../components/loading'
-import { dateFormatter } from '../../core/utils'
 
 interface PostProps {
-  blocks: BlockMapType
   project: Project
   moreProject: Project[]
 }
@@ -28,6 +34,17 @@ export const getStaticPaths: GetStaticPaths = async () => {
     fallback: true
   }
 }
+const notion = new NotionAPI()
+const Pdf = dynamic(() => import('react-notion-x').then((notion) => notion.Pdf))
+
+const Equation = dynamic(() =>
+  import('react-notion-x').then((notion) => notion.Equation)
+)
+
+const Modal = dynamic(
+  () => import('react-notion-x').then((notion) => notion.Modal),
+  { ssr: false }
+)
 
 export const getStaticProps: GetStaticProps<
   PostProps,
@@ -57,19 +74,22 @@ export const getStaticProps: GetStaticProps<
     throw Error(`Failed to find post for slug: ${slug}`)
   }
 
-  const blocks = await getPageBlocks(project.id)
+  const recordMap = await notion.getPage(project.id)
 
   return {
     props: {
       project,
-      blocks,
+      recordMap,
       moreProject
     },
-    revalidate: 1
+    revalidate: 10
   }
 }
 
-const ProjectPosts: React.FC<PostProps> = ({ project, blocks }) => {
+const ProjectPosts: React.FC<PostProps & types.PageProps> = ({
+  project,
+  recordMap
+}) => {
   const router = useRouter()
   if (router.isFallback) {
     return (
@@ -126,7 +146,17 @@ const ProjectPosts: React.FC<PostProps> = ({ project, blocks }) => {
           </div>
         </div>
         <article className="flex-1 my-6 post-container">
-          <NotionRenderer blockMap={blocks} mapImageUrl={toNotionImageUrl} />
+          <NotionRenderer
+            components={{
+              code: Code,
+              collection: Collection,
+              tweet: Tweet,
+              modal: Modal,
+              pdf: Pdf,
+              equation: Equation
+            }}
+            recordMap={recordMap}
+          />
         </article>
         <Footer />
       </Layout>

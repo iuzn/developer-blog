@@ -19,7 +19,7 @@ import { Footer } from '../../components/sections/footer'
 import Layout from '../../components/layout/index'
 import Header from '../../components/header/header'
 import Loading from '../../components/loading'
-import { Index } from '../../components/comments'
+import { ReactUtterances } from '../../components/comments'
 
 interface PostProps {
   post: BlogPost
@@ -155,7 +155,7 @@ const BlogPosts: React.FC<PostProps & recordMapProps> = ({ post, recordMap }) =>
             </time>
           </div>
         </div>
-        <article className="flex-1 my-6 post-container">
+        <article className="flex-1 my-6 post-container p-4">
           <NotionRenderer
             components={{
               code: Code,
@@ -167,6 +167,7 @@ const BlogPosts: React.FC<PostProps & recordMapProps> = ({ post, recordMap }) =>
             }}
             recordMap={recordMap}
           />
+          <br/>
           <button
             onClick={toggle}
             type="button"
@@ -176,7 +177,7 @@ const BlogPosts: React.FC<PostProps & recordMapProps> = ({ post, recordMap }) =>
             Yorumlar
           </button>
           <div className={!modal ? 'panel' : 'panel-active'}>
-            <Index
+            <ReactUtterances
               repo="iuzn/developer-blog"
               issueMap="issue-term"
               issueTerm="title"

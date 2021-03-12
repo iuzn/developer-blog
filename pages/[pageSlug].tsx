@@ -4,13 +4,14 @@ import dynamic from 'next/dynamic'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import { useRouter } from 'next/router'
 
-import { NotionRenderer, Code, Collection } from 'react-notion-x'
 import { NotionAPI } from 'notion-client'
+import { NotionRenderer, Code, Collection } from 'react-notion-x'
 import { Tweet } from 'react-static-tweets'
 
 import { getBlogTable } from '../core/blog'
-
+import * as types from '../types/othertypes'
 import { CustomPage } from '../types/custom-page'
+
 import { config } from '../config'
 import Layout from '../components/layout/index'
 import { Footer } from '../components/sections/footer'
@@ -20,6 +21,7 @@ import Loading from '../components/loading'
 interface PostProps {
   post: CustomPage
   morePosts: CustomPage[]
+  recordMap: any
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -31,6 +33,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 const notion = new NotionAPI()
+
 const Pdf = dynamic(() => import('react-notion-x').then((notion) => notion.Pdf))
 
 const Equation = dynamic(() =>
@@ -76,13 +79,8 @@ export const getStaticProps: GetStaticProps<
     revalidate: 10
   }
 }
-interface recordMapProps {
-  recordMap: any
-}
-const Post: React.FC<PostProps & recordMapProps> = ({
-  post,
-  recordMap
-}) => {
+
+const Post: React.FC<PostProps & types.PageProps> = ({ post, recordMap }) => {
   const router = useRouter()
   if (router.isFallback) {
     return (

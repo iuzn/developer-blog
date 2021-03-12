@@ -1,6 +1,5 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styles from '../sections/styles.module.css'
-import StoreContext from '../../store'
 import Loading from '../loading'
 
 export type MappingType =
@@ -23,7 +22,7 @@ interface ReactUtterancesState {
   pending: boolean
 }
 
-export class Index extends React.Component<
+export class ReactUtterances extends React.Component<
   ReactUtterancesProps,
   ReactUtterancesState
 > {
@@ -59,6 +58,12 @@ export class Index extends React.Component<
     scriptElement.setAttribute('crossorigin', 'annonymous')
     const store = localStorage.getItem('THEME')
     let theme = 'light'
+
+    if (store === 'system') {
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? (theme = 'github-dark')
+        : (theme = 'github-light')
+    }
     if (store === 'light') {
       theme = 'github-light'
     }

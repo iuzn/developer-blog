@@ -141,6 +141,7 @@ a:focus-visible {
     0 8px 16px var(--c-yellow-10);
 }
 .accordion {
+  position: relative;
   cursor: pointer;
   text-decoration: underline var(--c-yellow-80);
   padding: 18px;
@@ -148,7 +149,6 @@ a:focus-visible {
   text-align: left;
   outline: none;
   font-size: 1.5em;
-  transition: var(--fade);
   border: 1px solid var(--c-border);
   font-weight: bold;
   display: flex;
@@ -164,6 +164,7 @@ a:focus-visible {
 }
 
 .accordion-open {
+  position: relative;
   cursor: pointer;
   text-decoration: underline var(--c-yellow-80);
   padding: 18px;
@@ -212,8 +213,11 @@ a:focus-visible {
   overflow: hidden;
   visibility: hidden;
   max-height: 0;
+  opacity: 0;
+  transition: all ease-in-out var(--fade);
 }
 .panel-active {
+  transition: all ease-in-out var(--fade);
   visibility: visible;
   overflow: hidden;
   padding: 0 18px;
@@ -221,7 +225,6 @@ a:focus-visible {
   border: solid var(--c-border);
   border-width: 0 1px 1px 1px;
 }
-
 
 .static-tweet blockquote {
   margin: 0;
@@ -445,7 +448,6 @@ a:focus-visible {
   height: 100%;
   list-style: none;
 }
-
 
 .static-tweet-table-container {
   display: flex;
@@ -717,7 +719,6 @@ a:focus-visible {
   padding: 0.625rem 1.25rem;
   border-top: var(--tweet-border);
 }
-
 
 .notion {
   padding-top: 1rem;
@@ -1603,14 +1604,20 @@ img.notion-nav-icon {
 
 .medium-zoom-image {
   border-radius: 0;
-
 }
 
 .medium-zoom-image--opened {
   z-index: 4;
-
 }
-
+.medium-zoom-image--opened:active {
+  .notion-viewport {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+  }
+}
 .notion-frame {
   display: flex;
   flex-direction: column;
@@ -2094,7 +2101,6 @@ svg.notion-page-icon {
   height: 100%;
   max-height: 100%;
 }
-
 
 .notion-text {
   width: 100%;
@@ -3179,8 +3185,8 @@ svg.notion-page-icon {
 }
 
 .notion-collection-row-property,
-  .notion-property-relation,
-  .notion-page-title-text {
+.notion-property-relation,
+.notion-page-title-text {
   border-bottom: 1px solid;
 }
 
@@ -3441,8 +3447,8 @@ svg.notion-page-icon {
 }
 
 .notion-search {
-  box-shadow: rgba(15, 15, 15, 0.05) 0 0 0 1px,
-    rgba(15, 15, 15, 0.1) 0 5px 10px, rgba(15, 15, 15, 0.2) 0 15px 40px;
+  box-shadow: rgba(15, 15, 15, 0.05) 0 0 0 1px, rgba(15, 15, 15, 0.1) 0 5px 10px,
+    rgba(15, 15, 15, 0.2) 0 15px 40px;
   border-radius: 3px;
   background: #fff;
 
