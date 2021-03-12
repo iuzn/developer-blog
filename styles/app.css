@@ -878,58 +878,6 @@ a:focus-visible {
   font-weight: 600;
 }
 
-.notion-title {
-  font-size: 2.5em;
-  font-weight: 700;
-  margin-top: 0.75em;
-  margin-bottom: 0.25em;
-}
-
-.notion-h1,
-.notion-h2,
-.notion-h3 {
-  font-weight: 600;
-  line-height: 1.3;
-  padding: 3px 2px;
-}
-
-.notion-h1 {
-  font-size: 1.875em;
-  margin-top: 1.4em;
-}
-.notion-h1:first-child {
-  margin-top: 0;
-}
-.notion-h2 {
-  font-size: 1.5em;
-  margin-top: 1.1em;
-}
-.notion-h3 {
-  font-size: 1.25em;
-  margin-top: 1em;
-}
-.notion-page-cover {
-  display: block;
-  object-fit: cover;
-  width: 100%;
-  height: 30vh;
-  min-height: 30vh;
-  padding: 0;
-}
-
-.notion-page {
-  padding: 0;
-  margin: 0 auto;
-  max-width: 708px;
-  width: 100%;
-}
-
-@media only screen and (max-width: 730px) {
-  .notion-page {
-    padding: 0 2vw;
-  }
-}
-
 .notion-page-offset {
   margin-top: 96px;
 }
@@ -975,10 +923,11 @@ img.notion-page-icon-offset {
   font-size: 1.2em;
 }
 .notion-hr {
-  margin: 6px 0;
-  padding: 0;
-  border-top-width: 1px;
-  border-color: rgba(55, 53, 47, 0.09);
+  display: flex;
+  vertical-align: center;
+  height: 30px;
+  width: 100%;
+  border-top: 1px solid var(--c-border);
 }
 .notion-link {
   color: inherit;
@@ -1086,19 +1035,6 @@ img.notion-page-icon {
   border: none;
 }
 
-.notion-text {
-  word-break: break-word;
-  line-height: 28px;
-  font-weight: 400;
-  text-rendering: optimizeLegibility;
-  overflow-wrap: break-word;
-  -webkit-font-smoothing: antialiased;
-  white-space: pre-wrap;
-  caret-color: var(--c-text-color);
-  padding: 3px 2px;
-  margin-top: 1px;
-  margin-bottom: 1px;
-}
 .notion-block {
   padding: 3px 2px;
 }
@@ -1764,19 +1700,18 @@ img.notion-nav-icon {
   width: 100%;
   font-size: 2.5em;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-top: 0.75em;
+  margin-bottom: 0.25em;
   line-height: 1.2;
 }
 
 .notion-h {
   position: relative;
   display: inline-block;
-
   font-weight: 600;
   line-height: 1.3;
   padding: 3px 2px;
   margin-bottom: 1px;
-
   max-width: 100%;
   white-space: pre-wrap;
   word-break: break-word;
@@ -1784,7 +1719,6 @@ img.notion-nav-icon {
 
 .notion-h1 {
   font-size: 1.875em;
-  margin-top: 1.08em;
 }
 
 .notion-header-anchor {
@@ -1818,12 +1752,18 @@ img.notion-nav-icon {
 }
 
 .notion-hash-link {
-  opacity: 0;
-  text-decoration: none;
-  float: left;
-  margin-left: -20px;
-  padding-right: 4px;
-  fill: var(--fg-color-icon);
+  display: none;
+  @media (--t) {
+    display: block;
+    opacity: 0;
+    text-decoration: none;
+    float: left;
+    margin-left: -20px;
+    padding-top: 8px;
+    padding-right: 4px;
+    fill: var(--fg-color-icon);
+    transition: var(--fade-2);
+  }
 }
 
 .notion-page-cover {
@@ -1946,14 +1886,6 @@ img.notion-nav-icon {
   padding: 0.2em 0.9em;
   margin: 6px 0;
   font-size: 1.2em;
-}
-
-.notion-hr {
-  width: 100%;
-  margin: 6px 0;
-  padding: 0;
-  border-top: none;
-  border-color: var(--fg-color-0);
 }
 
 .notion-link {
@@ -2103,15 +2035,21 @@ svg.notion-page-icon {
 }
 
 .notion-text {
-  width: 100%;
-  white-space: pre-wrap;
   word-break: break-word;
+  line-height: 28px;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  white-space: pre-wrap;
+  caret-color: var(--c-text-color);
   padding: 3px 2px;
-  margin: 1px 0;
+  width: 100%;
+  margin: 4px 0;
 }
 
 .notion-text:first-child {
-  margin-top: 2px;
+  margin-top: 8px;
 }
 
 .notion-text-children {
@@ -2215,6 +2153,7 @@ svg.notion-page-icon {
   font-size: 14px;
   line-height: 1.4;
   color: var(--fg-color-3);
+  text-align: center;
 }
 
 .notion-callout {
@@ -2825,10 +2764,10 @@ svg.notion-page-icon {
 }
 
 .notion-table-of-contents-item {
-  color: inherit;
+  color: var(--c-text-color);
   text-decoration: none;
   user-select: none;
-  transition: background 20ms ease-in 0s;
+  transition: background ease-in var(--fade-2);
   cursor: pointer;
   width: 100%;
 
@@ -2844,11 +2783,11 @@ svg.notion-page-icon {
 }
 
 .notion-table-of-contents-item:hover {
-  background: var(--bg-color-0);
+  background: var(--c-yellow-10);
 }
 
 .notion-table-of-contents-item-body {
-  border-bottom: 1px solid var(--fg-color-1);
+  border-bottom: 1px solid var(--c-yellow-40);
 }
 
 .notion-to-do {
