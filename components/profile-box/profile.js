@@ -13,15 +13,8 @@ function Profile() {
         className={styles.button}
       >
         <img
-          className={styles.mobileImage}
-          src={config.avatarUrl.concat(`?s=36`)}
-          alt={name}
-          width={36}
-          height={36}
-        />
-        <img
           className={styles.tabletImage}
-          src={config.avatarUrl.concat(`?s=46`)}
+          src={config.avatarUrl.concat(`?s=72`)}
           alt={name}
           width={46}
           height={46}
