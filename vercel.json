@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/dm",
+      "destination": "https://twitter.com/messages/compose?recipient_id=1153865029256720384",
+      "permanent": true
+    }
+  ]
+}
