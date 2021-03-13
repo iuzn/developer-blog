@@ -9,7 +9,7 @@
   justify-content: center;
   background-color: var(--c-primary-40);
   z-index: 2;
-  backdrop-filter:blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .overlay {
@@ -18,15 +18,17 @@
 }
 .mod {
   display: grid;
-  grid-template-rows: 20px 80px 1fr 100px;
+  grid-template-rows: 20px 60px 80px 100px auto;
+  gap:15px;
   align-items: stretch;
+  justify-items: center;
   width: 100%;
   max-width: 600px;
   padding: 30px;
   border: 1px solid var(--c-yellow);
   background-color: var(--c-primary);
   border-radius: 20px;
-  margin: 20px;
+  margin: 18px;
   h2 {
     font-weight: bold;
     text-align: center;
@@ -38,9 +40,7 @@
     text-transform: capitalize;
     text-align: center;
     font-size: 30px;
-
     margin-bottom: auto;
-    padding-bottom: 60px;
   }
 
   transition: var(--fade);
@@ -132,11 +132,18 @@
 
 .fontselect {
   display: inline-flex;
-      gap: 10px;
+  gap: 10px;
+  align-items: center;
+  align-content: center;
   h3 {
-    font-size: 1.5em;
-    float: left;
-    margin-right: 20px;
+    padding-bottom: 0;
+    font-size: 1.4em;
+    margin-top: 2px;
+    margin-right: 10px;
+    @media (--t) {
+      font-size: 1.5em;
+      margin-right: 20px;
+    }
   }
   svg {
     pointer-events: none;
@@ -149,12 +156,15 @@
     box-sizing: border-box;
     outline-style: none;
     cursor: pointer;
-    width: 120px;
+    width: 100px;
     height: 40px;
     border-radius: 99px;
     border: 2px solid var(--c-yellow-20);
+    @media (--t) {
+      width: 120px;
+    }
     & span {
-        position: fixed;
+      position: fixed;
       visibility: visible;
       pointer-events: none;
       transition: all ease-in-out var(--fade);
@@ -172,52 +182,48 @@
     }
   }
 
- [id='Serif'] {
-   font-family: 'Source Serif Pro', serif;
-  background-color: var(--c-primary);
+  [id='Serif'] {
+    font-family: 'Source Serif Pro', serif;
+    background-color: var(--c-primary);
+  }
+  [id='Sansserif'] {
+    font-family: var(--font-sansserif);
+    background-color: var(--c-primary);
+  }
 }
- [id='Sansserif'] {
-   font-family: var(--font-sansserif);
-  background-color: var(--c-primary);
-}
-}
-
 
 :global(.sansserif):root {
   .fontselect [id='Sansserif'] {
     border: 2px solid var(--c-yellow);
-              span {
-        color: var(--c-yellow);
-      }
-      svg {
+    span {
+      color: var(--c-yellow);
+    }
+    svg {
       visibility: visible;
       opacity: 1;
       color: var(--c-yellow);
       border: transparent;
     }
-
   }
 }
 
 :global(.serif):root {
-    .fontselect{
-    h3{
-         font-family: 'Source Serif Pro', serif;
+  .fontselect {
+    h3 {
+      font-family: 'Source Serif Pro', serif;
     }
   }
   .fontselect [id='Serif'] {
     border: 2px solid var(--c-yellow);
-          span {
-        color: var(--c-yellow);
-      }
-      svg {
+    span {
+      color: var(--c-yellow);
+    }
+    svg {
       visibility: visible;
       opacity: 1;
       color: var(--c-yellow);
       border: transparent;
     }
-
-
   }
 }
 
