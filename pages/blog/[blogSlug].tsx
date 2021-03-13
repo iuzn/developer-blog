@@ -20,6 +20,7 @@ import Layout from '../../components/layout/index'
 import Header from '../../components/header/header'
 import Loading from '../../components/loading'
 import { ReactUtterances } from '../../components/comments'
+import {Blog} from "../../components/sections/blog";
 
 interface PostProps {
   post: BlogPost
@@ -86,7 +87,9 @@ export const getStaticProps: GetStaticProps<
 interface recordMapProps {
   recordMap: any
 }
-const BlogPosts: React.FC<PostProps & recordMapProps> = ({ post, recordMap }) => {
+
+
+const BlogPosts: React.FC<PostProps & recordMapProps> = ({ post,morePosts, recordMap }) => {
 
   const [modal, setModal] = useState(false)
   const toggle = () => setModal(!modal)
@@ -182,6 +185,9 @@ const BlogPosts: React.FC<PostProps & recordMapProps> = ({ post, recordMap }) =>
               issueMap="issue-term"
               issueTerm="title"
             />
+          </div>
+          <div>
+            <Blog blogpost={morePosts} preview />
           </div>
           <Footer />
         </article>
