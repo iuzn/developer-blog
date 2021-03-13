@@ -8,11 +8,13 @@
 
 .post-container {
   @apply max-w-3xl mx-auto w-full;
+  @media (--t) {
+    @apply max-w-3xl mx-auto w-full px-4;
+  }
   @media (--d) {
     @apply max-w-4xl mx-auto w-full px-4;
   }
 }
-bnmöh
 
 .achievement-notion .notion-link,
 .achievement-notion .notion-text {

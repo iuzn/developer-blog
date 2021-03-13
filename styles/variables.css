@@ -97,6 +97,9 @@
   --fade: 240ms;
   --fade-2: 120ms;
   --fade-3: 360ms;
+
+  --font:-apple-system, BlinkMacSystemFont, 'Inter', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
 .dim:root {
@@ -159,6 +162,9 @@
   --notion-orange_background_co: rgba(89, 74, 58, 0.3);
   --notion-brown_background_co: rgba(67, 64, 64, 0.3);
   --notion-gray_background_co: rgba(69, 75, 78, 0.3);
+  --font:-apple-system, BlinkMacSystemFont, 'Inter', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --font-serif:'Lora', serif;
 }
 
 .dark:root {

@@ -23,8 +23,7 @@ html {
 }
 body {
   font-size: 1rem;
-  font-family: -apple-system, BlinkMacSystemFont, 'Inter', Roboto, Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: var(--font);
   background-color: var(--c-primary);
   color: var(--c-text-color);
 }
@@ -125,9 +124,7 @@ a:focus-visible {
 .text-color-primary {
   p {
     color: var(--c-text-color);
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter', Roboto, Helvetica,
-      Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-      'Segoe UI Symbol';
+    font-family: var(--font);
   }
   span {
     color: var(--c-text-color);
@@ -742,8 +739,7 @@ a:focus-visible {
   line-height: 1.5;
   color: var(--c-text-color);
   caret-color: var(--c-text-color);
-  font-family: -apple-system, BlinkMacSystemFont, 'Inter', Roboto, Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: var(--font);
 }
 
 .bg-gradient {
@@ -1424,8 +1420,7 @@ img.notion-nav-icon {
   line-height: 1.5;
   color: var(--fg-color);
   caret-color: var(--fg-color);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
-    'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: var(--font);
 }
 
 .notion > * {
@@ -2053,6 +2048,8 @@ svg.notion-page-icon {
   word-break: break-word;
   line-height: 28px;
   font-weight: 400;
+  font-family: var(--font);
+  font-size: 1em;
   text-rendering: optimizeLegibility;
   overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
@@ -3421,8 +3418,7 @@ svg.notion-page-icon {
   line-height: 1.5;
   color: rgb(55, 53, 47);
   caret-color: rgb(55, 53, 47);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
-    'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: var(--font);
 }
 
 .notion-search .quickFindMenu {
