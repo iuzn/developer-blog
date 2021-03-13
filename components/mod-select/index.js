@@ -13,6 +13,11 @@ const THEME = {
   sepia: {id:'Sepia',name:'Kahve'},
   null: ''
 }
+const FONT = {
+  sansserif: {id:'Sansserif',name:'Sans Serif'},
+  serif: {id:'Serif',name:'Serif'},
+  null: ''
+}
 
 function ModSelect({ onClick = () => {} }) {
   const store = useContext(StoreContext)
@@ -24,7 +29,6 @@ function ModSelect({ onClick = () => {} }) {
   }, []);
   useEffect(() => {
     document.addEventListener("keydown", escFunction,true);
-
     return () => {
       document.removeEventListener("keydown", escFunction, false);
     };
@@ -55,6 +59,18 @@ function ModSelect({ onClick = () => {} }) {
               store.changeTheme(event.target.value)
             }
             return (<button key={theme} id={THEME[theme].id} className={styles.button} value={valueOption} checked={theme === store.theme} onClick={handleChange}><Check/><span>{THEME[theme].name}</span></button>
+            )
+          })}
+        </div>
+        <div className={styles.fontselect}><h3 >
+          Metin Fontu:
+        </h3>
+          {['sansserif','serif'].map((font) => {
+            const valueOptionFont = font
+            const handleChangeFont = (e) => {
+              store.changeFont(e.target.value)
+            }
+            return (<button key={font} id={FONT[font].id} value={valueOptionFont} checked={font === store.font} onClick={handleChangeFont}><span>{FONT[font].name}</span></button>
             )
           })}
         </div>

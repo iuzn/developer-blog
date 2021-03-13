@@ -7,11 +7,22 @@ import '../styles/app.css'
 function MyApp({ Component, pageProps }) {
   const siteTitle = process.env.NEXT_PUBLIC_BLOG_TITLE
   const [theme, themeSet] = useState(null)
+  const [font, fontSet] = useState(null)
 
   useEffect(() => {
     const theme = localStorage.getItem('THEME') || 'system'
     themeSet(theme)
   }, [])
+
+  useEffect(() => {
+    const font = localStorage.getItem('FONT') || 'sansserif'
+    fontSet(font)
+  }, [])
+
+  const changeFont = (font) => {
+    fontSet(font)
+    localStorage.setItem('FONT', font)
+  }
 
   const changeTheme = (theme) => {
     themeSet(theme)
@@ -61,21 +72,28 @@ function MyApp({ Component, pageProps }) {
         $html.classList.add('light')
       }
     }
-  }, [theme])
+  })
+
+
+  useEffect(() => {
+    if (!font) return
+    const $html = document.querySelector('html')
+    $html.classList.remove('sansserif')
+    $html.classList.remove('serif')
+    $html.classList.add(font.toString())
+  })
+
 
   return (
-    <StoreContext.Provider value={{ siteTitle, theme, changeTheme }}>
+    <StoreContext.Provider
+      value={{ siteTitle, theme, changeTheme, font, changeFont }}
+    >
       <Head>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-        <link rel="preconnect" href="https://fonts.gstatic.com"/>
-<link href="https://fonts.googleapis.com/css2" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" />
         <link rel="shortcut icon" href={process.env.NEXT_PUBLIC_FAVICON_URL} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
         <title>{siteTitle}</title>
       </Head>
       <Component {...pageProps} />

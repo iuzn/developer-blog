@@ -35,7 +35,7 @@
   padding: 0 25px 25px 25px;
   font-size: 1em;
   margin-bottom: 30px;
-  font-family: var(--font);;
+  font-family: var(--font-sansserif);;
   text-align: justify;
   text-justify: inter-word;
 }
@@ -51,7 +51,7 @@
     var(--c-yellow) 100%
   );
   background-size: 200% auto;
-  backdrop-filter: saturate(150%) blur(8px);
+  backdrop-filter: blur(8px);
   text-align: center;
   padding: 10px 30px;
   font-size: 1.2em;

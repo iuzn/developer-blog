@@ -23,7 +23,7 @@ html {
 }
 body {
   font-size: 1rem;
-  font-family: var(--font);
+  font-family: var(--font-sansserif);
   background-color: var(--c-primary);
   color: var(--c-text-color);
 }
@@ -739,7 +739,7 @@ a:focus-visible {
   line-height: 1.5;
   color: var(--c-text-color);
   caret-color: var(--c-text-color);
-  font-family: var(--font);
+  font-family: var(--font-sansserif);
 }
 
 .bg-gradient {
@@ -769,15 +769,6 @@ a:focus-visible {
   display: flex;
   flex: 1 1 0;
   background: #fff;
-}
-
-.medium-zoom-overlay {
-  z-index: 0;
-}
-
-.medium-zoom-image {
-  border-radius: 0;
-  z-index: 1;
 }
 
 .notion-frame {
@@ -925,14 +916,7 @@ img.notion-page-icon-offset {
 .notion-small-text {
   font-size: 14px;
 }
-.notion-quote {
-  white-space: pre-wrap;
-  word-break: break-word;
-  border-left: 3px solid currentcolor;
-  padding: 0.2em 0.9em;
-  margin: 0;
-  font-size: 1.2em;
-}
+
 .notion-hr {
   display: flex;
   vertical-align: center;
@@ -1545,7 +1529,8 @@ img.notion-nav-icon {
 
 .medium-zoom-overlay {
   z-index: 4;
-  backdrop-filter: saturate(150%) blur(10px);
+  background: var(--c-primary-40);
+  backdrop-filter: blur(10px);
 }
 
 .medium-zoom-image {
@@ -1886,16 +1871,17 @@ img.notion-nav-icon {
 .notion-small-text {
   font-size: 14px;
 }
-
 .notion-quote {
+    white-space: pre-wrap;
+  word-break: break-word;
+  border-left: 3px solid currentcolor;
+  font-size: 1.2em;
   display: block;
   width: 100%;
-  white-space: pre-wrap;
-  word-break: break-word;
   border-left: 3px solid currentcolor;
   padding: 0.2em 0.9em;
   margin: 6px 0;
-  font-size: 1.2em;
+  font-family: var(--font);
 }
 
 .notion-link {

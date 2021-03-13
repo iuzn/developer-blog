@@ -9,7 +9,7 @@
   justify-content: center;
   background-color: var(--c-primary-40);
   z-index: 2;
-  backdrop-filter: saturate(150%) blur(10px);
+  backdrop-filter:blur(10px);
 }
 
 .overlay {
@@ -129,6 +129,98 @@
     }
   }
 }
+
+.fontselect {
+  display: inline-flex;
+      gap: 10px;
+  h3 {
+    font-size: 1.5em;
+    float: left;
+    margin-right: 20px;
+  }
+  svg {
+    pointer-events: none;
+  }
+  button {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    outline-style: none;
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+    border-radius: 99px;
+    border: 2px solid var(--c-yellow-20);
+    & span {
+        position: fixed;
+      visibility: visible;
+      pointer-events: none;
+      transition: all ease-in-out var(--fade);
+    }
+    &:focus-visible,
+    &:hover {
+      color: var(--c-primary);
+      background-color: var(--c-yellow-40);
+      span {
+        font-size: 1em;
+        color: var(--c-text-color);
+        opacity: 1;
+        pointer-events: none;
+      }
+    }
+  }
+
+ [id='Serif'] {
+   font-family: 'Source Serif Pro', serif;
+  background-color: var(--c-primary);
+}
+ [id='Sansserif'] {
+   font-family: var(--font-sansserif);
+  background-color: var(--c-primary);
+}
+}
+
+
+:global(.sansserif):root {
+  .fontselect [id='Sansserif'] {
+    border: 2px solid var(--c-yellow);
+              span {
+        color: var(--c-yellow);
+      }
+      svg {
+      visibility: visible;
+      opacity: 1;
+      color: var(--c-yellow);
+      border: transparent;
+    }
+
+  }
+}
+
+:global(.serif):root {
+    .fontselect{
+    h3{
+         font-family: 'Source Serif Pro', serif;
+    }
+  }
+  .fontselect [id='Serif'] {
+    border: 2px solid var(--c-yellow);
+          span {
+        color: var(--c-yellow);
+      }
+      svg {
+      visibility: visible;
+      opacity: 1;
+      color: var(--c-yellow);
+      border: transparent;
+    }
+
+
+  }
+}
+
 .kapat {
   display: flex;
   justify-content: center;
@@ -168,7 +260,6 @@
 .container [id='Dim'] {
   background-color: rgb(21, 41, 39);
 }
-
 :global(.system):root {
   .container [id='System'] {
     border: 3px solid var(--c-primary);
@@ -180,6 +271,7 @@
     }
   }
 }
+
 :global(.light):root {
   .container [id='Light'] {
     border: 3px solid var(--c-yellow);

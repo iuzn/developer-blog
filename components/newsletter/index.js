@@ -80,7 +80,7 @@ const Newsletter = () => {
               color: 'var(--c-text-color)',
               padding: '16px',
               backgroundColor: 'var(--c-primary-80)',
-              backdropFilter: 'saturate(150%) blur(10px)',
+              backdropFilter: 'blur(10px)',
               border: '1px solid var(--c-border)',
               marginTop:`${!ismobile ? "0" : "60px"}`
             }
