@@ -4,6 +4,8 @@ import StoreContext from '../store'
 import '../assets/styles/main.css'
 import '../assets/styles/prism.css'
 import '../styles/app.css'
+import 'katex/dist/katex.min.css'
+
 function MyApp({ Component, pageProps }) {
   const siteTitle = process.env.NEXT_PUBLIC_BLOG_TITLE
   const [theme, themeSet] = useState(null)

@@ -27,17 +27,18 @@ body {
   background-color: var(--c-primary);
   color: var(--c-text-color);
 }
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
 }
 body {
   scrollbar-width: thin;
   scrollbar-color: var(--c-yellow) var(--c-yellow-10);
 }
-body::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background: var(--c-yellow-10);
 }
-body::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background-color: var(--c-yellow);
   border-radius: 6px;
   border: 3px solid var(--c-yellow-10);
@@ -2567,21 +2568,6 @@ svg.notion-page-icon {
   background: var(--c-yellow-60);
 }
 
-.notion-frame .katex-display .katex {
-  padding-right: 32px;
-}
-
-.notion-frame .katex > .katex-html {
-  white-space: normal;
-}
-.katex {
-  font: 1.21em / 1.2 KaTeX_Main, 'Times New Roman', serif;
-  text-indent: 0;
-  text-rendering: auto;
-  .katex-html {
-    display: none;
-  }
-}
 
 .notion-page-title {
   display: inline-flex;
