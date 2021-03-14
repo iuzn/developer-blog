@@ -1728,6 +1728,7 @@ svg.notion-page-icon {
   white-space: pre-wrap;
   word-break: break-word;
   margin-right: 0.5em;
+  padding-left: 0.5em;
 }
 
 .notion-collection-view-dropdown {
