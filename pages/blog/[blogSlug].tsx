@@ -187,7 +187,7 @@ const BlogPosts: React.FC<PostProps & recordMapProps> = ({ post,morePosts, recor
             />
           </div>
           <div>
-            <Blog blogpost={morePosts} preview />
+            <Blog suggested blogpost={morePosts}  />
           </div>
           <Footer />
         </article>

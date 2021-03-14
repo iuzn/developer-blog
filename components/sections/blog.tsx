@@ -27,7 +27,9 @@ export const BlogPost: React.FC<
         <div className="pb-2/3 aspect-16x9 bg-gray-100 relative border-b overflow-hidden">
           <img
             className={clsx('absolute w-full h-full object-cover')}
-            src={toNotionImageUrl(images[0].url.replace("&width=600", "&width=982"))}
+            src={toNotionImageUrl(
+              images[0].url.replace('&width=600', '&width=982')
+            )}
             alt={title}
           />
         </div>
@@ -45,15 +47,16 @@ export const BlogPost: React.FC<
     {!featured && (
       <img
         className={clsx('rounded-br-large absolute w-full h-full object-cover')}
-        src={toNotionImageUrl(images[0].url.replace("&width=600", "&width=235"))}
+        src={toNotionImageUrl(
+          images[0].url.replace('&width=600', '&width=235')
+        )}
         alt={title}
       />
     )}
     <Link href={`/blog/[projectSlug]`} as={`/blog/${slug}`}>
       <a aria-label="Blog Gönderisi" className={styles.footer}>
-        {featured &&
-          (!showVideo ? 'Okumaya devam et' : 'İzlemeye devam et')
-          }{!featured && (!showVideo ? 'Oku' : 'İzle')}
+        {featured && (!showVideo ? 'Okumaya devam et' : 'İzlemeye devam et')}
+        {!featured && (!showVideo ? 'Oku' : 'İzle')}
       </a>
     </Link>
   </div>
@@ -62,28 +65,43 @@ export const BlogPost: React.FC<
 export const Blog: React.FC<{
   blogpost: BlogPostData[]
   preview?: boolean
-}> = ({ blogpost, preview }) =>{
-    return(
-  <div>
-    <div className="grid grid-cols-1 ">
-      {blogpost.slice(0, preview ? 1 : undefined).map((p) => (
-        <BlogPost  key={p.id} featured {...p} />
-      ))}
-    </div>
-
-    {preview && (
-      <div className="container">
-        <div className="m-auto max-w-3xl pb-4">
-          <h1 className="text-4xl font-bold">Blog</h1>
-          <div className="text-2xl ">Tasarım, Web, Teknoloji</div>
-        </div>
-        <div className="md:grid mt-4 mb-4 grid-cols-2 sm:grid-cols-4 gap-4 ">
-          {blogpost.slice(1, 5).map((p) => (
-            <BlogPost key={p.id} className="hidden md:flex" {...p} />
+  suggested?: boolean
+}> = ({ blogpost, preview, suggested }) => {
+  return (
+    <div>
+      {!suggested && (
+        <div className="grid grid-cols-1 ">
+          {blogpost.slice(0, preview ? 1 : undefined).map((p) => (
+            <BlogPost key={p.id} featured {...p} />
           ))}
         </div>
-      </div>
-    )}
-  </div>
-)
+      )}
+      {preview && (
+        <div className="container">
+          <div className="m-auto max-w-3xl pb-4">
+            <h1 className="text-4xl font-bold">Blog</h1>
+            <div className="text-2xl ">Tasarım, Web, Teknoloji</div>
+          </div>
+          <div className="md:grid mt-4 mb-4 grid-cols-2 sm:grid-cols-4 gap-4 ">
+            {blogpost.slice(1, 5).map((p) => (
+              <BlogPost key={p.id} className="hidden md:flex" {...p} />
+            ))}
+          </div>
+        </div>
+      )}
+      {suggested && (
+        <div className="container mt-8">
+                    <div className="md:grid mt-4 mb-4 grid-cols-2 sm:grid-cols-3 gap-4 ">
+          <div className="m-auto max-w-3xl pb-4">
+            <h3 className="text-3xl font-bold underlined">Daha fazla içerik</h3>
+          </div>
+
+            {blogpost.slice(0, 2).map((p) => (
+              <BlogPost key={p.id} className="hidden md:flex " {...p} />
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  )
 }

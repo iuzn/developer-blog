@@ -76,4 +76,8 @@
   .color-primary-80 {
     color: var(--c-yellow-80);
   }
+  .underlined{
+      text-decoration: underline;
+      text-decoration-color:var(--c-yellow-80);
+  }
 }
