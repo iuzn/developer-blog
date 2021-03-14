@@ -1907,6 +1907,8 @@ svg.notion-page-icon {
 }
 
 .notion-table-cell {
+  display: grid;
+  align-items: center;
   min-height: 32px;
   padding: 5px 8px 6px;
   font-size: 14px;
@@ -2624,8 +2626,7 @@ svg.notion-page-icon {
 }
 
 .notion-collection-card-property,
-.notion-property-relation,
-.notion-page-title-text {
+.notion-property-relation{
   border-bottom: 1px solid;
 }
 
@@ -2689,8 +2690,7 @@ svg.notion-page-icon {
 }
 
 .notion-collection-row-property,
-.notion-property-relation,
-.notion-page-title-text {
+.notion-property-relation {
   border-bottom: 1px solid;
 }
 
