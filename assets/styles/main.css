@@ -7,9 +7,9 @@
 }
 
 .post-container {
-  @apply max-w-3xl mx-auto w-full;
+  @apply max-w-3xl mx-auto w-full mb-20;
   @media (--t) {
-    @apply max-w-3xl mx-auto w-full px-4;
+    @apply max-w-3xl mx-auto w-full px-4 mb-12;
   }
   @media (--d) {
     @apply max-w-4xl mx-auto w-full px-4;
