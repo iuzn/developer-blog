@@ -5,4 +5,5 @@ export const config = {
   notionBookmarkTableId: (process.env.NEXT_PUBLIC_BOOKMARK_ID as string),
   avatarUrl: (process.env.NEXT_PUBLIC_AVATAR_URL as string),
   publicName: (process.env.NEXT_PUBLIC_NAME as string),
+  utterancesGitHubRepo:(process.env.NEXT_PUBLIC_GITHUB_REPO as string)
 };
