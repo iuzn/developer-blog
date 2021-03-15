@@ -109,8 +109,6 @@ const BlogPosts: React.FC<PostProps & recordMapProps> = ({ post,morePosts, recor
     }
   })
   const router = useRouter()
-            console.log(router.asPath)
-            console.log(post.slug)
 let comments: React.ReactNode = null
   if (config.utterancesGitHubRepo) {
       comments = (
@@ -131,9 +129,6 @@ let comments: React.ReactNode = null
         </div>
       )
     }
-
-
-            console.log(`${"/blog/" + post.slug}`)
   if (router.isFallback) {
     return (
       <>
