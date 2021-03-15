@@ -108,8 +108,35 @@ const BlogPosts: React.FC<PostProps & recordMapProps> = ({ post,morePosts, recor
       })
     }
   })
-
   const router = useRouter()
+            console.log(router.asPath)
+            console.log(post.slug)
+let comments: React.ReactNode = null
+  if (config.utterancesGitHubRepo) {
+      comments = (
+          <div className="w-full">
+          <button
+            onClick={toggle}
+            type="button"
+            id="yorum"
+            className={!modal ? 'accordion' : 'accordion-open'}
+          >
+            Yorumlar
+          </button>
+          <div className={!modal ? 'panel' : 'panel-active'}>
+            {router.pathname != `${"/blog/" + post.slug}` ? <ReactUtterances
+          repo={config.utterancesGitHubRepo}
+              issueMap="issue-term"
+              issueTerm="title"
+            /> : <div className="text-center text-xl m-6">Yorum yok</div>
+            }
+          </div>
+        </div>
+      )
+    }
+
+
+            console.log(`${"/blog/" + post.slug}`)
   if (router.isFallback) {
     return (
       <>
@@ -169,26 +196,10 @@ const BlogPosts: React.FC<PostProps & recordMapProps> = ({ post,morePosts, recor
               equation: Equation
             }}
             recordMap={recordMap}
+            pageFooter={comments}
           />
           <br/>
-          <button
-            onClick={toggle}
-            type="button"
-            id="yorum"
-            className={!modal ? 'accordion' : 'accordion-open'}
-          >
-            Yorumlar
-          </button>
-          <div className={!modal ? 'panel' : 'panel-active'}>
-            <ReactUtterances
-              repo="iuzn/developer-blog"
-              issueMap="issue-term"
-              issueTerm="title"
-            />
-          </div>
-          <div>
             <Blog suggested blogpost={morePosts}  />
-          </div>
           <Footer />
         </article>
       </Layout>
