@@ -120,16 +120,13 @@ let comments: React.ReactNode = null
             type="button"
             id="yorum"
             className={!modal ? 'accordion' : 'accordion-open'}
-          >
-            Yorumlar
-          </button>
+          >Yorumlar</button>
           <div className={!modal ? 'panel' : 'panel-active'}>
-            {router.pathname != `${"/blog/" + post.slug}` ? <ReactUtterances
+             <ReactUtterances
           repo={config.utterancesGitHubRepo}
               issueMap="issue-term"
               issueTerm="title"
-            /> : <div className="text-center text-xl m-6">Yorum yok</div>
-            }
+            />
           </div>
         </div>
       )
