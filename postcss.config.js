@@ -8,7 +8,10 @@ module.exports = {
     {
       importFrom: [
         {
-          customMedia: {'--m': '(min-width: 200px)'}
+          customMedia: {'--ms': '(min-width: 200px)'}
+        },
+        {
+          customMedia: {'--m': '(min-width: 350px)'}
         },
         {
           customMedia: {'--t': '(min-width: 850px)'}
