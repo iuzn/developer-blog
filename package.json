@@ -29,6 +29,7 @@
     "react-notion": "^0.9.3",
     "react-notion-x": "^4.3.1",
     "react-static-tweets": "^0.2.6",
+    "remixicon": "^2.5.0",
     "sass": "^1.29.0",
     "static-tweets": "^0.2.7"
   },
