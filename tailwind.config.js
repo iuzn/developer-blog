@@ -27,9 +27,17 @@ module.exports = {
         }
       }
     },
+    screens: {
+      '--ms': '200px',
+      '--m': '350px',
+      '--ml': '450px',
+      '--t': '850px',
+      '--d': '1280px',
+    },
     borderRadius: {
       default: '4px',
       medium: '8px',
+      regular: '16px',
       large: '24px',
       full: '9999px'
     },
