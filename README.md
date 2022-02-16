@@ -25,4 +25,4 @@ I am not aware.
 - [ ] Post Filter (Search all posts)
 - [x] Bookmark Filter
 
-If you want to code with me, [I'm a click away!](mailto:dev@ibrahimuzun.com?subject=[GitHub]%Developing%20new%20social%media)
+If you want to code with me, [I'm a click away!](mailto:info@ibrahimuzun.com?subject=[GitHub]%Developing%20new%20social%media)
